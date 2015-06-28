@@ -23,14 +23,15 @@
       <div class="login-form">
 	  
 
-        <input type="email" class="text-input--underbar" placeholder="ID" value="">
-        <input type="password" class="text-input--underbar" placeholder="Password" value="">
+        <input type="email" id="txt_username" class="text-input--underbar" placeholder="ID" value="">
+        <input type="password" id="txt_pwd" class="text-input--underbar" placeholder="Password" value="">
         <br><br>
-        <ons-button modifier="large" class="login-button" onclick="goPage()">Log In</ons-button>
+        <ons-button modifier="large" class="login-button" onclick="javascript:verifyLogin();">Log In</ons-button>
       </div>
 
     </ons-page>
-	
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script>
 		function goPage()
 		{
@@ -42,6 +43,30 @@
 		{
 			return path.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');
 		}
+
+        function verifyLogin() {
+          var uname = document.getElementById("txt_username").value;
+          var pwd = document.getElementById("txt_pwd").value;
+          $.ajax({
+            type: 'POST',
+            dataType : 'Json',
+            url: 'http://192.168.1.165:3303',
+            data: {
+              'uname': uname,
+              'pwd': pwd
+            },
+            success: function (data) {
+              if ("SUCCESS" == data) {
+                alert("Login Success!!");
+              } else {
+                alert("Invalid Login!!");
+              }
+            },
+            error: function (xhr, type) {
+              alert('server error occurred');
+            }
+          });
+        }
 	</script>
 
   </body>
