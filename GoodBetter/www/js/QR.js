@@ -2,12 +2,10 @@ var resultDiv;
 
 document.addEventListener("deviceready", init, false);
 function init() {
-    //document.querySelector("#startScan").addEventListener("touchend", startScan, false);
+    document.querySelector("#startScan").addEventListener("touchend", startScan, false);
     //resultDiv = document.querySelector("#results");
 	
 	startScan();
-	
-	goINFO();
 }
 
 function startScan() {
@@ -24,16 +22,4 @@ function startScan() {
         }
     );
 
-}
-
-function goINFO()
-{
-	var dirPath = dirname(location.href);
-	fullPath = dirPath + "/INFO.html";
-	window.location=fullPath;
-}
-		
-function dirname(path)
-{
-	return path.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');
 }

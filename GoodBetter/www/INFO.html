@@ -5,75 +5,69 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/INFO.css" />	
-        <script type="text/javascript" src="cordova.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/Tab.css" />
+		<link rel="stylesheet" type="text/css" href="css/INFO.css" />
+		<link rel="stylesheet" type="text/css" href="css/Setting.css" />
+		<link rel="stylesheet" type="text/css" href="css/PlantTalk.css" />
+		<link rel="stylesheet" type="text/css" href="css/Record.css" />
 		</head>
     <body>
-        
-		<!--
-		<p>
-            <button id="startScan">Start Scan</button>
-        </p>
-		-->
-		
-		
-		<div class="tab-bar tab-bar--top tab-bar--top-border">
-			<label class="tab-bar__item tab-bar--top-border__item">
+
+		<div class="tab-bar-sp tab-bar--top-sp tab-bar--top-border-sp">
+			<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
 				<!--<input type="radio" name="top-tab-bar-b">-->
-				<button class="button--cta" id="startScan" class="tab-bar__button tab-bar--top-border__button" onclick="goQR();">
+				<button class="button--cta-sp" id="startScan" class="tab-bar__button-sp tab-bar--top-border__button-sp">
 				QR Scan
 				</button>
 			</label>
 
-			<label class="tab-bar__item tab-bar--top-border__item">
-				<input type="radio" name="top-tab-bar-b" checked="checked">
-				<button class="tab-bar__button tab-bar--top-border__button">
+			<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
+				<input type="radio" name="top-tab-bar-b-sp" checked="checked">
+				<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 				INFO
 				</button>
 			</label>
 			
-			<label class="tab-bar__item tab-bar--top-border__item">
-				<input type="radio" name="top-tab-bar-b">
-				<button class="tab-bar__button tab-bar--top-border__button">
+			<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
+				<input type="radio" name="top-tab-bar-b-sp">
+				<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 				Record
 				</button>
 			</label>
 			
-			<label class="tab-bar__item tab-bar--top-border__item">
-				<input type="radio" name="top-tab-bar-b">
-				<button class="tab-bar__button tab-bar--top-border__button">
+			<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
+				<input type="radio" name="top-tab-bar-b-sp">
+				<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 				Plant Talk
 				</button>
 			</label>
 
-			<label class="tab-bar__item tab-bar--top-border__item">
-				<input type="radio" name="top-tab-bar-b" onclick="goSetting();">
-				<button class="tab-bar__button tab-bar--top-border__button" >
+			<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
+				<input type="radio" name="top-tab-bar-b-sp" onclick="goSetting();">
+				<button class="tab-bar__button-sp tab-bar--top-border__button-sp" >
 				Setting
 				</button>
 			</label>
 		</div>
 		
-		<script>
-			function goSetting()
-			{
-				var dirPath = dirname(location.href);
-				fullPath = dirPath + "/Setting.html";
-				window.location=fullPath;
-			}
-			function goQR()
-			{
-				var dirPath = dirname(location.href);
-				fullPath = dirPath + "/QR_Scan.html";
-				window.location=fullPath;
-			}
-
-
-			function dirname(path)
-			{
-				return path.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');
-			}
-		</script>
+		<div class="tab_container">
+			<div id="tab1" class="tab_content">
+				<ul>
+					<li><a href="#">이것은 두 번째 탭의</a>
+					</li>
+					<li><a href="#">이것은 두 번째 탭의</a>
+					</li>
+					<li><a href="#">이것은 두 번째 탭의</a>
+					</li>
+					<li><a href="#">이것은 두 번째 탭의</a>
+					</li>
+					<li><a href="#">이것은 두 번째 탭의</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 		
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/QR.js"></script>
     </body>
 </html>
