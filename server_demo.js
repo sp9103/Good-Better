@@ -14,6 +14,7 @@ app.get('/',function (req,res) {
 });
 app.post('/', function(req, res){
     console.log(JSON.stringify(req.body));
+    res.json({result:'SUCCESS'});
 /*
     authenticate(req.body.username, req.body.password, function(err, user){
         if (user) {
