@@ -11,8 +11,8 @@
 }
 
 .profile-image-sp {
-  height: 300px;
-  width: 300px;
+  height: 70%;
+  
   border-radius: 50%;
   -webkit-border-radius: 50%;
   background-color: black;
