@@ -19,11 +19,11 @@
 		<script>
 			ons.bootstrap();
 		</script>
-
+		
   </head>
 	</head>
     <body>
-
+	
 		<div class="tab-bar-sp tab-bar--top-sp tab-bar--top-border-sp">
 			<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
 				<!--<input type="radio" name="top-tab-bar-b">-->
@@ -33,36 +33,46 @@
 			</label>
 
 			<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
-				<input type="radio" name="top-tab-bar-b-sp" checked="checked">
+				<input type="radio" name="top-tab-bar-b-sp" checked="checked" id="INFO">
 				<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 				INFO
 				</button>
 			</label>
 			
 			<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
-				<input type="radio" name="top-tab-bar-b-sp">
+				<input type="radio" name="top-tab-bar-b-sp" id="Record">
 				<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 				Record
 				</button>
 			</label>
 			
 			<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
-				<input type="radio" name="top-tab-bar-b-sp">
+				<input type="radio" name="top-tab-bar-b-sp" id="Talk">
 				<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
-				Plant Talk
+				Talk
 				</button>
 			</label>
 
-			<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
-				<input type="radio" name="top-tab-bar-b-sp" onclick="goSetting();">
-				<button class="tab-bar__button-sp tab-bar--top-border__button-sp" >
+			<label class="tab-bar__item-sp tab-bar--top-border__item-sp" id="Setting">
+				<input type="radio" name="top-tab-bar-b-sp" >
+				<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 				Setting
 				</button>
 			</label>	
 		</div>
 		
 		<br>
-		<div>
+		<div id="INFOPage">
+			<div id="results"></div>
+		</div>
+		
+		<div id="RecordPage">
+		</div>
+		
+		<div id="TalkPage">
+		</div>
+		
+		<div id="SettingPage" style="display:none">
 			<ons-row class="profile-wrapper">
 				<ons-col width="115px" class="profile-image-wrapper">
 					<img src="img/profile.png" class="profile-image">
@@ -75,37 +85,28 @@
 
 			</ons-row>
 			<br>
-			<!--
-			<ul class="list list--inset">
-				<li class="list__item list--inset__item list__item--chevron" onclick="window.open('http://www.goodandbetter.co.kr/','_system');">
-				HomePage
-				</li>
-				<li class="list__item list--inset__item list__item--chevron">
-				App Information
-				</li>
-			</ul>
-			-->
 			
 			<ons-list modifier="inset" class="settings-list">
 				<ons-list-item modifier="chevron" onclick="window.open('http://www.goodandbetter.co.kr/','_system');">
 				HomePage
-			</ons-list-item>
+				</ons-list-item>
 
-			<ons-list-item modifier="chevron">
+				<ons-list-item modifier="chevron">
 				App Information
-			</ons-list-item>
+				</ons-list-item>
 			</ons-list>
 			<br>
 		
 			<ons-list modifier="inset" class="settings-list">
 				<ons-list-item modifier="tappable">
-				<ons-icon icon="ion-log-out" style="opacity: 0.8"></ons-icon>
-				Sign out
+					<ons-icon icon="ion-log-out" style="opacity: 0.8"></ons-icon>
+					Sign out
 				</ons-list-item>
 			</ons-list>
 		</div>
 		
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/QR.js"></script>
+		<script type="text/javascript" src="js/Tab.js"></script>
     </body>
 </html>
