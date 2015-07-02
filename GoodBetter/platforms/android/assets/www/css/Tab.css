@@ -6,7 +6,7 @@
   font-size: 17px;
   display: table;
   table-layout: fixed;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   left: 0px;
   right: 0px;
@@ -173,7 +173,7 @@
   z-index: 0;
 }
 .tab-bar--top-sp {
-  position: relative;
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -202,11 +202,11 @@
   z-index: 0;
 }
 .tab-bar--top-border__button-sp {
-  background-color: transparent;
+  background-color: white;
   border-bottom: 4px solid transparent;
 }
 :checked + .tab-bar--top-border__button-sp {
-  background-color: transparent;
+  background-color: white;
   border-bottom: 4px solid #eb5e2f;
 }
 
@@ -248,7 +248,7 @@
   color: #ccc;
   text-shadow: 0 1px none;
   vertical-align: top;
-  background-color: transparent;
+  background-color: white;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-top: none;
