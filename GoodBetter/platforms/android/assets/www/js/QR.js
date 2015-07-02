@@ -2,7 +2,8 @@ var resultDiv;
 
 document.addEventListener("deviceready", init, false);
 function init() {
-    document.querySelector("#startScan").addEventListener("touchend", startScan, false);
+	
+    //document.querySelector("#startScan").addEventListener("touchend", startScan, false);
     resultDiv = document.querySelector("#results");
 	
 	startScan();
@@ -12,14 +13,26 @@ function startScan() {
 
     cordova.plugins.barcodeScanner.scan(
         function (result) {
-            var s = "Result: " + result.text + "<br/>" +
-            "Format: " + result.format + "<br/>" +
-            "Cancelled: " + result.cancelled;
-            resultDiv.innerHTML = s;
+            //var s = "Result: " + result.text + "<br/>" +
+            //"Format: " + result.format + "<br/>" +
+            //"Cancelled: " + result.cancelled;
+            //resultDiv.innerHTML = s;
+			
+			nextPage();
         }, 
         function (error) {
             alert("Scanning failed: " + error);
         }
     );
 
+}
+
+function nextPage() {
+	var dirPath = dirname(location.href);
+    fullPath = dirPath + "/INFO.html";
+    window.location = fullPath;
+}
+
+function dirname(path) {
+    return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
 }

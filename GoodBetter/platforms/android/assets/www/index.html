@@ -30,7 +30,7 @@
         <br>
         <input type="checkbox" id="check_auto" value="AUTO">auto-login
         <br><br>
-        <ons-button modifier="large" class="login-button" onclick="verifyLogin();">Log In</ons-button>
+        <ons-button modifier="large" class="login-button" onclick="goPage();">Log In</ons-button>
     </div>
 
 </ons-page>
@@ -57,7 +57,7 @@
 
     function goPage() {
         var dirPath = dirname(location.href);
-        fullPath = dirPath + "/INFO.html";
+        fullPath = dirPath + "/QR_Scan.html";
         window.location = fullPath;
     }
     function dirname(path) {

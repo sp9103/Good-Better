@@ -9,6 +9,13 @@ document.querySelector("#INFO").addEventListener("touchend", INFOClick, false);
 document.querySelector("#Record").addEventListener("touchend", RecordClick, false);
 document.querySelector("#Talk").addEventListener("touchend", TalkClick, false);
 document.querySelector("#Setting").addEventListener("touchend", SetClick, false);
+document.querySelector("#QR").addEventListener("touchend", QRClick, false);
+
+function QRClick() {
+	var dirPath = dirname(location.href);
+    fullPath = dirPath + "/QR_Scan.html";
+    window.location = fullPath;
+}
 
 function INFOClick() {
 	document.getElementById("INFOPage").style.display = "block";
@@ -36,4 +43,8 @@ function SetClick() {
 	document.getElementById("RecordPage").style.display = "none";
 	document.getElementById("TalkPage").style.display = "none";
 	document.getElementById("SettingPage").style.display = "block";
+}
+
+function dirname(path) {
+    return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
 }
