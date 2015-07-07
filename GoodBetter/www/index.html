@@ -28,11 +28,12 @@
         <input type="email" id="txt_username" class="text-input--underbar" placeholder="ID" value="">
         <input type="password" id="txt_pwd" class="text-input--underbar" placeholder="Password" value="">
         <br>
-			<label class="switch">
-				<input type="checkbox" id="check_auto" value="AUTO" class="switch__input">
-				<div class="switch__toggle"></div>
-			</label>
-			Auto Login
+        <label class="switch">
+            <input type="checkbox" id="check_auto" value="AUTO" class="switch__input">
+
+            <div class="switch__toggle"></div>
+        </label>
+        Auto Login
         <br><br>
         <ons-button modifier="large" class="login-button" onclick="goPage();">Log In</ons-button>
     </div>
@@ -46,15 +47,15 @@
 
     function onDeviceReady() {
         var auto = window.localStorage.getItem("auto");
-        if(null == auto) {
+        if (null == auto) {
             /* frist run */
-        }else if( "true"==auto) {
+        } else if ("true" == auto) {
             /* auto-login */
             document.getElementById("txt_username").value = window.localStorage.getItem("username");
             document.getElementById("txt_pwd").value = window.localStorage.getItem("userpw");
             document.getElementById("check_auto").checked = true;
             verifyLogin();
-        }else {
+        } else {
             /* non auto-login */
         }
     }
@@ -81,9 +82,9 @@
             },
             success: function (data) {
                 if ("SUCCESS" == data.result) {
-                    window.localStorage.setItem("username",uname);
-                    window.localStorage.setItem("userpw",pwd);
-                    window.localStorage.setItem("auto",document.getElementById("check_auto").checked);
+                    window.localStorage.setItem("username", uname);
+                    window.localStorage.setItem("userpw", pwd);
+                    window.localStorage.setItem("auto", document.getElementById("check_auto").checked);
                     goPage();
                 } else {
                     alert("Invalid Login!!" + data.result);

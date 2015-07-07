@@ -16,13 +16,15 @@
 
 		<script src="lib/onsen/js/angular/angular.js"></script>
 		<script src="lib/onsen/js/onsenui.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
 		<script>
 			ons.bootstrap();
 		</script>
 
   </head>
 	</head>
-    <body>
+    <body onload="onLoad()">
 
 		<div class="tab-bar-sp tab-bar--top-sp tab-bar--top-border-sp" style="z-index:1000;">
 			<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
@@ -140,8 +142,19 @@
 				</ons-list-item>
 			</ons-list>
 		</div>
+	<script>
+		function onLoad() {
+			document.addEventListener("deviceready", onDeviceReady(), false);
+		}
 
-		<script type="text/javascript" src="cordova.js"></script>
-		<script type="text/javascript" src="js/Tab.js"></script>
+		function onDeviceReady() {
+			var s = window.localStorage.getItem("cur_plant");
+			var plant = JSON.parse(s);
+			alert(plant.PLA_Name);
+		}
+		function showre() {
+		}
+
+	</script>
     </body>
 </html>
