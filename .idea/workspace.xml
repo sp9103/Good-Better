@@ -7,6 +7,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GoodBetter/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/GoodBetter/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GoodBetter/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/GoodBetter/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GoodBetter/www/INFO.html" afterPath="$PROJECT_DIR$/GoodBetter/www/INFO.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GoodBetter/platforms/android/assets/www/css/PlantTalk.css" afterPath="$PROJECT_DIR$/GoodBetter/platforms/android/assets/www/css/PlantTalk.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GoodBetter/www/css/PlantTalk.css" afterPath="$PROJECT_DIR$/GoodBetter/www/css/PlantTalk.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Good-Better.iws" />
@@ -28,28 +30,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GoodBetter/www/js/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="58" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tab.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GoodBetter/www/js/Tab.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.142857">
-              <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Tab.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GoodBetter/www/css/Tab.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -75,8 +55,8 @@
       <file leaf-file-name="Setting.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GoodBetter/www/Setting.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.357143">
-              <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+            <state vertical-scroll-proportion="-13.571428">
+              <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -85,8 +65,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GoodBetter/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.857142">
-              <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="17" selection-end-column="24" />
+            <state vertical-scroll-proportion="-18.321428">
+              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -95,44 +75,70 @@
       <file leaf-file-name="INFO.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GoodBetter/www/INFO.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8744839">
-              <caret line="159" column="64" selection-start-line="159" selection-start-column="64" selection-end-line="159" selection-end-column="64" />
+            <state vertical-scroll-proportion="0.6319613">
+              <caret line="106" column="46" selection-start-line="106" selection-start-column="46" selection-end-line="106" selection-end-column="46" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QR_Scan.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GoodBetter/www/QR_Scan.html">
+      <file leaf-file-name="onsenui.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GoodBetter/www/lib/onsen/js/onsenui.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.214286">
-              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+            <state vertical-scroll-proportion="-8.285714">
+              <caret line="12060" column="31" selection-start-line="12060" selection-start-column="24" selection-end-line="12060" selection-end-column="31" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Setting.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GoodBetter/www/css/Setting.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-23.75">
+              <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GoodBetter/www/css/login.css">
+      <file leaf-file-name="PlantTalk.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GoodBetter/www/css/PlantTalk.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QR.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GoodBetter/www/js/QR.js">
+      <file leaf-file-name="dark-theme.styl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GoodBetter/www/lib/onsen/stylus/dark-theme.styl">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sunshine-theme.styl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GoodBetter/www/lib/onsen/stylus/sunshine-theme.styl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -160,11 +166,12 @@
         <option value="$PROJECT_DIR$/GoodBetter/www/js/PlantTalk.js" />
         <option value="$PROJECT_DIR$/GoodBetter/www/css/INFO.css" />
         <option value="$PROJECT_DIR$/GoodBetter/www/thema/onsen-css-components.css" />
-        <option value="$PROJECT_DIR$/GoodBetter/www/css/PlantTalk.css" />
         <option value="$PROJECT_DIR$/GoodBetter/www/js/Tab.js" />
         <option value="$PROJECT_DIR$/GoodBetter/www/QR_Scan.html" />
         <option value="$PROJECT_DIR$/GoodBetter/www/index.html" />
         <option value="$PROJECT_DIR$/GoodBetter/www/js/QR.js" />
+        <option value="$PROJECT_DIR$/GoodBetter/www/css/Setting.css" />
+        <option value="$PROJECT_DIR$/GoodBetter/www/css/PlantTalk.css" />
         <option value="$PROJECT_DIR$/GoodBetter/www/INFO.html" />
       </list>
     </option>
@@ -523,7 +530,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="58" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -566,9 +573,13 @@
           <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -611,7 +622,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -661,9 +672,13 @@
           <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -681,7 +696,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="48" column="2" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -738,13 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GoodBetter/www/lib/onsen/stylus/sunshine-theme.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GoodBetter/www/thema/onsen-css-components.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -769,22 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GoodBetter/www/css/Setting.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GoodBetter/www/css/PlantTalk.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="51" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GoodBetter/www/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -798,16 +790,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="58" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GoodBetter/www/Setting.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.357143">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -823,14 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.214286">
           <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GoodBetter/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.857142">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="17" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -851,14 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GoodBetter/www/css/Tab.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GoodBetter/www/lib/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -869,15 +837,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GoodBetter/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.321428">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GoodBetter/www/Setting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.571428">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GoodBetter/www/lib/onsen/stylus/dark-theme.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GoodBetter/www/lib/onsen/stylus/sunshine-theme.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GoodBetter/www/css/Setting.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.75">
+          <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GoodBetter/www/css/Tab.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GoodBetter/www/lib/onsen/js/onsenui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.285714">
+          <caret line="12060" column="31" selection-start-line="12060" selection-start-column="24" selection-end-line="12060" selection-end-column="31" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GoodBetter/www/css/PlantTalk.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GoodBetter/www/INFO.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8744839">
-          <caret line="159" column="64" selection-start-line="159" selection-start-column="64" selection-end-line="159" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.6319613">
+          <caret line="106" column="46" selection-start-line="106" selection-start-column="46" selection-end-line="106" selection-end-column="46" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>

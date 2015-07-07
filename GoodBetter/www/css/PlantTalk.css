@@ -6,6 +6,9 @@
     bottom: 0;
     background-color: rgba(0,0,0,0.1);
 }
+.alal {
+    text-align: center;
+}
 .popoverMin {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -29,9 +32,12 @@
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
     font-size: 17px;
-    position: absolute;
+    position: relative;
     width: 220px;
     min-height: 100px;
+    height:inherit;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 .popover__contentMin {
     background-color: white;
@@ -42,7 +48,8 @@
     color: #1f1f21;
     overflow: hidden;
     min-height: 100px;
-    height: 100%;
+    height: inherit;
+    margin-bottom: 5px;
 }
 .popover__contentMin > * {
     overflow: hidden;
