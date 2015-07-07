@@ -64,7 +64,7 @@
 		</div>
 
 		<br><br><br>
-		<div id="INFOPage">
+		<div id="INFOPage" style="display:none">
 
 				<div class="profile-card">
 
@@ -93,8 +93,20 @@
 			<br>
 		</div>
 
-		<div id="RecordPage" style="display:none">
-			<div id="results"></div>
+		<div id="RecordPage" style="display:block">
+			<div class="form-group">
+				<label>Date</label><br>
+				<input type="date" class="form-control datepicker" id="appointment">
+			</div>
+	
+			<ul class="list">
+				<li class="list__item list__item--chevron">
+					2015/06/15
+				</li>
+				<li class="list__item list__item--chevron">
+					2015/06/31
+				</li>
+			</ul>
 		</div>
 
 		<div id="TalkPage" style="display:none">
@@ -140,23 +152,25 @@
 				</ons-list-item>
 			</ons-list>
 		</div>
-	<script>
-		function onLoad() {
-			document.addEventListener("deviceready", onDeviceReady(), false);
-		}
+		
+		<script>
+			function onLoad() {
+				document.addEventListener("deviceready", onDeviceReady(), false);
+			}
 
-		function onDeviceReady() {
-			var s = window.localStorage.getItem("cur_plant");
-			var plant = JSON.parse(s);
-			var url = "http://wan.iptime.org:5001";
-			document.getElementById("pla_name").innerHTML = plant.PLA_Name;
-			document.getElementById("pla_location").innerHTML = "<ons-icon icon=\"fa-map-marker\"></ons-icon> "+plant.PLA_Location;
-			document.getElementById("pla_content").innerHTML = plant.PLA_Content;
-			document.getElementById("pla_image").src = url+plant.PLA_Image;
-		}
+			function onDeviceReady() {
+				var s = window.localStorage.getItem("cur_plant");
+				var plant = JSON.parse(s);
+				var url = "http://wan.iptime.org:5001";
+				document.getElementById("pla_name").innerHTML = plant.PLA_Name;
+				document.getElementById("pla_location").innerHTML = "<ons-icon icon=\"fa-map-marker\"></ons-icon> "+plant.PLA_Location;
+				document.getElementById("pla_content").innerHTML = plant.PLA_Content;
+				document.getElementById("pla_image").src = url+plant.PLA_Image;
+			}
 
-	</script>
-		<!--<script type="text/javascript" src="cordova.js"></script> -->
+		</script>
+		
+		<script src="js/nativedatepicker.js"></script>
 		<script type="text/javascript" src="js/Tab.js"></script>
     </body>
 </html>
