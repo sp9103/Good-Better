@@ -68,10 +68,8 @@
 
 				<div class="profile-card">
 
-					<img src="img/nan.jpg" class="profile-image-sp">
+					<img id="pla_image" src="img/nan.jpg" class="profile-image-sp">
 					<div class="profile-name" id="pla_name">매화나무</div>
-					<div class="profile-id">벚나무과</div>
-						<div class="profile-desc">학명 : Prunus mume SIEB. et ZUCC.</div>
 
 				</div>
 				<br>
@@ -150,11 +148,15 @@
 		function onDeviceReady() {
 			var s = window.localStorage.getItem("cur_plant");
 			var plant = JSON.parse(s);
+			var url = "http://wan.iptime.org:5001";
 			document.getElementById("pla_name").innerHTML = plant.PLA_Name;
 			document.getElementById("pla_location").innerHTML = "<ons-icon icon=\"fa-map-marker\"></ons-icon> "+plant.PLA_Location;
 			document.getElementById("pla_content").innerHTML = plant.PLA_Content;
+			document.getElementById("pla_image").src = url+plant.PLA_Image;
 		}
 
 	</script>
+		<!--<script type="text/javascript" src="cordova.js"></script> -->
+		<script type="text/javascript" src="js/Tab.js"></script>
     </body>
 </html>
