@@ -18,7 +18,7 @@ function startScan() {
             "Cancelled: " + result.cancelled;
 			//resultDiv.innerHTML = s;
 			
-			//alert(s);
+			alert(s);
 			
 			if(result.cancelled == true)
 				prevPage();

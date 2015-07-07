@@ -28,7 +28,11 @@
         <input type="email" id="txt_username" class="text-input--underbar" placeholder="ID" value="">
         <input type="password" id="txt_pwd" class="text-input--underbar" placeholder="Password" value="">
         <br>
-        <input type="checkbox" id="check_auto" value="AUTO">auto-login
+			<label class="switch">
+				<input type="checkbox" id="check_auto" value="AUTO" class="switch__input">
+				<div class="switch__toggle"></div>
+			</label>
+			Auto Login
         <br><br>
         <ons-button modifier="large" class="login-button" onclick="goPage();">Log In</ons-button>
     </div>
