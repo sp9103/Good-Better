@@ -3,6 +3,12 @@ TIME_SEPARATOR = ':';
 LOCALIZED_MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 ISO_DATA_NAME = 'iso';
 
+document.querySelector("#appointment").addEventListener("touchend", DataClick, false);
+
+function DataClick() {
+	alert("test");
+}
+
 function pad(n) { return ("0" + n).slice(-2); }
 
 function getDateString(date) {
