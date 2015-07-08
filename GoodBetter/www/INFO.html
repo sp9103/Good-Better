@@ -93,8 +93,27 @@
 			<br>
 		</div>
 
-		<div id="RecordPage" style="display:none">
-			<div id="results"></div>
+		<div id="RecordPage" style="display:none">		
+			<button class="button-sp" id="addButton">+Add</button>
+			<!-- 임시 date -->
+			<input type="date">
+			
+			<br><br>
+			<div class="settings-header">List</div>
+			<ul class="list">
+				<li class="list__item list__item--chevron">
+					2015/06/05
+				</li>
+				<li class="list__item list__item--chevron">
+					2015/06/12
+				</li>
+				<li class="list__item list__item--chevron">
+					2015/06/22
+				</li>
+				<li class="list__item list__item--chevron">
+					2015/06/30
+				</li>
+			</ul>
 		</div>
 
 		<div id="TalkPage" style="display:none">
@@ -154,6 +173,7 @@
 			document.getElementById("pla_content").innerHTML = plant.PLA_Content;
 			document.getElementById("pla_image").src = url+plant.PLA_Image;
 		}
+		
 
 	</script>
 		<!--<script type="text/javascript" src="cordova.js"></script> -->
