@@ -5,29 +5,108 @@
 
     <link rel="stylesheet" href="css/RecordAddPage.css">
 
-    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
-	<link rel="stylesheet" href="thema/onsen-css-components.css">
 
-		<script src="lib/onsen/js/angular/angular.js"></script>
-		<script src="lib/onsen/js/onsenui.js"></script>
-    <script>
-      ons.bootstrap();
-    </script>
-
+	<script src="lib/onsen/js/angular/angular.js"></script>
+	<script src="lib/onsen/js/onsenui.js"></script>
+	
   </head>
   <body>
-	<!-- Prerequisite=This example use ionicons(http://ionicons.com) to display icons. -->
-	<div class="navigation-bar navigation-bar--transparent">
-		<div class="navigation-bar__left">	
+	<div class="navigation-bar">
+		<div class="navigation-bar__left">
 		</div>
+
 		<div class="navigation-bar__center">
 			RecordAddPage
 		</div>
+
 		<div class="navigation-bar__right">
 			<span class="toolbar-button--quiet navigation-bar__line-height">Cancel</span>
 		</div>
 	</div>
+	
+	<!-- 날짜 출력 -->
+	<input name="tName" type="text" id="tDate" onclick="autoDate();">
+	
+	<!--Check List-->
+	<ul class="list">
+		<li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+				<input type="checkbox">
+				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				물주기
+			</label>
+		</li>
+		<li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+				<input type="checkbox">
+				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				영양제투여
+			</label>
+		</li>
+		<li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+				<input type="checkbox">
+				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				병충해
+			</label>
+		</li>
+		<li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+				<input type="checkbox">
+				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				가지치기
+			</label>
+		</li>
+		<li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+				<input type="checkbox">
+				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				분갈이
+			</label>
+		</li>
+	</ul>
+	
+	<textarea class="textarea" rows="5" placeholder="비고"></textarea>
+	
+	<div class="Submit-Class">
+		<button class="Submit Submit--large">Submit</button>
+	</div>
+	
+	<script>
+	
+		function autoDate () {
+			var tDay = new Date();
+			var tMonth = tDay.getMonth()+1;
+			var tDate = tDay.getDate();
+			if ( tMonth < 10) tMonth = "0"+tMonth;
+			if ( tDate < 10) tDate = "0"+tDate;
+			
+			alert(tDay);
+			//document.getElementById("tDate").value = tDay.getFullYear()+"년"+tMonth+"월"+tDate+"일";
+		}
 
-	<button class="Submit Submit--large">Submit</button>
+		// Multiple onload function created by: Simon Willison
+		// http://simonwillison.net/2004/May/26/addLoadEvent/
+		//function addLoadEvent(func) {
+			/*var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function() {
+				if (oldonload) {
+					oldonload();
+				}
+				func();
+		
+			}*/
+		//	alert("test");
+		//}
+
+		/*addLoadEvent(function() {
+			alert("test");
+			//autoDate();
+		});*/
+	</script>
+	
   </body>
 </html>

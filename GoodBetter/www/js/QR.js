@@ -13,14 +13,14 @@ function startScan() {
 
     cordova.plugins.barcodeScanner.scan(
         function (result) {
-            /*
-            var s = "Result: " + result.text + "<br/>" +
+            
+            /*var s = "Result: " + result.text + "<br/>" +
                 "Format: " + result.format + "<br/>" +
                 "Cancelled: " + result.cancelled;
-                */
-            //resultDiv.innerHTML = s;
+                
+            resultDiv.innerHTML = s;*/
 
-            $.ajax({
+            /*$.ajax({
                 dataType: 'Json',
                 url: result.text,
                 success: function (data) {
@@ -36,13 +36,12 @@ function startScan() {
                 }
             });
             if (result.cancelled == true)
-                prevPage();
-            /*
+                prevPage();*/
+			
             if (result.cancelled == true)
                 prevPage();
             else
                 nextPage();
-                */
         },
         function (error) {
             alert("Scanning failed: " + error);
