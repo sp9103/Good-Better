@@ -19,6 +19,7 @@
     <script src="lib/onsen/js/onsenui.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+    <script type="text/javascript" src="js/Setting.js" charset="euc-kr"></script>
     <script>
         ons.bootstrap();
     </script>
@@ -66,7 +67,7 @@
 
 <br><br><br>
 
-<div id="INFOPage"style="display:none">
+<div id="INFOPage">
 
     <div class="profile-card">
 
@@ -87,11 +88,7 @@
     <br>
     <ons-list modifier="inset" style="margin-top: 10px">
         <ons-list-item modifier="tappable" id="pla_content">
-            5m 정도의 높이로 자라는 낙엽활엽수로 많은 가지를 치며 잔가지는 푸르다.<br>
-            잎은 서로 어긋나게 자리하며 계란 꼴 또는 긴 계란 꼴로 끝은 뾰족하고 밑동은 둥글다. 잎의 길이는 3~7cm로 가장자리에는 작으면서도 예리한 생김새의 톱니가 있다.<br>
-            이른봄 잎눈이 움직이기 전에 꽃이 피는데 지난해에 잎이 붙어 있던 자리에서 1~2송이씩 거의 가지에 들러붙은 상태로 핀다. 지름이 2~3cm 정도인 꽃은 5장의 둥근 꽃잎으로 이루어지며 흰빛으로
-            피어나는데 분홍빛으로 피는 종류도 있다. 꽃이 피면 강한 향기를 풍긴다.<br>
-            꽃이 지고 난 뒤에는 둥근 열매를 맺고 익으면 노랗게 물든다. 맛은 매우 시다.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>asdfasdfasdfsdasfsdaf<br>
+            식물에 대한 설명
         </ons-list-item>
     </ons-list>
     <br>
@@ -101,12 +98,13 @@
     <div id="results"></div>
 </div>
 
-<div id="TalkPage">
+<div id="TalkPage" style="display:none">
     <div style="text-align: right">
     <div class="popoverMin popover--left" style="display:inline-block">
         <div class="popover__right-arrowMin"></div>
         <div class="popover__contentMin">
-            <div style="text-align:center;opacity:0.4;margin-top:40px">Content</div>
+            <div style="text-align:center;opacity:0.4;margin-top:40px">
+                <img id="pla_image2" width="100" height="100" src="img/nan.jpg" class="profile-image-sp"><br>Content</div>
         </div>
     </div>
     </div>
@@ -146,9 +144,9 @@
     <br>
 
     <ons-list modifier="inset" class="settings-list">
-        <ons-list-item modifier="tappable">
+        <ons-list-item modifier="tappable" onclick="signOut()">
             <ons-icon icon="ion-log-out" style="opacity: 0.8"></ons-icon>
-            Sign out
+            자동 로그인 해제
         </ons-list-item>
     </ons-list>
 </div>
