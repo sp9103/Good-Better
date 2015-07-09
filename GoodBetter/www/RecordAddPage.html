@@ -9,6 +9,54 @@
 	<script src="lib/onsen/js/angular/angular.js"></script>
 	<script src="lib/onsen/js/onsenui.js"></script>
 	
+	<!-- 카메라 앨범 불러오기 부분-->
+	<script type="text/javascript" charset="utf-8">
+		var pictureSource;  
+		var destinationType;
+  
+		document.addEventListener("deviceready",onDeviceReady,false);
+		function onDeviceReady() {
+			pictureSource=navigator.camera.PictureSourceType;
+			destinationType=navigator.camera.DestinationType;
+		}
+		
+		function onPhotoDataSuccess(imageData) {
+			var smallImage = document.getElementById('ImageAdd');
+			smallImage.style.display = 'block';
+			smallImage.src = "data:image/jpeg;base64," + imageData;
+		}
+ 
+		function onPhotoURISuccess(imageURI) {
+			var largeImage = document.getElementById('ImageAdd');
+			largeImage.style.display = 'block';
+			largeImage.src = imageURI;
+		}
+  
+		function capturePhoto() {
+			navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+			correctOrientation : true,
+			destinationType: destinationType.DATA_URL });
+		}
+ 
+		function capturePhotoEdit() {
+			navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, 
+			allowEdit: true, //android에서는 특별한 효과 없음, 무시됨
+			correctOrientation : true,
+			destinationType: destinationType.DATA_URL });
+		}
+    
+		function getPhoto(source) {
+			navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+			correctOrientation : true, 
+			destinationType: destinationType.FILE_URI,
+			sourceType: source });
+		}
+
+		function onFail(message) {
+			alert('Failed because: ' + message);
+		}
+    </script>
+	
   </head>
   <body onload="onLoad()">
 	<div class="navigation-bar">
@@ -23,6 +71,17 @@
 			<span class="toolbar-button--quiet navigation-bar__line-height" id="Cancel">Cancel</span>
 		</div>
 	</div>
+	
+	<!--
+	<button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
+    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+    <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button>
+<br>
+<!--
+    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+    
+	<img style="display:none;" id="largeImage" src="" />
+	-->
 	
 	<!-- 날짜 출력 -->
 	<br>
@@ -75,16 +134,15 @@
 	<br>
 	<textarea class="textarea" rows="5" placeholder="비고"></textarea>
 	
-	<div class="Submit-Class" id="SubmitButton">
+	<div class="Submit-Class" id="SubmitButton" >
 		<button class="Submit Submit--large">Submit</button>
 	</div>
 	
 	<!-- 사진 추가 버튼-->
 	<br><br>
-	<input type="image" src="img/ImageAdd.png" id="ImageAdd" class="ImageAdd">
+	<input type="image" src="img/ImageAdd.png" id="ImageAdd" class="ImageAdd" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">
 	
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/RecordAddPage.js"></script>
-	
   </body>
 </html>

@@ -5,8 +5,6 @@ function init() {
 	$("#Setting").css('display','block');
 }*/
 
-var pictureSource;  
-var destinationType;
 
 document.querySelector("#Cancel").addEventListener("touchend", CancelClick, false);
 document.querySelector("#ImageAdd").addEventListener("touchend", ImageAddClick, false);
@@ -36,6 +34,7 @@ function onDeviceReady() {
 	if ( tDate < 10) tDate = "0"+tDate;
 	
 	var submitKey = window.localStorage.getItem("SubmitKey");
+	
 	if(submitKey > 0)	document.getElementById("SubmitButton").style.display = "block";
 	else 	document.getElementById("SubmitButton").style.display = "block";
 	
@@ -54,8 +53,4 @@ function onBackKeyDown() {
 	var r = confirm("Do u want exit this app?");
 	if (r == true)
 		navigator.app.exitApp();
-}
-
-function onFail(message) {
-	alert('Failed because: ' + message); 
 }
