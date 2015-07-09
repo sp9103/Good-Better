@@ -10,7 +10,7 @@
 	<script src="lib/onsen/js/onsenui.js"></script>
 	
   </head>
-  <body>
+  <body onload="onLoad()">
 	<div class="navigation-bar">
 		<div class="navigation-bar__left">
 		</div>
@@ -25,7 +25,13 @@
 	</div>
 	
 	<!-- 날짜 출력 -->
-	<input name="tName" type="text" id="tDate" onclick="autoDate();">
+	<br>
+	<ul class="list list--inset">
+		<li class="list__item list--inset__item list__item--chevron" id="Today">
+			Today
+		</li>
+	</ul>
+	<br>
 	
 	<!--Check List-->
 	<ul class="list">
@@ -66,6 +72,7 @@
 		</li>
 	</ul>
 	
+	<br>
 	<textarea class="textarea" rows="5" placeholder="비고"></textarea>
 	
 	<div class="Submit-Class">
@@ -73,39 +80,21 @@
 	</div>
 	
 	<script>
-	
-		function autoDate () {
+		function onLoad() {
+			document.addEventListener("deviceready", onDeviceReady(), false);
+		}
+
+		function onDeviceReady() {
 			var tDay = new Date();
 			var tMonth = tDay.getMonth()+1;
 			var tDate = tDay.getDate();
 			if ( tMonth < 10) tMonth = "0"+tMonth;
 			if ( tDate < 10) tDate = "0"+tDate;
-			
-			alert(tDay);
-			//document.getElementById("tDate").value = tDay.getFullYear()+"년"+tMonth+"월"+tDate+"일";
+
+			document.getElementById("Today").innerHTML = tDay.getFullYear()+" / "+tMonth+" / "+tDate;
 		}
-
-		// Multiple onload function created by: Simon Willison
-		// http://simonwillison.net/2004/May/26/addLoadEvent/
-		//function addLoadEvent(func) {
-			/*var oldonload = window.onload;
-			if (typeof window.onload != 'function') {
-				window.onload = func;
-			} else {
-				window.onload = function() {
-				if (oldonload) {
-					oldonload();
-				}
-				func();
 		
-			}*/
-		//	alert("test");
-		//}
 
-		/*addLoadEvent(function() {
-			alert("test");
-			//autoDate();
-		});*/
 	</script>
 	
   </body>
