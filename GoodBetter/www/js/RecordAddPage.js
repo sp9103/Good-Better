@@ -34,7 +34,12 @@ function onDeviceReady() {
 	var tDate = tDay.getDate();
 	if ( tMonth < 10) tMonth = "0"+tMonth;
 	if ( tDate < 10) tDate = "0"+tDate;
-
+	
+	var submitKey = window.localStorage.getItem("SubmitKey");
+	if(submitKey > 0)	document.getElementById("SubmitButton").style.display = "block";
+	else 	document.getElementById("SubmitButton").style.display = "block";
+	
+		
 	document.getElementById("Today").innerHTML = tDay.getFullYear()+" / "+tMonth+" / "+tDate;
 	
 	document.addEventListener("backbutton", onBackKeyDown, false);

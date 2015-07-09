@@ -57,6 +57,8 @@ function AddClick() {
 	var dirPath = dirname(location.href);
     fullPath = dirPath + "/RecordAddPage.html";
     window.location = fullPath;
+	
+	window.localStorage.setItem("SubmitKey", 1);
 }
 
 function dirname(path) {
