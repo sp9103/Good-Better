@@ -804,3 +804,8 @@
   border-bottom: 1px solid #ddd;
   background-image: none;
 }
+
+.ImageAdd {
+  width: 20%;
+  height: 20%;
+}
