@@ -10,6 +10,8 @@ function init() {
 }
 
 function startScan() {
+    nextPage();
+    /*
     cordova.plugins.barcodeScanner.scan(
         function (result) {
             $.ajax({
@@ -34,6 +36,7 @@ function startScan() {
             alert("Scanning failed: " + error);
         }
     );
+    */
 }
 
 function nextPage() {

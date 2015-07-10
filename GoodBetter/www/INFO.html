@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/Setting.css" />
 	<link rel="stylesheet" type="text/css" href="css/PlantTalk.css" />
 	<link rel="stylesheet" type="text/css" href="css/Record.css" />
+	<link rel="stylesheet" href="css/RecordAddPage.css">
 
 	<link rel="stylesheet" href="lib/onsen/css/onsenui.css">
 	<link rel="stylesheet" href="thema/onsen-css-components.css">
@@ -120,14 +121,26 @@
 </div>
 
 <div id="TalkPage" style="display:none">
-	<div>
-		<div class="popoverMin popover--left">
+	<div style="text-align: right">
+		<div class="popoverMin popover--left" style="display:inline-block">
 			<div class="popover__right-arrowMin"></div>
+			<div class="popover__contentMin">
+				<div style="text-align:center;opacity:0.4;margin-top:40px">
+					<img id="pla_image2" width="100" height="100" src="img/nan.jpg" class="profile-image-sp"><br>Content</div>
+			</div>
+		</div>
+	</div>
+	<div style="text-align: left">
+		<div class="popoverMin popover--right">
+			<div class="popover__left-arrowMin"></div>
 			<div class="popover__contentMin">
 				<div style="text-align:center;opacity:0.4;margin-top:40px">Content</div>
 			</div>
 		</div>
 	</div>
+	<div class="Submit-Class" id="SubmitButton" >
+	<button class="Submit Submit--large" id="questionButton">질문하기</button>
+</div>
 </div>
 
 <div id="SettingPage" style="display:none">

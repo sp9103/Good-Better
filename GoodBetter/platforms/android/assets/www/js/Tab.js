@@ -11,6 +11,7 @@ document.querySelector("#Talk").addEventListener("touchend", TalkClick, false);
 document.querySelector("#Setting").addEventListener("touchend", SetClick, false);
 document.querySelector("#QR").addEventListener("touchend", QRClick, false);
 document.querySelector("#addButton").addEventListener("touchend", AddClick, false);
+document.querySelector("#questionButton").addEventListener("touchend", QuestionClick, false);
 
 function QRClick() {
 	var dirPath = dirname(location.href);
@@ -60,6 +61,13 @@ function AddClick() {
 	
 	window.localStorage.setItem("SubmitKey", 1);
 }
+
+function QuestionClick() {
+	var dirPath = dirname(location.href);
+	fullPath = dirPath + "/AddQuestion.html";
+	window.location = fullPath;
+}
+
 
 function dirname(path) {
     return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
