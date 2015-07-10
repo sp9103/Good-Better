@@ -68,7 +68,7 @@
   <string name="msg_default_format">포맷</string>
   <string name="msg_default_meta">메타데이터</string>
   <string name="msg_default_mms_subject">안녕하세요</string>
-  <string name="msg_default_status">바코드를 사각형 안에 비춰주세요.</string>
+  <string name="msg_default_status"> </string>
   <string name="msg_default_time">시간</string>
   <string name="msg_default_type">종류</string>
   <string name="msg_encode_contents_failed">주어진 데이터로 바코드를 만들지 못하였습니다.</string>
@@ -129,7 +129,7 @@
   <string name="result_sms">전화번호를 찾았습니다</string>
   <string name="result_tel">전화번호를 찾았습니다</string>
   <string name="result_text">단문을 찾았습니다</string>
-  <string name="result_uri">인터넷 주소를 찾았습니다</string>
+  <string name="result_uri"> </string>
   <string name="result_wifi">WiFi 설정을 찾았습니다</string>
   <string name="sbc_name">구글 책 검색</string>
   <string name="share_name">바코드로 공유</string>

@@ -6,6 +6,9 @@
     bottom: 0;
     background-color: rgba(0,0,0,0.1);
 }
+.alal {
+    text-align: center;
+}
 .popoverMin {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
