@@ -10,11 +10,11 @@ function init() {
 }
 
 function startScan() {
-    nextPage();
-    /*
+    //nextPage();
+    
     cordova.plugins.barcodeScanner.scan(
         function (result) {
-            $.ajax({
+            /*$.ajax({
                 dataType: 'Json',
                 url: result.text,
                 success: function (data) {
@@ -28,15 +28,17 @@ function startScan() {
                 error: function (xhr, type) {
                     //alert('server error occurred');
                 }
-            });
+            });*/
             if (result.cancelled == true)
                 prevPage();
+			else
+				nextPage();
         },
         function (error) {
             alert("Scanning failed: " + error);
         }
     );
-    */
+    
 }
 
 function nextPage() {
