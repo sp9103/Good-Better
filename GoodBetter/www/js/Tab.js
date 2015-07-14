@@ -10,6 +10,8 @@ document.querySelector("#Record").addEventListener("touchend", RecordClick, fals
 document.querySelector("#Talk").addEventListener("touchend", TalkClick, false);
 document.querySelector("#Setting").addEventListener("touchend", SetClick, false);
 document.querySelector("#QR").addEventListener("touchend", QRClick, false);
+document.querySelector("#addButton").addEventListener("touchend", AddClick, false);
+document.querySelector("#questionButton").addEventListener("touchend", QuestionClick, false);
 
 function QRClick() {
 	var dirPath = dirname(location.href);
@@ -44,6 +46,28 @@ function SetClick() {
 	document.getElementById("TalkPage").style.display = "none";
 	document.getElementById("SettingPage").style.display = "block";
 }
+
+function SetClick() {
+	document.getElementById("INFOPage").style.display = "none";
+	document.getElementById("RecordPage").style.display = "none";
+	document.getElementById("TalkPage").style.display = "none";
+	document.getElementById("SettingPage").style.display = "block";
+}
+
+function AddClick() {
+	var dirPath = dirname(location.href);
+    fullPath = dirPath + "/RecordAddPage.html";
+    window.location = fullPath;
+	
+	window.localStorage.setItem("SubmitKey", 1);
+}
+
+function QuestionClick() {
+	var dirPath = dirname(location.href);
+	fullPath = dirPath + "/AddQuestion.html";
+	window.location = fullPath;
+}
+
 
 function dirname(path) {
     return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');

@@ -19,6 +19,22 @@
                         {
                             "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"DatePickerPlugin\"><param name=\"android-package\" value=\"com.plugin.datepicker.DatePickerPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Datepicker\"><param name=\"android-package\" value=\"nl.moreapps.datepicker.Datepicker\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -50,6 +66,12 @@
                         },
                         {
                             "xml": "<uses-feature android:name=\"android.hardware.camera\" android:required=\"false\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 1
                         }
                     ]
@@ -547,6 +569,18 @@
             "PACKAGE_NAME": "com.app.GoodBetter"
         },
         "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.app.GoodBetter"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.app.GoodBetter"
+        },
+        "cordova-plugin-datepicker": {
+            "PACKAGE_NAME": "com.app.GoodBetter"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "com.app.GoodBetter"
+        },
+        "nl.moreapps.datepicker": {
             "PACKAGE_NAME": "com.app.GoodBetter"
         }
     },
