@@ -163,7 +163,7 @@
 			HomePage
 		</ons-list-item>
 
-		<ons-list-item modifier="chevron" >
+		<ons-list-item modifier="chevron" onclick="document.getElementById('AppInfoDialog').style.display = 'block'">
 			App Information
 		</ons-list-item>
 	</ons-list>
@@ -175,6 +175,20 @@
 			Sign out
 		</ons-list-item>
 	</ons-list>
+	
+	<div id = "AppInfoDialog" style="display:none">
+	<div class="alert-dialog-mask"></div>
+	<div class="alert-dialog">
+		<div class="alert-dialog-content">
+			App Information<br><br>
+			Version : 0.1.0<br>
+		</div>
+
+		<div class="alert-dialog-footer">
+			<button class="alert-dialog-button alert-dialog-button--primal" onclick="document.getElementById('AppInfoDialog').style.display = 'none'">OK</button>
+		</div>
+	</div>
+	</div>
 </div>
 <script>
 	function onLoad() {
