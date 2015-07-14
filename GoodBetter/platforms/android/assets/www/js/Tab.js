@@ -5,10 +5,6 @@ function init() {
 	$("#Setting").css('display','block');
 }*/
 
-document.querySelector("#INFO").addEventListener("touchend", INFOClick, false);
-document.querySelector("#Record").addEventListener("touchend", RecordClick, false);
-document.querySelector("#Talk").addEventListener("touchend", TalkClick, false);
-document.querySelector("#Setting").addEventListener("touchend", SetClick, false);
 document.querySelector("#QR").addEventListener("touchend", QRClick, false);
 document.querySelector("#addButton").addEventListener("touchend", AddClick, false);
 document.querySelector("#questionButton").addEventListener("touchend", QuestionClick, false);
