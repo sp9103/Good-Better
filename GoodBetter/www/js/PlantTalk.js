@@ -1,10 +1,18 @@
 /**
  * Created by min on 2015. 7. 25..
  */
-function makeTalkingBubble(arrow, content, image)
+function makeTalkingBubble(arrow, content)
 {
     var dir = ['right','left'];
     var html;
+    var image;
+    if(content.substring(0,4)=='<img') {
+        var start = content.indexOf('\'');
+        var end = content.indexOf('\'',start+1);
+        image = 'http://goodandbetter.cafe24.com'+content.substring(start+1,end);
+        start = content.indexOf('>');
+        content = content.substring(start+1,content.length);
+    }
     html = "<div style=\"text-align: "+dir[arrow]+"\">";
     html +="<div class=\"popoverMin popover--"+dir[(arrow+1)%2]+"\" style=\"display:inline-block\">";
     html +="<div class=\"popover__"+dir[arrow]+"-arrowMin\"></div>";

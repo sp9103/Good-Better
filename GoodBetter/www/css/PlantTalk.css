@@ -50,6 +50,7 @@
     min-height: 30px;
     height: inherit;
     margin-bottom: 5px;
+    word-break: break-all;
 }
 .popover__contentMin > * {
     overflow: hidden;
