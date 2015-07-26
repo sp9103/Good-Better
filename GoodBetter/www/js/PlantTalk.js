@@ -15,28 +15,10 @@ function makeTalkingBubble(arrow, content, image)
     html +="</div></div></div></div>";
     return html;
 }
-
-
-/*
-<div style="text-align: right">
-    <div class="popoverMin popover--left" style="display:inline-block">
-    <div class="popover__right-arrowMin"></div>
-    <div class="popover__contentMin">
-    <img id="pla_image2" style="max-width: 100%; height: auto;" src="img/nan.jpg"> <!--http://tadream.tistory.com/9766-->
-<div style="text-align:center;opacity:0.4;">
-    <br>ContentContent</div>
-    </div>
-    </div>
-    </div>
-
-
-
- <div style="text-align: left">
- <div class="popoverMin popover--right">
- <div class="popover__left-arrowMin"></div>
- <div class="popover__contentMin">
- <div style="text-align:center;opacity:0.4;">Content</div>
- </div>
- </div>
- </div>
-    */
+function makeQuestionButton()
+{
+    var html;
+    html = "<div class=\"Submit-Class\" id=\"SubmitButton\" >";
+    html += "<button class=\"Submit Submit--large\" id=\"questionButton\">질문하기</button></div>";
+    return html;
+}
