@@ -10,11 +10,11 @@ function init() {
 }
 
 function startScan() {
-    //nextPage();
     
     cordova.plugins.barcodeScanner.scan(
         function (result) {
-            /*$.ajax({
+            //alert(result.text);
+            $.ajax({
                 dataType: 'Json',
                 url: result.text,
                 success: function (data) {
@@ -26,9 +26,9 @@ function startScan() {
                     }
                 },
                 error: function (xhr, type) {
-                    //alert('server error occurred');
+                    alert('server error occurred');
                 }
-            });*/
+            });
             if (result.cancelled == true)
                 prevPage();
 			else

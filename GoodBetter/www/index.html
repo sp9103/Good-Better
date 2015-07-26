@@ -35,7 +35,7 @@
         </label>
         Auto Login
         <br><br>
-        <ons-button modifier="large" class="login-button" onclick="goPage();">Log In</ons-button>
+        <ons-button modifier="large" class="login-button" onclick="verifyLogin();">Log In</ons-button>
     </div>
 
 </ons-page>
@@ -72,29 +72,28 @@
     function verifyLogin() {
         var uname = document.getElementById("txt_username").value;
         var pwd = document.getElementById("txt_pwd").value;
-        goPage();
-        /*$.ajax({
+        $.ajax({
             type: 'POST',
             dataType: 'Json',
-            url: 'http://192.168.1.165:3303',
+            url: 'http://goodandbetter.cafe24.com/appLogin',
             data: {
                 'inputId': uname,
                 'inputPw': pwd
             },
             success: function (data) {
-                if ("SUCCESS" == data.result) {
+                if (0 == data.error) {
                     window.localStorage.setItem("username", uname);
                     window.localStorage.setItem("userpw", pwd);
                     window.localStorage.setItem("auto", document.getElementById("check_auto").checked);
                     goPage();
                 } else {
-                    alert("Invalid Login!!" + data.result);
+                    alert(data.errMSG);
                 }
             },
             error: function (xhr, type) {
                 alert('server error occurred');
             }
-        });*/
+        });
     }
 </script>
 
