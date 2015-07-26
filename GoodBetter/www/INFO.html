@@ -66,7 +66,7 @@
 </div>
 
 <br><br><br>
-<div id="INFOPage" style="display: none">
+<div id="INFOPage">
 
 	<div class="profile-card">
 
@@ -121,7 +121,7 @@
 	</ul>
 </div>
 
-<div id="TalkPage">
+<div id="TalkPage" style="display: none">
 	<div class="Submit-Class" id="SubmitButton" >
 		<button class="Submit Submit--large" id="questionButton">질문하기</button>
 	</div>
@@ -175,8 +175,6 @@
 </div>
 <script>
 	function onLoad() {
-		/* test */
-		document.getElementById("TalkPage").innerHTML = makeTalkingBubble(0,2)+makeTalkingBubble(1,2,"http://cache.clien.net/cs2/data/file/park/20141106131055_XRc8k32w_31846318_gJ0phAdm_3.jpg") + makeQuestionButton();
 		document.addEventListener("deviceready", onDeviceReady(), false);
 	}
 	function onDeviceReady() {

@@ -1,9 +1,9 @@
 
 
 /*document.addEventListener("deviceready", init, false);
-function init() {
-	$("#Setting").css('display','block');
-}*/
+ function init() {
+ $("#Setting").css('display','block');
+ }*/
 
 document.querySelector("#QR").addEventListener("touchend", QRClick, false);
 document.querySelector("#addButton").addEventListener("touchend", AddClick, false);
@@ -11,8 +11,8 @@ document.querySelector("#questionButton").addEventListener("touchend", QuestionC
 
 function QRClick() {
 	var dirPath = dirname(location.href);
-    fullPath = dirPath + "/QR_Scan.html";
-    window.location = fullPath;
+	fullPath = dirPath + "/QR_Scan.html";
+	window.location = fullPath;
 }
 
 function INFOClick() {
@@ -34,6 +34,22 @@ function TalkClick() {
 	document.getElementById("RecordPage").style.display = "none";
 	document.getElementById("TalkPage").style.display = "block";
 	document.getElementById("SettingPage").style.display = "none";
+	var talkUrl = 'http://goodandbetter.cafe24.com/appGetTalk?plantCode='+1;
+	$.ajax({
+		dataType: 'Json',
+		url: talkUrl,
+		success: function (data) {
+			if(data.error == 0){
+				document.getElementById("TalkPage").innerHTML=makeTalk(data.result);
+			}
+			else {
+				document.getElementById("TalkPage").innerHTML='해당 페이지를 열람할 수 없습니다.';
+			}
+		},
+		error: function (xhr, type) {
+			//alert('server error occurred');
+		}
+	});
 }
 
 function SetClick() {
@@ -52,9 +68,9 @@ function SetClick() {
 
 function AddClick() {
 	var dirPath = dirname(location.href);
-    fullPath = dirPath + "/RecordAddPage.html";
-    window.location = fullPath;
-	
+	fullPath = dirPath + "/RecordAddPage.html";
+	window.location = fullPath;
+
 	window.localStorage.setItem("SubmitKey", 1);
 }
 
@@ -66,5 +82,5 @@ function QuestionClick() {
 
 
 function dirname(path) {
-    return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
+	return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
 }
