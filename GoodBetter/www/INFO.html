@@ -18,6 +18,7 @@
 	<script src="lib/onsen/js/angular/angular.js"></script>
 	<script src="lib/onsen/js/onsenui.js"></script>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="js/PlantTalk.js"></script>
 	<script type="text/javascript" src="cordova.js"></script>
 	<script>
 		ons.bootstrap();
@@ -65,7 +66,7 @@
 </div>
 
 <br><br><br>
-<div id="INFOPage">
+<div id="INFOPage" style="display: none">
 
 	<div class="profile-card">
 
@@ -120,7 +121,7 @@
 	</ul>
 </div>
 
-<div id="TalkPage" style="display:none">
+<div id="TalkPage">
 	<div style="text-align: right">
 		<div class="popoverMin popover--left" style="display:inline-block">
 			<div class="popover__right-arrowMin"></div>
@@ -192,6 +193,8 @@
 </div>
 <script>
 	function onLoad() {
+		/* test */
+		document.getElementById("TalkPage").innerHTML = makeTalkingBubble(0,2)+makeTalkingBubble(1,2,"http://cache.clien.net/cs2/data/file/park/20141106131055_XRc8k32w_31846318_gJ0phAdm_3.jpg");
 		document.addEventListener("deviceready", onDeviceReady(), false);
 	}
 	function onDeviceReady() {
@@ -202,6 +205,7 @@
 		document.getElementById("pla_location").innerHTML = "<ons-icon icon=\"fa-map-marker\"></ons-icon> "+plant.PLA_Location;
 		document.getElementById("pla_content").innerHTML = plant.PLA_Content;
 		document.getElementById("pla_image").src = url+plant.PLA_Image;
+
 	}
 </script>
 <script type="text/javascript" src="js/Tab.js"></script>
