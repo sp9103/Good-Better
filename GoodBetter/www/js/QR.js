@@ -24,15 +24,20 @@ function startScan() {
                         window.localStorage.setItem("cur_plant",s);
                         nextPage();
                     }
+                    else {
+                        alert(data.errMSG);
+                    }
                 },
-                error: function (xhr, type) {
-                    alert('server error occurred');
+                error: function (xhr, ajaxoptions,thrownError) {
+                    alert('server error occurred! code:'+xhr.status);
                 }
             });
+            /*
             if (result.cancelled == true)
                 prevPage();
 			else
 				nextPage();
+				*/
         },
         function (error) {
             alert("Scanning failed: " + error);
