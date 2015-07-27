@@ -10,10 +10,10 @@ function init() {
 }
 
 function startScan() {
-    nextPage();
-    /*
+    
     cordova.plugins.barcodeScanner.scan(
         function (result) {
+            //alert(result.text);
             $.ajax({
                 dataType: 'Json',
                 url: result.text,
@@ -24,19 +24,26 @@ function startScan() {
                         window.localStorage.setItem("cur_plant",s);
                         nextPage();
                     }
+                    else {
+                        alert(data.errMSG);
+                    }
                 },
-                error: function (xhr, type) {
-                    //alert('server error occurred');
+                error: function (xhr, ajaxoptions,thrownError) {
+                    alert('server error occurred! code:'+xhr.status);
                 }
             });
+            /*
             if (result.cancelled == true)
                 prevPage();
+			else
+				nextPage();
+				*/
         },
         function (error) {
             alert("Scanning failed: " + error);
         }
     );
-    */
+    
 }
 
 function nextPage() {

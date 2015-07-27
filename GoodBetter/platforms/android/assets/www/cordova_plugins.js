@@ -68,6 +68,13 @@ module.exports = [
         "clobbers": [
             "window.datePicker"
         ]
+    },
+    {
+        "file": "plugins/com.telerik.plugins.nativepagetransitions/www/NativePageTransitions.js",
+        "id": "com.telerik.plugins.nativepagetransitions.NativePageTransitions",
+        "clobbers": [
+            "window.plugins.nativepagetransitions"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -79,7 +86,8 @@ module.exports.metadata =
     "cordova-plugin-camera": "1.2.0",
     "cordova-plugin-datepicker": "0.8.2",
     "org.apache.cordova.device": "0.3.0",
-    "nl.moreapps.datepicker": "1.0.2"
+    "nl.moreapps.datepicker": "1.0.2",
+    "com.telerik.plugins.nativepagetransitions": "0.4.1"
 }
 // BOTTOM OF METADATA
 });

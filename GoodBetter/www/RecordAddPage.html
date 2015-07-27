@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-
+	
     <link rel="stylesheet" href="css/RecordAddPage.css">
 
 
@@ -13,9 +13,26 @@
 	<script type="text/javascript" charset="utf-8">
 		var pictureSource;  
 		var destinationType;
+		
+		var options = {
+  "direction"        : "up", // 'left|right|up|down', default 'left' (which is like 'next')
+  "duration"         :  500, // in milliseconds (ms), default 400
+  "slowdownfactor"   :    3, // overlap views (higher number is more) or no overlap (1), default 4
+  "iosdelay"         :  100, // ms to wait for the iOS webview to update before animation kicks in, default 60
+  "androiddelay"     :  150, // same as above but for Android, default 70
+  "winphonedelay"    :  250, // same as above but for Windows Phone, default 200,
+  "fixedPixelsTop"   :    0, // the number of pixels of your fixed header, default 0 (iOS and Android)
+  "fixedPixelsBottom":   60  // the number of pixels of your fixed footer (f.i. a tab bar), default 0 (iOS and Android)
+};
+window.plugins.nativepagetransitions.slide(
+  options,
+  function (msg) {console.log("success: " + msg)}, // called when the animation has finished
+  function (msg) {alert("error: " + msg)} // called in case you pass in weird values
+);
   
 		document.addEventListener("deviceready",onDeviceReady,false);
 		function onDeviceReady() {
+		
 			pictureSource=navigator.camera.PictureSourceType;
 			destinationType=navigator.camera.DestinationType;
 		}
@@ -68,7 +85,7 @@
 		</div>
 
 		<div class="navigation-bar__right">
-			<span class="toolbar-button--quiet navigation-bar__line-height" id="Cancel">Cancel</span>
+			<span class="toolbar-button--quiet navigation-bar__line-height" id="Cancel" data-transition="slide">Cancel</span>
 		</div>
 	</div>
 	
@@ -87,14 +104,14 @@
 			<label class="checkbox checkbox--list-item">
 				<input type="checkbox">
 				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
-				물주기
+				관수
 			</label>
 		</li>
 		<li class="list__item list__item--tappable">
 			<label class="checkbox checkbox--list-item">
 				<input type="checkbox">
 				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
-				영양제투여
+				영양제
 			</label>
 		</li>
 		<li class="list__item list__item--tappable">
@@ -115,7 +132,21 @@
 			<label class="checkbox checkbox--list-item">
 				<input type="checkbox">
 				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				잎세정
+			</label>
+		</li>
+		<li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+				<input type="checkbox">
+				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
 				분갈이
+			</label>
+		</li>
+		<li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+				<input type="checkbox">
+				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				교체
 			</label>
 		</li>
 	</ul>
@@ -129,7 +160,11 @@
 	
 	<!-- 사진 추가 버튼-->
 	<br><br>
-	<input type="image" src="img/ImageAdd.png" id="ImageAdd" class="ImageAdd" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">
+	<img style="display: none; width: 200px;" id="ImageAdd" src="" />
+	<br>
+	<input type="image" src="img/ImageAdd.png" class="ImageAdd" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">
+	<input type="image" src="img/takepicture.png"class="ImageAdd" onclick="capturePhoto();">
+	<br><br><br><br>
 	
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/RecordAddPage.js"></script>

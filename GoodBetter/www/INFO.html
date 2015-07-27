@@ -18,6 +18,7 @@
 	<script src="lib/onsen/js/angular/angular.js"></script>
 	<script src="lib/onsen/js/onsenui.js"></script>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="js/PlantTalk.js"></script>
 	<script type="text/javascript" src="cordova.js"></script>
 	<script>
 		ons.bootstrap();
@@ -35,28 +36,28 @@
 		</button>
 	</label>
 
-	<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
-		<input type="radio" name="top-tab-bar-b-sp" checked="checked" id="INFO">
+	<label class="tab-bar__item-sp tab-bar--top-border__item-sp"onclick="INFOClick();">
+		<input type="radio" name="top-tab-bar-b-sp" checked="checked" >
 		<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 			INFO
 		</button>
 	</label>
 
-	<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
-		<input type="radio" name="top-tab-bar-b-sp" id="Record">
+	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" onclick="RecordClick();">
+		<input type="radio" name="top-tab-bar-b-sp">
 		<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 			Record
 		</button>
 	</label>
 
-	<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
-		<input type="radio" name="top-tab-bar-b-sp" id="Talk">
+	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" onclick="TalkClick();">
+		<input type="radio" name="top-tab-bar-b-sp">
 		<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 			Talk
 		</button>
 	</label>
 
-	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" id="Setting">
+	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" onclick="SetClick();">
 		<input type="radio" name="top-tab-bar-b-sp" >
 		<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 			Setting
@@ -98,7 +99,7 @@
 	<button class="button-sp" id="addButton">+Add</button>
 	<!-- 임시 date -->
 	<div class="form-group">
-		<input type="button" class="form-control datepicker" id="appointment">
+		<input type="text" class="form-control datepicker" id="appointment">
 	</div>
 
 	<br><br>
@@ -120,28 +121,10 @@
 	</ul>
 </div>
 
-<div id="TalkPage" style="display:none">
-	<div style="text-align: right">
-		<div class="popoverMin popover--left" style="display:inline-block">
-			<div class="popover__right-arrowMin"></div>
-			<div class="popover__contentMin">
-				<div style="text-align:center;opacity:0.4;margin-top:40px">
-					<img id="pla_image2" style="max-width: 100%; height: auto;" src="img/nan.jpg" class="profile-image-sp">
-					<br>ContentContent</div>
-			</div>
-		</div>
-	</div>
-	<div style="text-align: left">
-		<div class="popoverMin popover--right">
-			<div class="popover__left-arrowMin"></div>
-			<div class="popover__contentMin">
-				<div style="text-align:center;opacity:0.4;margin-top:40px">Content</div>
-			</div>
-		</div>
-	</div>
+<div id="TalkPage" style="display: none">
 	<div class="Submit-Class" id="SubmitButton" >
-	<button class="Submit Submit--large" id="questionButton">질문하기</button>
-</div>
+		<button class="Submit Submit--large" id="questionButton">질문하기</button>
+	</div>
 </div>
 
 <div id="SettingPage" style="display:none">
@@ -163,7 +146,7 @@
 			HomePage
 		</ons-list-item>
 
-		<ons-list-item modifier="chevron" >
+		<ons-list-item modifier="chevron" onclick="document.getElementById('AppInfoDialog').style.display = 'block'">
 			App Information
 		</ons-list-item>
 	</ons-list>
@@ -175,6 +158,20 @@
 			Sign out
 		</ons-list-item>
 	</ons-list>
+	
+	<div id = "AppInfoDialog" style="display:none">
+	<div class="alert-dialog-mask"></div>
+	<div class="alert-dialog">
+		<div class="alert-dialog-content">
+			App Information<br><br>
+			Version : 0.1.0<br>
+		</div>
+
+		<div class="alert-dialog-footer">
+			<button class="alert-dialog-button alert-dialog-button--primal" onclick="document.getElementById('AppInfoDialog').style.display = 'none'">OK</button>
+		</div>
+	</div>
+	</div>
 </div>
 <script>
 	function onLoad() {
@@ -183,11 +180,12 @@
 	function onDeviceReady() {
 		var s = window.localStorage.getItem("cur_plant");
 		var plant = JSON.parse(s);
-		var url = "http://wan.iptime.org:5001";
+		var url = "http://goodandbetter.cafe24.com";
 		document.getElementById("pla_name").innerHTML = plant.PLA_Name;
 		document.getElementById("pla_location").innerHTML = "<ons-icon icon=\"fa-map-marker\"></ons-icon> "+plant.PLA_Location;
 		document.getElementById("pla_content").innerHTML = plant.PLA_Content;
 		document.getElementById("pla_image").src = url+plant.PLA_Image;
+
 	}
 </script>
 <script type="text/javascript" src="js/Tab.js"></script>
