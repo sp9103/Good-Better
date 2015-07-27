@@ -27,6 +27,14 @@ function RecordClick() {
 	document.getElementById("RecordPage").style.display = "block";
 	document.getElementById("TalkPage").style.display = "none";
 	document.getElementById("SettingPage").style.display = "none";
+	var cur_plant = window.localStorage.getItem("cur_plant");
+	var plant = JSON.parse(cur_plant);
+	var tDay = new Date();
+	var tMonth = tDay.getMonth()+1;
+	
+	var RecordURL = 'http://goodandbetter.cafe24.com/appGetChecklist?plantCode='+plant.PLA_Code+'&year='+tDay.getFullYear()+'&month='+tMonth;
+	
+	alert(RecordURL);
 }
 
 function TalkClick() {
