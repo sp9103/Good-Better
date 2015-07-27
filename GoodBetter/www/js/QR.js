@@ -30,6 +30,11 @@ function startScan() {
                 },
                 error: function (xhr, ajaxoptions,thrownError) {
                     alert('server error occurred! code:'+xhr.status);
+					
+					//QR코드 재촬영
+					var dirPath = dirname(location.href);
+					fullPath = dirPath + "/QR_Scan.html";
+					window.location = fullPath;
                 }
             });
             /*
