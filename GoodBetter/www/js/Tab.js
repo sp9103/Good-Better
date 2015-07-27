@@ -34,7 +34,27 @@ function RecordClick() {
 	
 	var RecordURL = 'http://goodandbetter.cafe24.com/appGetChecklist?plantCode='+plant.PLA_Code+'&year='+tDay.getFullYear()+'&month='+tMonth;
 	
-	alert(RecordURL);
+	$.ajax({
+		dataType: 'Json',
+		url: RecordURL,
+		success: function (data) {
+			if(data.error == 0){
+				var s = JSON.stringify(data.result);
+				document.getElementById("RecordList").innerHTML=makeRecordList(s);
+			}
+			else {
+				if(data.errMSG == 'no check List'){
+					document.getElementById("RecordList").innerHTML='&nbsp;&nbsp;해당 날짜에 기록이 없습니다.';
+				}
+				else{
+					document.getElementById("RecordList").innerHTML='&nbsp;&nbsp;해당 페이지를 열람할 수 없습니다.';
+				}
+			}
+		},
+		error: function (xhr, type) {
+			//alert('server error occurred');
+		}
+	});
 }
 
 function TalkClick() {
@@ -88,7 +108,39 @@ function QuestionClick() {
 	window.location = fullPath;
 }
 
-
 function dirname(path) {
 	return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
+}
+
+function makeRecordList(data)
+{
+	var html="";
+   
+   html="<ul class=\"list\">";
+   alert(data);
+   list = JSON.parse(data);
+   for(i = 0; i < list.length; i++){
+	   var time = list[i].CHE_Indate;
+	   
+	   //스트링 자르기
+		var date = cutStr(10, time);
+	   
+	   html+="<li class=\"list__item list__item--chevron\">";
+	   
+	   html+=date;
+	   html+="</li>";
+   }
+   
+   html += "</ul>";
+   
+    return html;
+}
+
+function cutStr(len, str){
+	var l = 0;
+	for (var i=0; i<str.length; i++) {
+       l += (str.charCodeAt(i) > 128) ? 2 : 1;
+       if (l > len) return str.substring(0,i);
+	}
+	return str;
 }
