@@ -9,24 +9,19 @@
 	<script src="lib/onsen/js/angular/angular.js"></script>
 	<script src="lib/onsen/js/onsenui.js"></script>
 	
-	<!-- 카메라 앨범 불러오기 부분-->
 	<script type="text/javascript" charset="utf-8">
-		var pictureSource;  
-		var destinationType;
   
 		document.addEventListener("deviceready",onDeviceReady,false);
 		function onDeviceReady() {
-		
-			pictureSource=navigator.camera.PictureSourceType;
-			destinationType=navigator.camera.DestinationType;
+			var CheckID = window.localStorage.getItem("CheckID");
+			var data = window.localStorage.getItem("CheckList");
+			var list = JSON.parse(data);
 			
-			var tDay = new Date();
-			var tMonth = tDay.getMonth()+1;
-			var tDate = tDay.getDate();
-			if ( tMonth < 10) tMonth = "0"+tMonth;
-			if ( tDate < 10) tDate = "0"+tDate;
-		
-			document.getElementById("Today").innerHTML = tDay.getFullYear()+" / "+tMonth+" / "+tDate;
+			var Indate = list[CheckID].CHE_Indate;
+	   
+			//스트링 자르기			
+			var time = cutStr(10, Indate);
+			document.getElementById("Today").innerHTML=time;			
 	
 			document.addEventListener("backbutton", onBackKeyDown, false);
 		}
@@ -37,40 +32,13 @@
 				navigator.app.exitApp();
 		}
 		
-		function onPhotoDataSuccess(imageData) {
-			var smallImage = document.getElementById('ImageAdd');
-			smallImage.style.display = 'block';
-			smallImage.src = "data:image/jpeg;base64," + imageData;
-		}
- 
-		function onPhotoURISuccess(imageURI) {
-			var largeImage = document.getElementById('ImageAdd');
-			largeImage.style.display = 'block';
-			largeImage.src = imageURI;
-		}
-  
-		function capturePhoto() {
-			navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-			correctOrientation : true,
-			destinationType: destinationType.DATA_URL });
-		}
- 
-		function capturePhotoEdit() {
-			navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, 
-			allowEdit: true, //android에서는 특별한 효과 없음, 무시됨
-			correctOrientation : true,
-			destinationType: destinationType.DATA_URL });
-		}
-    
-		function getPhoto(source) {
-			navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-			correctOrientation : true, 
-			destinationType: destinationType.FILE_URI,
-			sourceType: source });
-		}
-
-		function onFail(message) {
-			alert('Failed because: ' + message);
+		function cutStr(len, str){
+			var l = 0;
+			for (var i=0; i<str.length; i++) {
+				l += (str.charCodeAt(i) > 128) ? 2 : 1;
+				if (l > len) return str.substring(0,i);
+			}
+			return str;
 		}
     </script>
 	
@@ -81,11 +49,11 @@
 		</div>
 
 		<div class="navigation-bar__center">
-			RecordAddPage
+			Record View page
 		</div>
 
 		<div class="navigation-bar__right">
-			<span class="toolbar-button--quiet navigation-bar__line-height" id="Cancel">Cancel</span>
+			<span class="toolbar-button--quiet navigation-bar__line-height" id="Cancel">Back</span>
 		</div>
 	</div>
 	
@@ -154,19 +122,10 @@
 	<br>
 	<textarea class="textarea" rows="5" placeholder="비고"></textarea>
 	
-	<div class="Submit-Class" id="SubmitButton" >
-		<button class="Submit Submit--large">Submit</button>
-	</div>
-	
 	<!-- 사진 추가 버튼-->
 	<br><br>
 	<img style="display: none; width: 200px;" id="ImageAdd" src="" />
 	<br>
-	<div id="ImageAddButton">
-		<input type="image" src="img/ImageAdd.png" class="ImageAdd" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">
-		<input type="image" src="img/takepicture.png"class="ImageAdd" onclick="capturePhoto();">
-		<br><br><br><br>
-	</div>
 	
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/RecordAddPage.js"></script>

@@ -73,11 +73,10 @@ function SetClick() {
 }
 
 function AddClick() {
+	
 	var dirPath = dirname(location.href);
 	fullPath = dirPath + "/RecordAddPage.html";
 	window.location = fullPath;
-
-	window.localStorage.setItem("SubmitKey", 1);
 }
 
 function QuestionClick() {
@@ -96,13 +95,16 @@ function makeRecordList(data)
    
    html="<ul class=\"list\">";
    list = JSON.parse(data);
+   window.localStorage.setItem("CheckList", data);
+   
    for(i = 0; i < list.length; i++){
 	   var time = list[i].CHE_Indate;
 	   
 	   //스트링 자르기
 		var date = cutStr(10, time);
+		var tid = "check"+i;
 	   
-	   html+="<li class=\"list__item list__item--chevron\">";
+	   html+="<li class=\"list__item list__item--chevron\" id="+tid+" onclick=RecordView(this.id)"+">";
 	   
 	   html+=date;
 	   html+="</li>";
@@ -135,7 +137,7 @@ function RecordListLoad(PlantCode, year, month){
 			}
 			else {
 				if(data.errMSG == 'no check List'){
-					document.getElementById("RecordList").innerHTML='&nbsp;&nbsp;해당 날짜에 기록이 없습니다.';
+					document.getElementById("RecordList").innerHTML="<img style=\"width: 100%;\" src=\"img/EmptyList.png\" />";
 				}
 				else{
 					document.getElementById("RecordList").innerHTML='&nbsp;&nbsp;해당 페이지를 열람할 수 없습니다.';
@@ -146,4 +148,24 @@ function RecordListLoad(PlantCode, year, month){
 			//alert('server error occurred');
 		}
 	});
+}
+
+//페이지 이동_ 체크리스트 상세 기록 보여주기
+function RecordView(id){
+	var data = window.localStorage.getItem("CheckList");
+	list = JSON.parse(data);
+	var idx;
+	
+	for(var i = 0; i < list.length; i++){
+		idx=i;
+		var tid = "check"+idx;
+		if(id == tid){
+			break;
+		}
+	}
+	window.localStorage.setItem("CheckID", idx);
+	
+	var dirPath = dirname(location.href);
+	fullPath = dirPath + "/RecordViewPage.html";
+	window.location = fullPath;
 }
