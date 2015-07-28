@@ -32,29 +32,7 @@ function RecordClick() {
 	var tDay = new Date();
 	var tMonth = tDay.getMonth()+1;
 	
-	var RecordURL = 'http://goodandbetter.cafe24.com/appGetChecklist?plantCode='+plant.PLA_Code+'&year='+tDay.getFullYear()+'&month='+tMonth;
-	
-	$.ajax({
-		dataType: 'Json',
-		url: RecordURL,
-		success: function (data) {
-			if(data.error == 0){
-				var s = JSON.stringify(data.result);
-				document.getElementById("RecordList").innerHTML=makeRecordList(s);
-			}
-			else {
-				if(data.errMSG == 'no check List'){
-					document.getElementById("RecordList").innerHTML='&nbsp;&nbsp;해당 날짜에 기록이 없습니다.';
-				}
-				else{
-					document.getElementById("RecordList").innerHTML='&nbsp;&nbsp;해당 페이지를 열람할 수 없습니다.';
-				}
-			}
-		},
-		error: function (xhr, type) {
-			//alert('server error occurred');
-		}
-	});
+	RecordListLoad(plant.PLA_Code, tDay.getFullYear(), tMonth);
 }
 
 function TalkClick() {
@@ -117,7 +95,6 @@ function makeRecordList(data)
 	var html="";
    
    html="<ul class=\"list\">";
-   alert(data);
    list = JSON.parse(data);
    for(i = 0; i < list.length; i++){
 	   var time = list[i].CHE_Indate;
@@ -143,4 +120,30 @@ function cutStr(len, str){
        if (l > len) return str.substring(0,i);
 	}
 	return str;
+}
+
+function RecordListLoad(PlantCode, year, month){
+	var RecordURL = 'http://goodandbetter.cafe24.com/appGetChecklist?plantCode='+PlantCode+'&year='+year+'&month='+month;
+	
+	$.ajax({
+		dataType: 'Json',
+		url: RecordURL,
+		success: function (data) {
+			if(data.error == 0){
+				var s = JSON.stringify(data.result);
+				document.getElementById("RecordList").innerHTML=makeRecordList(s);
+			}
+			else {
+				if(data.errMSG == 'no check List'){
+					document.getElementById("RecordList").innerHTML='&nbsp;&nbsp;해당 날짜에 기록이 없습니다.';
+				}
+				else{
+					document.getElementById("RecordList").innerHTML='&nbsp;&nbsp;해당 페이지를 열람할 수 없습니다.';
+				}
+			}
+		},
+		error: function (xhr, type) {
+			//alert('server error occurred');
+		}
+	});
 }
