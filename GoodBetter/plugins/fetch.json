@@ -32,37 +32,10 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-datepicker": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/VitaliiBlagodir/cordova-plugin-datepicker",
-            "subdir": "."
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "org.apache.cordova.device": {
         "source": {
             "type": "registry",
             "id": "org.apache.cordova.device"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "nl.moreapps.datepicker": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/DURK/cordova-datepicker-plugin",
-            "subdir": "."
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "com.telerik.plugins.nativepagetransitions": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Telerik-Verified-Plugins/NativePageTransitions",
-            "subdir": "."
         },
         "is_top_level": true,
         "variables": {}

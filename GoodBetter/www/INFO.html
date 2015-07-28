@@ -98,8 +98,7 @@
 <div id="RecordPage" style="display:none">
 	<button class="button-sp" id="addButton">+Add</button>
 	<!-- 임시 date -->
-	<div class="form-group">
-		<input type="text" class="form-control datepicker" id="appointment">
+	<div id="selectGroup">
 	</div>
 
 	<br><br>
@@ -174,29 +173,36 @@
 		document.getElementById("pla_location").innerHTML = "<ons-icon icon=\"fa-map-marker\"></ons-icon> "+plant.PLA_Location;
 		document.getElementById("pla_content").innerHTML = plant.PLA_Content;
 		document.getElementById("pla_image").src = url+plant.PLA_Image;
-
+		
+		//체크리스트에 select bar를 생성
+		makeSelect();
+	}
+	
+	function makeSelect(){
+		var html="";
+		var tDay = new Date();
+		var tMonth = tDay.getMonth()+1;
+	
+		html += "<section class=\"container\">";
+		html += "<div class=\"dropdown\">";
+		html += "<select name=\"YearSelect\" class=\"dropdown-select\">";
+		for(var i = tDay.getFullYear(); i >= 2014; i--){
+			html += "<option value=\"" + i + "\">" + i + "</option>";
+		}
+		html += "</select>";
+		html += "</div>";
+		html += "<div class=\"dropdown\">";
+		html += "<select name=\"MonthSelect\" class=\"dropdown-select\">";
+		for(var i = 1; i < 13; i++){
+			html += "<option value=\"" + i + "\">" + i + "</option>";
+		}
+		html += "</select>";
+		html += "</div>";
+		html += "</section>";
+	
+		document.getElementById("selectGroup").innerHTML=html;
 	}
 </script>
 <script type="text/javascript" src="js/Tab.js"></script>
-<script src="js/nativedatepicker.js"></script>
-<script type="text/javascript">
-	(function($){
-		$(document).ready(function () {
-			$(document).on('click', '.datepicker', function () {
-				showDatePicker($(this), 'date');
-			});
-
-			$(document).on('click', '.timepicker', function () {
-				showDatePicker($(this), 'time');
-			});
-			$(document).on('click', '.datetimepicker', function () {
-				if (device.platform === "Android")
-					showDateTimePicker($(this));
-				else
-					showDatePicker($(this), 'datetime');
-			});
-		});
-	})(jQuery);
-</script>
 </body>
 </html>

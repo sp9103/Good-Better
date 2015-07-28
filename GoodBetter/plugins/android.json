@@ -25,19 +25,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"DatePickerPlugin\"><param name=\"android-package\" value=\"com.plugin.datepicker.DatePickerPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Datepicker\"><param name=\"android-package\" value=\"nl.moreapps.datepicker.Datepicker\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"NativePageTransitions\"><param name=\"android-package\" value=\"com.telerik.plugins.nativepagetransitions.NativePageTransitions\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -578,16 +566,7 @@
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.app.GoodBetter"
         },
-        "cordova-plugin-datepicker": {
-            "PACKAGE_NAME": "com.app.GoodBetter"
-        },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.app.GoodBetter"
-        },
-        "nl.moreapps.datepicker": {
-            "PACKAGE_NAME": "com.app.GoodBetter"
-        },
-        "com.telerik.plugins.nativepagetransitions": {
             "PACKAGE_NAME": "com.app.GoodBetter"
         }
     },
