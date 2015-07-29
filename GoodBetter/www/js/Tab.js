@@ -133,6 +133,7 @@ function RecordListLoad(PlantCode, year, month){
 		success: function (data) {
 			if(data.error == 0){
 				var s = JSON.stringify(data.result);
+				//alert(s);
 				document.getElementById("RecordList").innerHTML=makeRecordList(s);
 			}
 			else {

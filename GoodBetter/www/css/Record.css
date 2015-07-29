@@ -170,6 +170,70 @@ table {
   margin: 0 -1px;
 }
 
+.Refresh {
+  right: 10px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0 5%;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 32px;
+  text-decoration: none;
+  padding: 4px 10px;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: #fff;
+  vertical-align: middle;
+  background-color: rgba(194,106,24,0.81);
+  border: 0px solid currentColor;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.Refresh:hover {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.Refresh:active {
+  background-color: rgba(194,106,24,0.81);
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  opacity: 0.2;
+}
+.Refresh:focus {
+  outline: 0;
+}
+
 /*
  * Copyright (c) 2012-2013 Thibaut Courouble
  * http://www.cssflow.com
@@ -179,12 +243,12 @@ table {
  */
 
 .container {
-  margin: 50px auto;
-  width: 500px;
+  margin: 25px auto;
+  width: 100%;
   text-align: center;
 }
 .container > .dropdown {
-  margin: 0 20px;
+  margin: 0 5%;
   vertical-align: top;
 }
 
@@ -279,3 +343,4 @@ table {
     padding-left: 6px;
   }
 }
+

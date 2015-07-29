@@ -152,7 +152,7 @@
 	<div class="alert-dialog">
 		<div class="alert-dialog-content">
 			App Information<br><br>
-			Version : 0.1.0<br>
+			Version : 0.1.0 Beta<br>
 		</div>
 
 		<div class="alert-dialog-footer">
@@ -185,22 +185,40 @@
 	
 		html += "<section class=\"container\">";
 		html += "<div class=\"dropdown\">";
-		html += "<select name=\"YearSelect\" class=\"dropdown-select\">";
+		html += "<select name=\"YearSelect\" id=\"YearSelect\" class=\"dropdown-select\">";
 		for(var i = tDay.getFullYear(); i >= 2014; i--){
 			html += "<option value=\"" + i + "\">" + i + "</option>";
 		}
 		html += "</select>";
 		html += "</div>";
 		html += "<div class=\"dropdown\">";
-		html += "<select name=\"MonthSelect\" class=\"dropdown-select\">";
+		html += "<select name=\"MonthSelect\" id=\"MonthSelect\" class=\"dropdown-select\">";
 		for(var i = 1; i < 13; i++){
-			html += "<option value=\"" + i + "\">" + i + "</option>";
+			if(i == tMonth){
+				html += "<option value=\"" + i + "\" selected=\"selected\">" + i + "</option>";
+			}
+			else{
+				html += "<option value=\"" + i + "\">" + i + "</option>";
+			}
 		}
 		html += "</select>";
 		html += "</div>";
+		html += "<button class=\"Refresh\" onclick=\"RefreshRecord()\">Refresh</button>";
 		html += "</section>";
 	
 		document.getElementById("selectGroup").innerHTML=html;
+	}
+	
+	function RefreshRecord(){
+		var YearSelect = document.getElementById("YearSelect");
+		var target_Year = YearSelect.options[YearSelect.selectedIndex].value;
+		var MonthSelect = document.getElementById("MonthSelect");
+		var target_Month = MonthSelect.options[MonthSelect.selectedIndex].value;
+		
+		var cur_plant = window.localStorage.getItem("cur_plant");
+		var plant = JSON.parse(cur_plant);
+		
+		RecordListLoad(plant.PLA_Code, target_Year, target_Month);
 	}
 </script>
 <script type="text/javascript" src="js/Tab.js"></script>
