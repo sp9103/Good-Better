@@ -36,11 +36,15 @@
 			if(Change == 1)			document.getElementById('Change').checked="checked";
 			
 			//Text 작성
+			var CHETEXT = list[CheckID].CHE_Text;
+			document.getElementById('CHETEXT').innerHTML = CHETEXT;
 						
 			//Image 씌우기
 			if(list[CheckID].CHE_Image != ""){
 				var ImageURL = "http://goodandbetter.cafe24.com"+list[CheckID].CHE_Image;
+				
 				//alert(ImageURL);
+				document.getElementById('ImageAdd').block;
 				document.getElementById('ImageAdd').src = ImageURL;
 			}
 	
@@ -141,11 +145,11 @@
 	</ul>
 	
 	<br>
-	<textarea class="textarea" rows="5" placeholder="비고"></textarea>
+	<textarea class="textarea" rows="5" placeholder="비고" readonly id="CHETEXT"></textarea>
 	
 	<!-- 사진 추가 버튼-->
 	<br><br>
-	<img style="display: none; width: 200px;" id="ImageAdd" src="" />
+	<img id="ImageAdd" style=" width: 200px;" src="" />
 	<br>
 	
 	<script type="text/javascript" src="cordova.js"></script>
