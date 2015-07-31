@@ -156,17 +156,33 @@ function RecordView(id){
 	var data = window.localStorage.getItem("CheckList");
 	list = JSON.parse(data);
 	var idx;
+	var tFullDay;
 	
 	for(var i = 0; i < list.length; i++){
 		idx=i;
 		var tid = "check"+idx;
 		if(id == tid){
+			tFullDay = cutStr(10, list[i].CHE_Indate);
 			break;
 		}
 	}
 	window.localStorage.setItem("CheckID", idx);
 	
-	var dirPath = dirname(location.href);
-	fullPath = dirPath + "/RecordViewPage.html";
-	window.location = fullPath;
+	var tDay = new Date();
+	var tMonth = tDay.getMonth()+1;
+	if(tMonth < 10) tMonth = "0"+tMonth;
+	var tDate = tDay.getDate();
+	if(tDate < 10) tDate = "0"+tDate;
+	var preDate = tDay.getFullYear() + "-" + tMonth + "-" + tDate;
+	alert(preDate +" / " + tFullDay);
+	
+	//수정 가능인지 체크
+	if(preDate == tDate){
+		//같은날이니까 수정가능
+		
+	}else{
+		var dirPath = dirname(location.href);
+		fullPath = dirPath + "/RecordViewPage.html";
+		window.location = fullPath;
+	}
 }
