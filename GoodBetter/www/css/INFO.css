@@ -11,7 +11,7 @@
 }
 
 .profile-image-sp {
-  height: 70%;
+  height: 95%;
   
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -34,7 +34,7 @@
 }
 
 .profile-desc {
-  font-size: 15px;
+  font-size: 5%;
   opacity: 0.6;
   width: 90%;
   text-align: center;
