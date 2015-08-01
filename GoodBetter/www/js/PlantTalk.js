@@ -28,7 +28,7 @@ function makeQuestionButton()
 {
     var html;
     html = "<div class=\"Submit-Class\" id=\"SubmitButton\" >";
-    html += "<button class=\"Submit Submit--large\" id=\"questionButton\">질문하기</button></div>";
+    html += "<button class=\"Submit Submit--large\" id=\"questionButton\" onclick=\"QuestionClick()\">질문하기</button></div>";
     return html;
 }
 
