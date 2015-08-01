@@ -4,7 +4,7 @@
 function makeTalkingBubble(arrow, content)
 {
     var dir = ['right','left'];
-    var html;
+    var html="";
     var image;
     if(content.substring(0,4)=='<img') {
         var start = content.indexOf('\'');
@@ -13,7 +13,7 @@ function makeTalkingBubble(arrow, content)
         start = content.indexOf('>');
         content = content.substring(start+1,content.length);
     }
-    html = "<div style=\"text-align: "+dir[arrow]+"\">";
+    html += "<div style=\"text-align: "+dir[arrow]+"\">";
     html +="<div class=\"popoverMin popover--"+dir[(arrow+1)%2]+"\" style=\"display:inline-block\">";
     html +="<div class=\"popover__"+dir[arrow]+"-arrowMin\"></div>";
     html +="<div class=\"popover__contentMin\">";
@@ -41,5 +41,6 @@ function makeTalk(talks)
         if(talk.TAL_Reply!="") html += makeTalkingBubble(1,talk.TAL_Reply);
     }
     html += makeQuestionButton();
+    html += "<div style=\"height:50px\"></div>";
     return html;
 }
