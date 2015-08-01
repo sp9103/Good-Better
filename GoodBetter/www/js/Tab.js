@@ -73,6 +73,8 @@ function SetClick() {
 }
 
 function AddClick() {
+	var idx = -1;
+	window.localStorage.setItem("CheckID", idx);
 	
 	var dirPath = dirname(location.href);
 	fullPath = dirPath + "/RecordAddPage.html";
@@ -176,9 +178,11 @@ function RecordView(id){
 	var preDate = tDay.getFullYear() + "-" + tMonth + "-" + tDate;
 	
 	//수정 가능인지 체크
-	if(preDate == tDate){
+	if(preDate == tFullDay){
 		//같은날이니까 수정가능
-		
+		var dirPath = dirname(location.href);
+		fullPath = dirPath + "/RecordAddPage.html";
+		window.location = fullPath;
 	}else{
 		var dirPath = dirname(location.href);
 		fullPath = dirPath + "/RecordViewPage.html";
