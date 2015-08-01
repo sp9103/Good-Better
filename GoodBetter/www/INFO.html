@@ -19,6 +19,7 @@
 	<script src="lib/onsen/js/onsenui.js"></script>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="js/PlantTalk.js"></script>
+	<script src="js/Setting.js"></script>
 	<script type="text/javascript" src="cordova.js"></script>
 	<script>
 		ons.bootstrap();
@@ -138,9 +139,9 @@
 	<br>
 
 	<ons-list modifier="inset" class="settings-list">
-		<ons-list-item modifier="tappable">
+		<ons-list-item modifier="tappable" onclick="disableAutoLogin()">
 			<ons-icon icon="ion-log-out" style="opacity: 0.8"></ons-icon>
-			Sign out
+			자동 로그인 해제
 		</ons-list-item>
 	</ons-list>
 	
