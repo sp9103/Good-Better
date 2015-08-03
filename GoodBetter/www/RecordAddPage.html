@@ -76,26 +76,30 @@
 		function onPhotoDataSuccess(imageData) {
 			var smallImage = document.getElementById('ImageAdd');
 			smallImage.style.display = 'block';
-			smallImage.src = "data:image/jpeg;base64," + imageData;
+			smallImage.src = /*"data:image/jpeg;base64," +*/ imageData;
+			
+			//alert(smallImage.src);
 		}
  
 		function onPhotoURISuccess(imageURI) {
 			var largeImage = document.getElementById('ImageAdd');
 			largeImage.style.display = 'block';
 			largeImage.src = imageURI;
+			
+			//alert(largeImage.src);
 		}
   
 		function capturePhoto() {
 			navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
 			correctOrientation : true,
-			destinationType: destinationType.DATA_URL });
+			destinationType: destinationType.FILE_URI });
 		}
  
 		function capturePhotoEdit() {
 			navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, 
 			allowEdit: true, //android에서는 특별한 효과 없음, 무시됨
 			correctOrientation : true,
-			destinationType: destinationType.DATA_URL });
+			destinationType: destinationType.FILE_URI });
 		}
     
 		function getPhoto(source) {
