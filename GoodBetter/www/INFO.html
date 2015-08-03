@@ -19,6 +19,7 @@
 	<script src="lib/onsen/js/onsenui.js"></script>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="js/PlantTalk.js"></script>
+	<script src="js/Setting.js"></script>
 	<script type="text/javascript" src="cordova.js"></script>
 	<script>
 		ons.bootstrap();
@@ -65,7 +66,7 @@
 	</label>
 </div>
 
-<br><br><br>
+<div style="height: 49px;"></div>
 <div id="INFOPage">
 
 	<div class="profile-card">
@@ -108,7 +109,7 @@
 
 <div id="TalkPage" style="display: none">
 	<div class="Submit-Class" id="SubmitButton" >
-		<button class="Submit Submit--large" id="questionButton">질문하기</button>
+		<button class="Submit Submit--large" id="questionButton" onclick="QuestionClick()">질문하기</button>
 	</div>
 </div>
 
@@ -138,9 +139,9 @@
 	<br>
 
 	<ons-list modifier="inset" class="settings-list">
-		<ons-list-item modifier="tappable">
+		<ons-list-item modifier="tappable" onclick="disableAutoLogin()">
 			<ons-icon icon="ion-log-out" style="opacity: 0.8"></ons-icon>
-			Sign out
+			자동 로그인 해제
 		</ons-list-item>
 	</ons-list>
 	

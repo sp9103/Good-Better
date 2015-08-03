@@ -30,6 +30,7 @@
             var largeImage = document.getElementById('ImageAdd');
             largeImage.style.display = 'block';
             largeImage.src = imageURI;
+            alert(imageURI);
         }
 
         function capturePhoto() {
@@ -58,7 +59,8 @@
     </script>
 
 </head>
-<body onload="onLoad()">
+<body>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <div class="navigation-bar">
     <div class="navigation-bar__left">
     </div>
@@ -68,15 +70,15 @@
     </div>
 
     <div class="navigation-bar__right">
-        <span class="toolbar-button--quiet navigation-bar__line-height" id="Cancel">Cancel</span>
+        <span class="toolbar-button--quiet navigation-bar__line-height" id="QuestionCancel">Cancel</span>
     </div>
 </div>
 
 <br>
-<textarea class="textarea" rows="10" placeholder="질문"></textarea>
+<textarea class="textarea" rows="10" placeholder="질문" id="content"></textarea>
 
 <div class="Submit-Class" id="SubmitButton" >
-    <button class="Submit Submit--large">Submit</button>
+    <button class="Submit Submit--large" onclick="submitClicked(document.getElementById('content').value)">Submit</button>
 </div>
 
 <!-- 사진 추가 버튼-->
@@ -84,6 +86,6 @@
 <input type="image" src="img/ImageAdd.png" id="ImageAdd" class="ImageAdd" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">
 
 <script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/RecordAddPage.js"></script>
+<script src="js/AddQuestion.js"></script>
 </body>
 </html>

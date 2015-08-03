@@ -1,7 +1,7 @@
 /**
  * Created by minseock on 2015-07-08.
  */
-function signOut() {
+function disableAutoLogin() {
     window.localStorage.setItem("auto",false);
-    alert("ÀÚµ¿ ·Î±×ÀÎÀÌ ÇØÁ¦µÇ¾ú½À´Ï´Ù.");
+    alert("ìë™ ë¡œê·¸ì¸ì´ í•´ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 }
