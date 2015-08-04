@@ -80,7 +80,7 @@
     transform: rotate(45deg);
     top: 50%;
     left: 0;
-    margin-left: -3px;
+    margin-left: -6px;
     margin-top: -9px;
 }
 .popover__right-arrowMin {
@@ -107,6 +107,6 @@
     transform: rotate(225deg);
     top: 50%;
     right: 0;
-    margin-right: -3px;
+    margin-right: -6px;
     margin-top: -9px;
 }
