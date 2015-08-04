@@ -15,21 +15,45 @@ function dirname(path) {
     return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
 }
 
-function submitClicked(content, imageUri) {
+function submitClicked(content, imageUrir) {
     if(content) {
+
+        imageUri = 'file:///storage/emulated/0/DCIM/Facebook/FB_IMG_1432276141336.jpg';
+
+        var options = new FileUploadOptions();
+        options.fileKey = "talkImage";
+        options.fileName = imageUri.substr(imageUri.lastIndexOf('/') + 1);
+        options.mimeType = "image/jpeg";
+
+        var params = {};
+        params.clientCode = 2;
+        params.plantCode = 1;
+        params.question = content;
+
+        options.params = params;
+
+        var ft = new FileTransfer();
+        ft.upload(imageUri, encodeURI('http://goodandbetter.cafe24.com/appRegisterTalk'),
+            function(data) {
+                if(data.error == 0) alert('success');
+                else alert(data.errMSG);
+            }, function(error) {
+                alert('fail');
+            }, options);
+        /*
         //alert(content);
         var formData = new FormData();
         formData.append('clientCode',2);
         formData.append('plantCode',1);
         formData.append('question',content);
-        /*
+
         if(imageUri){
             var blob = dataURItoBlob(imageUri);
             formData.append('talkImage',blob);
-        }*/
-        var blob = dataURItoBlob('content://media/external/images/media/67072');
-        alert(""+blob.type);
-        formData.append('talkImage',blob);
+        }
+        //var blob = dataURItoBlob('file:///storage/emulated/0/DCIM/Facebook/FB_IMG_1432276141336.jpg');
+        //alert(""+blob.type);
+        formData.append('talkImage',new File("file:///storage/emulated/0/DCIM/Facebook/FB_IMG_1432276141336.jpg"));
 
         $.ajax({
             url:'http://goodandbetter.cafe24.com/appRegisterTalk',
@@ -47,6 +71,7 @@ function submitClicked(content, imageUri) {
             }
 
         });
+        */
 
     }else {
         alert("질문을 입력하세요!");
