@@ -16,8 +16,11 @@
         document.addEventListener("deviceready",onDeviceReady,false);
         function onDeviceReady() {
 
+
             pictureSource=navigator.camera.PictureSourceType;
             destinationType=navigator.camera.DestinationType;
+
+            window.localStorage.removeItem("imageuri");
 
             document.addEventListener("backbutton", onBackKeyDown, false);
         }
@@ -32,16 +35,15 @@
             var smallImage = document.getElementById('ImageAdd');
             smallImage.style.display = 'block';
             smallImage.src = /*"data:image/jpeg;base64," +*/ imageData;
-
-            alert(smallImage.src);
+            window.localStorage.setItem("imageuri", imageData);
         }
 
         function onPhotoURISuccess(imageURI) {
             var largeImage = document.getElementById('ImageAdd');
             largeImage.style.display = 'block';
             largeImage.src = imageURI;
-
-            alert(largeImage.src);
+            window.localStorage.setItem("imageuri", imageURI);
+            //alert(largeImage.src);
         }
 
         function capturePhoto() {
