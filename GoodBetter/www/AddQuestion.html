@@ -13,37 +13,50 @@
     <script type="text/javascript" charset="utf-8">
         var pictureSource;
         var destinationType;
-
         document.addEventListener("deviceready",onDeviceReady,false);
         function onDeviceReady() {
+
+
             pictureSource=navigator.camera.PictureSourceType;
             destinationType=navigator.camera.DestinationType;
+
+            window.localStorage.removeItem("imageuri");
+
+            document.addEventListener("backbutton", onBackKeyDown, false);
+        }
+
+        function onBackKeyDown() {
+            var r = confirm("어플리케이션을 종료하시겠습니까?");
+            if (r == true)
+                navigator.app.exitApp();
         }
 
         function onPhotoDataSuccess(imageData) {
             var smallImage = document.getElementById('ImageAdd');
             smallImage.style.display = 'block';
-            smallImage.src = "data:image/jpeg;base64," + imageData;
+            smallImage.src = /*"data:image/jpeg;base64," +*/ imageData;
+            window.localStorage.setItem("imageuri", imageData);
         }
 
         function onPhotoURISuccess(imageURI) {
             var largeImage = document.getElementById('ImageAdd');
             largeImage.style.display = 'block';
             largeImage.src = imageURI;
-            alert(imageURI);
+            window.localStorage.setItem("imageuri", imageURI);
+            //alert(largeImage.src);
         }
 
         function capturePhoto() {
             navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
                 correctOrientation : true,
-                destinationType: destinationType.DATA_URL });
+                destinationType: destinationType.FILE_URI });
         }
 
         function capturePhotoEdit() {
             navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20,
                 allowEdit: true, //android에서는 특별한 효과 없음, 무시됨
                 correctOrientation : true,
-                destinationType: destinationType.DATA_URL });
+                destinationType: destinationType.FILE_URI });
         }
 
         function getPhoto(source) {
@@ -83,7 +96,14 @@
 
 <!-- 사진 추가 버튼-->
 <br><br>
-<input type="image" src="img/ImageAdd.png" id="ImageAdd" class="ImageAdd" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">
+<img style="display: none; width: 200px;" id="ImageAdd" src="" />
+<br>
+<div id="ImageAddButton">
+    <input type="image" src="img/ImageAdd.png" class="ImageAdd" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">
+    <input type="image" src="img/takepicture.png"class="ImageAdd" onclick="capturePhoto();">
+    <br><br><br><br>
+</div>
+<input type="file" id="uploadingFile" style="display: none" />
 
 <script type="text/javascript" src="cordova.js"></script>
 <script src="js/AddQuestion.js"></script>
