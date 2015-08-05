@@ -45,6 +45,7 @@ function submitClicked_WithImage(content, imageUri) {
 
         options.params = params;
 
+		alert(imageUri);
         var ft = new FileTransfer();
         ft.upload(imageUri, encodeURI('http://goodandbetter.cafe24.com/appRegisterTalk'),
             function(data) {

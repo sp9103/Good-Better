@@ -83,11 +83,45 @@
  
 		function onPhotoURISuccess(imageURI) {
 			var largeImage = document.getElementById('ImageAdd');
-			largeImage.style.display = 'block';
-			largeImage.src = imageURI;
+			//largeImage.style.display = 'block';
+			//largeImage.src = imageURI;
+			
+			////////////////////////////
+			var imgFileName = imageURI.substr(imageURI.lastIndexOf('/') +1); 
+            var imgPath = "tmp/" + imgFileName;
+			
+			var gotFileEntry = function(fileEntry) { 
+				alert("got image file entry: " + fileEntry.fullPath); 
+				var gotFileSystem = function(fileSystem){ 
+					// copy the file 
+                    fileEntry.copyTo(fileSystem.root, null, copiedFile, fsFail);
+				}; 
+				// get file system to copy or move image file to 
+                window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFileSystem, fsFail);
+			}; 
+			
+			//resolve file system for image 
+            //(image is currently stored in dir off of persistent file system but that may change) 
+            window.resolveLocalFileSystemURI(imageURI, gotFileEntry, fsFail); 	
+			///////////////////////////
+			
+		}
+		
+		function copiedFile(fileEntry) { 
+            alert("copied file: " + fileEntry.fullPath); 
+            // !!! assumes you have an img element on page with id=largeImage 
+            var largeImage = document.getElementById('ImageAdd'); 
+
+            largeImage.style.display = 'block'; 
+            largeImage.src = fileEntry.toURI();
 			
 			alert(largeImage.src);
-		}
+        } 
+		
+		// file system fail 
+        function fsFail(error) { 
+            alert("failed with error code: " + error.code); 
+        }; 
   
 		function capturePhoto() {
 			navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
