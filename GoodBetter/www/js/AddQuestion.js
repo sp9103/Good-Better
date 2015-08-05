@@ -32,7 +32,11 @@ function submitClicked_WithImage(content, imageUri) {
         var options = new FileUploadOptions();
         options.fileKey = "talkImage";
         options.fileName = imageUri.substr(imageUri.lastIndexOf('/') + 1);
-        options.mimeType = "image/jpeg";
+    var mime=imageUri.substr(imageUri.lastIndexOf('.') + 1);
+    var type;
+    if(mime=='jpg' || mime=='jpeg') type='image/jpeg';
+    else if(mime=='png') type = 'image/png';
+        options.mimeType = type;
 
         var params = {};
         params.clientCode = 2;
