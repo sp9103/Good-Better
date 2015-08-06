@@ -18,6 +18,8 @@
 		function onDeviceReady() {
 			var CheckID = window.localStorage.getItem("CheckID");
 
+			window.localStorage.removeItem("imageuri");
+			
 			//수정일 경우임
 			if(CheckID != "-1"){
 				var data = window.localStorage.getItem("CheckList");
@@ -78,7 +80,7 @@
 			smallImage.style.display = 'block';
 			smallImage.src = /*"data:image/jpeg;base64," +*/ imageData;
 			
-			alert(smallImage.src);
+			window.localStorage.setItem("imageuri", imageData);
 		}
  
 		function onPhotoURISuccess(imageURI) {
@@ -91,7 +93,6 @@
             //var imgPath = "tmp/" + imgFileName;
 			
 			var gotFileEntry = function(fileEntry) { 
-				alert("got image file entry: " + fileEntry.fullPath); 
 				var gotFileSystem = function(fileSystem){ 
 					// copy the file 
                     fileEntry.copyTo(fileSystem.root, null, copiedFile, fsFail);
@@ -108,14 +109,13 @@
 		}
 		
 		function copiedFile(fileEntry) { 
-            alert("copied file: " + fileEntry.fullPath); 
             // !!! assumes you have an img element on page with id=largeImage 
             var largeImage = document.getElementById('ImageAdd'); 
 
             largeImage.style.display = 'block'; 
             largeImage.src = fileEntry.toURI();
 			
-			alert(largeImage.src);
+			window.localStorage.setItem("imageuri", largeImage.src);
         } 
 		
 		// file system fail 

@@ -49,8 +49,8 @@ function submitClicked_WithImage(content, imageUri) {
         var ft = new FileTransfer();
         ft.upload(imageUri, encodeURI('http://goodandbetter.cafe24.com/appRegisterTalk'),
             function(data) {
-                if(data.error == 0) alert('success');
-                else alert(data.errMSG);
+                alert("질문이 등록되었습니다.");
+				QuestionCancelClick();
             }, function(error) {
                 alert('fail');
             }, options);
@@ -71,7 +71,11 @@ function submitClicked_NoImage(content) {
          contentType:false,
          type:'POST',
          success:function (data,status,req) {
-         if(data.error == 0) alert('success');
+         if(data.error == 0){
+			 //이번 페이지로 돌아가기 구현
+			 alert("질문이 등록되었습니다.");
+			 QuestionCancelClick();
+		 } 
          else alert(data.errMSG);
          },
          error:function (req,status,error) {

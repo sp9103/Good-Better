@@ -42,5 +42,6 @@ function makeTalk(talks)
     }
     html += makeQuestionButton();
     html += "<div style=\"height:50px\"></div>";
+	
     return html;
 }

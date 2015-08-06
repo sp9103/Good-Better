@@ -49,7 +49,7 @@ function TalkClick() {
 				document.getElementById("TalkPage").innerHTML=makeTalk(data.result);
 			}
 			else {
-				document.getElementById("TalkPage").innerHTML='해당 페이지를 열람할 수 없습니다.';
+				document.getElementById("TalkPage").innerHTML=makeTalk(data.result);
 			}
 		},
 		error: function (xhr, type) {
