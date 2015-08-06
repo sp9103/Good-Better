@@ -21,15 +21,15 @@ function dirname(path) {
 
 function SubmitClicked(){
 	var imageUri = window.localStorage.getItem("imageuri");
+	var cur_plant = window.localStorage.getItem("cur_plant");
+	var plant = JSON.parse(cur_plant);
+	var clientCode = window.localStorage.getItem("clientCode");	
 			
 	//이미지 없을때
 	if(!imageUri){
 		var formData = new FormData();
 		
-		var cur_plant = window.localStorage.getItem("cur_plant");
-		var plant = JSON.parse(cur_plant);
-		
-		formData.append('clientCode',2);				//임시
+		formData.append('clientCode',clientCode);				//임시
 		formData.append('plantCode', plant.PLA_Code);				//임시
 		formData.append('water',document.getElementById("Water").checked ? 1 : 0);
 		formData.append('supplements',document.getElementById("Supplements").checked ? 1 : 0);
@@ -59,6 +59,32 @@ function SubmitClicked(){
 				alert('fail');
 			}
 		});
+	}else{
+		/*var options = new FileUploadOptions();
+		
+		options.fileKey = "checklistImage";
+        options.fileName = imageUri.substr(imageUri.lastIndexOf('/') + 1);
+		var mime=imageUri.substr(imageUri.lastIndexOf('.') + 1);
+		var type;
+		if(mime=='jpg' || mime=='jpeg') type='image/jpeg';
+		else if(mime=='png') type = 'image/png';
+        options.mimeType = type;
+		
+		var params = {};
+        params.clientCode = clientCode;
+        params.plantCode = plant.PLA_Code;
+		params.water = document.getElementById("Water").checked ? 1 : 0;
+        formData.append('plantCode', plant.PLA_Code);				//임시
+		formData.append('water',document.getElementById("Water").checked ? 1 : 0);
+		formData.append('supplements',document.getElementById("Supplements").checked ? 1 : 0);
+		formData.append('damage',document.getElementById("Damage").checked ? 1 : 0);
+		formData.append('pruning',document.getElementById("Pruning").checked ? 1 : 0);
+		formData.append('cleanleaf',document.getElementById("Cleanleaf").checked ? 1 : 0);
+		formData.append('repotting',document.getElementById("Repotting").checked ? 1 : 0);
+		formData.append('change',document.getElementById("Change").checked ? 1 : 0);
+		formData.append('text',document.getElementById("CHETEXT").value);
+
+        options.params = params;*/
 	}
 }
  

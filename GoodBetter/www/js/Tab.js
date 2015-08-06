@@ -40,7 +40,11 @@ function TalkClick() {
 	document.getElementById("RecordPage").style.display = "none";
 	document.getElementById("TalkPage").style.display = "block";
 	document.getElementById("SettingPage").style.display = "none";
-	var talkUrl = 'http://goodandbetter.cafe24.com/appGetTalk?plantCode='+1;
+	
+	var cur_plant = window.localStorage.getItem("cur_plant");
+	var plant = JSON.parse(cur_plant);
+	
+	var talkUrl = 'http://goodandbetter.cafe24.com/appGetTalk?plantCode='+plant.PLA_Code;
 	$.ajax({
 		dataType: 'Json',
 		url: talkUrl,

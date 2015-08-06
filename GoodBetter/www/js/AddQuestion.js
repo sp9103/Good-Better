@@ -29,23 +29,26 @@ function submitClicked_WithImage(content, imageUri) {
 
         //imageUri = 'file:///storage/emulated/0/DCIM/Facebook/FB_IMG_1432276141336.jpg';
 
+		var s = window.localStorage.getItem("cur_plant");
+		var plant = JSON.parse(s);
+		var clientCode = window.localStorage.getItem("clientCode");
+		
         var options = new FileUploadOptions();
         options.fileKey = "talkImage";
         options.fileName = imageUri.substr(imageUri.lastIndexOf('/') + 1);
-    var mime=imageUri.substr(imageUri.lastIndexOf('.') + 1);
-    var type;
-    if(mime=='jpg' || mime=='jpeg') type='image/jpeg';
-    else if(mime=='png') type = 'image/png';
+		var mime=imageUri.substr(imageUri.lastIndexOf('.') + 1);
+		var type;
+		if(mime=='jpg' || mime=='jpeg') type='image/jpeg';
+		else if(mime=='png') type = 'image/png';
         options.mimeType = type;
 
         var params = {};
-        params.clientCode = 2;
-        params.plantCode = 1;
+        params.clientCode = clientCode;
+        params.plantCode = plant.PLA_Code;
         params.question = content;
 
         options.params = params;
 
-		alert(imageUri);
         var ft = new FileTransfer();
         ft.upload(imageUri, encodeURI('http://goodandbetter.cafe24.com/appRegisterTalk'),
             function(data) {
@@ -58,9 +61,13 @@ function submitClicked_WithImage(content, imageUri) {
 }
 
 function submitClicked_NoImage(content) {
-         var formData = new FormData();
-         formData.append('clientCode',2);
-         formData.append('plantCode',1);
+        var formData = new FormData();
+		var s = window.localStorage.getItem("cur_plant");
+		var plant = JSON.parse(s);
+		var clientCode = window.localStorage.getItem("clientCode");
+		 
+         formData.append('clientCode',clientCode);
+         formData.append('plantCode',plant.PLA_Code);
          formData.append('question',content);
 
          $.ajax({

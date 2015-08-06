@@ -86,6 +86,7 @@
                     window.localStorage.setItem("userpw", pwd);
                     window.localStorage.setItem("auto", document.getElementById("check_auto").checked);
 					window.localStorage.setItem("isadmin", data.result.isAdmin);
+					window.localStorage.setItem("clientCode", data.result.clientCode);
                     goPage();
                 } else {
                     alert(data.errMSG);
