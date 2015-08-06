@@ -178,7 +178,10 @@ function RecordView(id){
 	var preDate = tDay.getFullYear() + "-" + tMonth + "-" + tDate;
 	
 	//수정 가능인지 체크
-	if(preDate == tFullDay){
+	var isadmin = window.localStorage.getItem("isadmin");
+	
+	//어드민이 아닐때는 그냥 보여주기만 (수정불가능하게)
+	if(preDate == tFullDay && isadmin == 1){
 		//같은날이니까 수정가능
 		var dirPath = dirname(location.href);
 		fullPath = dirPath + "/RecordAddPage.html";

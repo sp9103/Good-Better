@@ -176,7 +176,13 @@
 		makeSelect();
 		
 		//어드민이나 마스터가 아닐 경우 체크리스트 추가 불가능하게 버튼 막음				<---동작할때 구현함
-		var isadmin = document.getElementById("isadmin");
+		var isadmin = window.localStorage.getItem("isadmin");
+		
+		//어드민 아닐때는 추가 못하게함
+		if(isadmin != 1){
+			document.getElementById("addButton").style.display = "none";
+		}	
+			
 	}
 	
 	function makeSelect(){
