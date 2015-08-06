@@ -5,6 +5,7 @@ function init() {
 	$("#Setting").css('display','block');
 }*/
 
+
 document.querySelector("#Cancel").addEventListener("touchend", CancelClick, false);
 
 function CancelClick() {
@@ -28,8 +29,8 @@ function SubmitClicked(){
 		var cur_plant = window.localStorage.getItem("cur_plant");
 		var plant = JSON.parse(cur_plant);
 		
-		formData.append('clientCode',2);			//임시
-		formData.append('plantCode', 1);				//임시
+		formData.append('clientCode',2);				//임시
+		formData.append('plantCode', plant.PLA_Code);				//임시
 		formData.append('water',document.getElementById("Water").checked ? 1 : 0);
 		formData.append('supplements',document.getElementById("Supplements").checked ? 1 : 0);
 		formData.append('damage',document.getElementById("Damage").checked ? 1 : 0);
@@ -50,7 +51,7 @@ function SubmitClicked(){
 				if(data.error == 0){
 					//이번 페이지로 돌아가기 구현
 					alert("체크리스트가 등록되었습니다.");
-					CancelClick()
+					CancelClick();
 				} 
 				else alert(data.errMSG);
 			},
@@ -58,10 +59,7 @@ function SubmitClicked(){
 				alert('fail');
 			}
 		});
-		alert("upload complete!");
-	}else{
-		
-	}	
+	}
 }
  
 
