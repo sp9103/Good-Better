@@ -18,7 +18,7 @@ function QRClick() {
 }
 
 function INFOClick() {
-	window.localStorage.setItem("TabHistory", "INFO");
+	//window.localStorage.setItem("TabHistory", "INFO");
 	
 	document.getElementById("INFOPage").style.display = "block";
 	document.getElementById("RecordPage").style.display = "none";
@@ -27,7 +27,7 @@ function INFOClick() {
 }
 
 function RecordClick() {
-	window.localStorage.setItem("TabHistory", "Record");
+	//window.localStorage.setItem("TabHistory", "Record");
 	
 	document.getElementById("INFOPage").style.display = "none";
 	document.getElementById("RecordPage").style.display = "block";
@@ -42,7 +42,7 @@ function RecordClick() {
 }
 
 function TalkClick() {
-	window.localStorage.setItem("TabHistory", "Talk")";
+	//window.localStorage.setItem("TabHistory", "Talk")";
 	
 	document.getElementById("INFOPage").style.display = "none";
 	document.getElementById("RecordPage").style.display = "none";
@@ -71,7 +71,7 @@ function TalkClick() {
 }
 
 function SetClick() {
-	window.localStorage.setItem("TabHistory", "Setting");
+	//window.localStorage.setItem("TabHistory", "Setting");
 	
 	document.getElementById("INFOPage").style.display = "none";
 	document.getElementById("RecordPage").style.display = "none";

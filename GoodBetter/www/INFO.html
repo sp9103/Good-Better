@@ -68,7 +68,7 @@
 </div>
 
 <div style="height: 49px;"></div>
-<div id="INFOPage" style="display:none">
+<div id="INFOPage" style="display:block">
 
 	<div class="profile-card">
 
@@ -168,7 +168,6 @@
 	
 	function onDeviceReady() {
 		var TabHistory = window.localStorage.getItem("TabHistory");
-		alert(TabHistory);
 		
 		switch(TabHistory){
 			case "INFO":

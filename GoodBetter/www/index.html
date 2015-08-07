@@ -2,43 +2,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-
-    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
-    <link rel="stylesheet" href="thema/onsen-css-components.css">
-    <link rel="stylesheet" href="css/login.css">
-
-    <script src="lib/onsen/js/angular/angular.js"></script>
-    <script src="lib/onsen/js/onsenui.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
-    <script>
-        ons.bootstrap();
-    </script>
 </head>
 <body onload="onLoad()">
-
-<ons-page>
-    <ons-toolbar>
-        <div class="center">Log In</div>
-    </ons-toolbar>
-
-    <div class="login-form">
-
-
-        <input type="email" id="txt_username" class="text-input--underbar" placeholder="ID" value="">
-        <input type="password" id="txt_pwd" class="text-input--underbar" placeholder="Password" value="">
-        <br>
-        <label class="switch">
-            <input type="checkbox" id="check_auto" value="AUTO" class="switch__input">
-
-            <div class="switch__toggle"></div>
-        </label>
-        Auto Login
-        <br><br>
-        <ons-button modifier="large" class="login-button" onclick="verifyLogin();">Log In</ons-button>
-    </div>
-
-</ons-page>
 
 <script>
     function onLoad() {
@@ -46,56 +13,16 @@
     }
 
     function onDeviceReady() {
-        var auto = window.localStorage.getItem("auto");
-        if (null == auto) {
-            /* frist run */
-        } else if ("true" == auto) {
-            /* auto-login */
-            document.getElementById("txt_username").value = window.localStorage.getItem("username");
-            document.getElementById("txt_pwd").value = window.localStorage.getItem("userpw");
-            document.getElementById("check_auto").checked = true;
-            verifyLogin();
-        } else {
-            /* non auto-login */
-        }
+		goPage();
     }
-
+	
     function goPage() {
         var dirPath = dirname(location.href);
-        fullPath = dirPath + "/QR_Scan.html";
+        fullPath = dirPath + "/Login.html";
         window.location = fullPath;
     }
     function dirname(path) {
         return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
-    }
-
-    function verifyLogin() {
-        var uname = document.getElementById("txt_username").value;
-        var pwd = document.getElementById("txt_pwd").value;
-        $.ajax({
-            type: 'POST',
-            dataType: 'Json',
-            url: 'http://goodandbetter.cafe24.com/appLogin',
-            data: {
-                'inputId': uname,
-                'inputPw': pwd
-            },
-            success: function (data) {
-                if (0 == data.error) {
-                    window.localStorage.setItem("username", uname);
-                    window.localStorage.setItem("userpw", pwd);
-                    window.localStorage.setItem("auto", document.getElementById("check_auto").checked);
-					window.localStorage.setItem("isadmin", data.result.isAdmin);
-					window.localStorage.setItem("clientCode", data.result.clientCode);
-                    goPage();
-                } else {
-                    alert(data.errMSG);
-                }
-            },
-            error: function (xhr, type) {
-                alert('server error occurred');
-            }
-        });
     }
 </script>
 

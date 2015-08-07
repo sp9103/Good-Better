@@ -8,7 +8,7 @@ function disableAutoLogin() {
 		alert("자동 로그인이 해제되었습니다.");
 		
 		var dirPath = dirname(location.href);
-		fullPath = dirPath + "/index.html";
+		fullPath = dirPath + "/Login.html";
 		window.location = fullPath;
 	}
 }
