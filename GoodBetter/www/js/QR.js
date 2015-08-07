@@ -1,13 +1,3 @@
-var resultDiv;
-
-document.addEventListener("deviceready", init, false);
-function init() {
-
-    //document.querySelector("#startScan").addEventListener("touchend", startScan, false);
-    //resultDiv = document.querySelector("#results");
-
-    startScan();
-}
 
 function startScan() {
     
@@ -29,12 +19,26 @@ function startScan() {
                     }
                 },
                 error: function (xhr, ajaxoptions,thrownError) {
-                    alert('server error occurred! code:'+xhr.status);
 					
-					//QR코드 재촬영
-					var dirPath = dirname(location.href);
-					fullPath = dirPath + "/QR_Scan.html";
-					window.location = fullPath;
+					if(xhr.status == 200){
+						alert("어플리케이션을 종료하시겠습니까?")							//왠진 모르겠지만 이렇게 구현하면 정상동작
+						var r = confirm("어플리케이션을 종료하시겠습니까?");
+						if (r == true)
+							navigator.app.exitApp();
+						else if(r == false){
+							//QR코드 재촬영
+							var dirPath = dirname(location.href);
+							fullPath = dirPath + "/QR_Scan.html";
+							window.location = fullPath;
+						}
+					}else{
+						alert('server error occurred! code:'+xhr.status);
+						
+						//QR코드 재촬영
+						/*var dirPath = dirname(location.href);
+						fullPath = dirPath + "/QR_Scan.html";
+						window.location = fullPath;*/
+					}
                 }
             });
             /*
@@ -48,7 +52,6 @@ function startScan() {
             alert("Scanning failed: " + error);
         }
     );
-    
 }
 
 function nextPage() {
