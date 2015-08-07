@@ -199,8 +199,3 @@ function RecordView(id){
 		window.location = fullPath;
 	}
 }
-
-function TestCall(var s){
-	alert("TestCall complete!");
-	alert(s);
-}

@@ -11,8 +11,17 @@
 		<script type="text/javascript" charset="utf-8">
 			document.addEventListener("deviceready", init, false);
 			function init() {	
-
+				document.addEventListener("backbutton", onBackKeyDown, false);
+			
 				startScan();
+			}
+			
+			function onBackKeyDown() {
+				var r = confirm("어플리케이션을 종료하시겠습니까?");
+				if (r == true)
+					navigator.app.exitApp();
+				else
+					startScan();
 			}
 		</script>
     </head>
