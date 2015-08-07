@@ -12,6 +12,7 @@ function startScan() {
                         var s = JSON.stringify(data.result);
                         //alert(s);
                         window.localStorage.setItem("cur_plant",s);
+						window.localStorage.setItem("TabHistory", "INFO");
                         nextPage();
                     }
                     else {

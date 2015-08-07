@@ -10,12 +10,16 @@ document.querySelector("#addButton").addEventListener("touchend", AddClick, fals
 document.querySelector("#questionButton").addEventListener("touchend", QuestionClick, false);
 
 function QRClick() {
+	window.localStorage.setItem("TabHistory", "QR"); 
+	
 	var dirPath = dirname(location.href);
 	fullPath = dirPath + "/QR_Scan.html";
 	window.location = fullPath;
 }
 
 function INFOClick() {
+	window.localStorage.setItem("TabHistory", "INFO");
+	
 	document.getElementById("INFOPage").style.display = "block";
 	document.getElementById("RecordPage").style.display = "none";
 	document.getElementById("TalkPage").style.display = "none";
@@ -23,6 +27,8 @@ function INFOClick() {
 }
 
 function RecordClick() {
+	window.localStorage.setItem("TabHistory", "Record");
+	
 	document.getElementById("INFOPage").style.display = "none";
 	document.getElementById("RecordPage").style.display = "block";
 	document.getElementById("TalkPage").style.display = "none";
@@ -36,6 +42,8 @@ function RecordClick() {
 }
 
 function TalkClick() {
+	window.localStorage.setItem("TabHistory", "Talk")";
+	
 	document.getElementById("INFOPage").style.display = "none";
 	document.getElementById("RecordPage").style.display = "none";
 	document.getElementById("TalkPage").style.display = "block";
@@ -63,13 +71,8 @@ function TalkClick() {
 }
 
 function SetClick() {
-	document.getElementById("INFOPage").style.display = "none";
-	document.getElementById("RecordPage").style.display = "none";
-	document.getElementById("TalkPage").style.display = "none";
-	document.getElementById("SettingPage").style.display = "block";
-}
-
-function SetClick() {
+	window.localStorage.setItem("TabHistory", "Setting");
+	
 	document.getElementById("INFOPage").style.display = "none";
 	document.getElementById("RecordPage").style.display = "none";
 	document.getElementById("TalkPage").style.display = "none";
@@ -195,4 +198,9 @@ function RecordView(id){
 		fullPath = dirPath + "/RecordViewPage.html";
 		window.location = fullPath;
 	}
+}
+
+function TestCall(var s){
+	alert("TestCall complete!");
+	alert(s);
 }

@@ -18,6 +18,7 @@
 	<script src="lib/onsen/js/angular/angular.js"></script>
 	<script src="lib/onsen/js/onsenui.js"></script>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="js/Tab.js"></script>
 	<script src="js/PlantTalk.js"></script>
 	<script src="js/Setting.js"></script>
 	<script type="text/javascript" src="cordova.js"></script>
@@ -67,7 +68,7 @@
 </div>
 
 <div style="height: 49px;"></div>
-<div id="INFOPage">
+<div id="INFOPage" style="display:none">
 
 	<div class="profile-card">
 
@@ -163,7 +164,25 @@
 	function onLoad() {
 		document.addEventListener("deviceready", onDeviceReady(), false);
 	}
+	
 	function onDeviceReady() {
+		var TabHistory = window.localStorage.getItem("TabHistory");
+		alert(TabHistory);
+		
+		switch(TabHistory){
+			case "INFO":
+				tt();
+				break;
+			case "Record":
+				RecordClick();
+				break;
+			case "Talk":
+
+				break;
+			case "Setting":
+				break;
+		}
+	
 		var s = window.localStorage.getItem("cur_plant");
 		var plant = JSON.parse(s);
 		var url = "http://goodandbetter.cafe24.com";
@@ -228,6 +247,5 @@
 		RecordListLoad(plant.PLA_Code, target_Year, target_Month);
 	}
 </script>
-<script type="text/javascript" src="js/Tab.js"></script>
 </body>
 </html>
