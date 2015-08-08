@@ -14,8 +14,33 @@
     <script>
         ons.bootstrap();
     </script>
-	
-	<script type="text/javascript" charset="utf-8">
+</head>
+<body>
+
+<ons-page>
+    <ons-toolbar>
+        <div class="center">Log In</div>
+    </ons-toolbar>
+
+    <div class="login-form">
+
+
+        <input type="email" id="txt_username" class="text-input--underbar" placeholder="ID" value="">
+        <input type="password" id="txt_pwd" class="text-input--underbar" placeholder="Password" value="">
+        <br>
+        <label class="switch">
+            <input type="checkbox" id="check_auto" value="AUTO" class="switch__input">
+
+            <div class="switch__toggle"></div>
+        </label>
+        Auto Login
+        <br><br>
+        <ons-button modifier="large" class="login-button" onclick="verifyLogin();">Log In</ons-button>
+    </div>
+
+</ons-page>
+
+<script type="text/javascript" charset="utf-8">
 		document.addEventListener("deviceready", onDeviceReady(), false);
 		
 		function onDeviceReady() {
@@ -77,31 +102,6 @@
 			});
 		}
 	</script>
-</head>
-<body>
-
-<ons-page>
-    <ons-toolbar>
-        <div class="center">Log In</div>
-    </ons-toolbar>
-
-    <div class="login-form">
-
-
-        <input type="email" id="txt_username" class="text-input--underbar" placeholder="ID" value="">
-        <input type="password" id="txt_pwd" class="text-input--underbar" placeholder="Password" value="">
-        <br>
-        <label class="switch">
-            <input type="checkbox" id="check_auto" value="AUTO" class="switch__input">
-
-            <div class="switch__toggle"></div>
-        </label>
-        Auto Login
-        <br><br>
-        <ons-button modifier="large" class="login-button" onclick="verifyLogin();">Log In</ons-button>
-    </div>
-
-</ons-page>
 
 </body>
 </html>
