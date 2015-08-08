@@ -21,7 +21,7 @@
 	<script src="js/Tab.js"></script>
 	<script src="js/PlantTalk.js"></script>
 	<script src="js/Setting.js"></script>
-	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 	<script>
 		ons.bootstrap();
 	</script>
@@ -31,36 +31,36 @@
 <body onload="onLoad()">
 
 <div class="tab-bar-sp tab-bar--top-sp tab-bar--top-border-sp" style="z-index:1000;">
-	<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
+	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" onclick="QRClick();">
 		<!--<input type="radio" name="top-tab-bar-b">-->
 		<button class="button--cta-sp" id="QR" class="tab-bar__button-sp tab-bar--top-border__button-sp">
 			QR Scan
 		</button>
 	</label>
 
-	<label class="tab-bar__item-sp tab-bar--top-border__item-sp"onclick="INFOClick();">
-		<input type="radio" name="top-tab-bar-b-sp" checked="checked" >
+	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" onclick="INFOClick();">
+		<input type="radio" name="top-tab-bar-b-sp" checked="checked" id="INFOradio">
 		<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 			INFO
 		</button>
 	</label>
 
 	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" onclick="RecordClick();">
-		<input type="radio" name="top-tab-bar-b-sp">
+		<input type="radio" name="top-tab-bar-b-sp" id="Recordradio">
 		<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 			Record
 		</button>
 	</label>
 
 	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" onclick="TalkClick();">
-		<input type="radio" name="top-tab-bar-b-sp">
+		<input type="radio" name="top-tab-bar-b-sp" id="Talkradio">
 		<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 			Talk
 		</button>
 	</label>
 
 	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" onclick="SetClick();">
-		<input type="radio" name="top-tab-bar-b-sp" >
+		<input type="radio" name="top-tab-bar-b-sp" id="Settingradio">
 		<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 			Setting
 		</button>
@@ -68,7 +68,7 @@
 </div>
 
 <div style="height: 49px;"></div>
-<div id="INFOPage" style="display:block">
+<div id="INFOPage" style="display:none">
 
 	<div class="profile-card">
 
@@ -168,16 +168,21 @@
 	
 	function onDeviceReady() {
 		var TabHistory = window.localStorage.getItem("TabHistory");
+		var radioId = TabHistory + "radio";
+		document.getElementById(radioId).checked = "checked";
 		
 		switch(TabHistory){
 			case "INFO":
+				INFOClick();
 				break;
 			case "Record":
+				RecordClick();
 				break;
 			case "Talk":
-
+				TalkClick();
 				break;
 			case "Setting":
+				SetClick();
 				break;
 		}
 	
