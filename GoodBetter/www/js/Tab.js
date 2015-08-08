@@ -5,8 +5,6 @@
  $("#Setting").css('display','block');
  }*/
 
-document.querySelector("#QR").addEventListener("touchend", QRClick, false);
-
 function QRClick() {
 	window.localStorage.setItem("TabHistory", "QR"); 
 	
@@ -16,7 +14,8 @@ function QRClick() {
 }
 
 function INFOClick() {
-	//window.localStorage.setItem("TabHistory", "INFO");
+	window.localStorage.setItem("TabHistory", "INFO");
+	var t = window.localStorage.getItem("TabHistory");
 	
 	document.getElementById("INFOPage").style.display = "block";
 	document.getElementById("RecordPage").style.display = "none";
@@ -25,7 +24,7 @@ function INFOClick() {
 }
 
 function RecordClick() {
-	//window.localStorage.setItem("TabHistory", "Record");
+	window.localStorage.setItem("TabHistory", "Record");
 	
 	document.getElementById("INFOPage").style.display = "none";
 	document.getElementById("RecordPage").style.display = "block";

@@ -21,7 +21,7 @@
 	<script src="js/Tab.js"></script>
 	<script src="js/PlantTalk.js"></script>
 	<script src="js/Setting.js"></script>
-	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 	<script>
 		ons.bootstrap();
 	</script>
@@ -31,14 +31,14 @@
 <body onload="onLoad()">
 
 <div class="tab-bar-sp tab-bar--top-sp tab-bar--top-border-sp" style="z-index:1000;">
-	<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
+	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" onclick="QRClick();">
 		<!--<input type="radio" name="top-tab-bar-b">-->
 		<button class="button--cta-sp" id="QR" class="tab-bar__button-sp tab-bar--top-border__button-sp">
 			QR Scan
 		</button>
 	</label>
 
-	<label class="tab-bar__item-sp tab-bar--top-border__item-sp"onclick="INFOClick();">
+	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" onclick="INFOClick();">
 		<input type="radio" name="top-tab-bar-b-sp" checked="checked" >
 		<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 			INFO
@@ -68,7 +68,7 @@
 </div>
 
 <div style="height: 49px;"></div>
-<div id="INFOPage" style="display:block">
+<div id="INFOPage" style="display:none">
 
 	<div class="profile-card">
 
@@ -171,13 +171,16 @@
 		
 		switch(TabHistory){
 			case "INFO":
+				INFOClick();
 				break;
 			case "Record":
+				RecordClick();
 				break;
 			case "Talk":
-
+				TalkClick();
 				break;
 			case "Setting":
+				SetClick();
 				break;
 		}
 	
