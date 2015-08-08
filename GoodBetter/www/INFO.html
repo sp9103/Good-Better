@@ -39,28 +39,28 @@
 	</label>
 
 	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" onclick="INFOClick();">
-		<input type="radio" name="top-tab-bar-b-sp" checked="checked" >
+		<input type="radio" name="top-tab-bar-b-sp" checked="checked" id="INFOradio">
 		<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 			INFO
 		</button>
 	</label>
 
 	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" onclick="RecordClick();">
-		<input type="radio" name="top-tab-bar-b-sp">
+		<input type="radio" name="top-tab-bar-b-sp" id="Recordradio">
 		<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 			Record
 		</button>
 	</label>
 
 	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" onclick="TalkClick();">
-		<input type="radio" name="top-tab-bar-b-sp">
+		<input type="radio" name="top-tab-bar-b-sp" id="Talkradio">
 		<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 			Talk
 		</button>
 	</label>
 
 	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" onclick="SetClick();">
-		<input type="radio" name="top-tab-bar-b-sp" >
+		<input type="radio" name="top-tab-bar-b-sp" id="Settingradio">
 		<button class="tab-bar__button-sp tab-bar--top-border__button-sp">
 			Setting
 		</button>
@@ -168,6 +168,8 @@
 	
 	function onDeviceReady() {
 		var TabHistory = window.localStorage.getItem("TabHistory");
+		var radioId = TabHistory + "radio";
+		document.getElementById(radioId).checked = "checked";
 		
 		switch(TabHistory){
 			case "INFO":

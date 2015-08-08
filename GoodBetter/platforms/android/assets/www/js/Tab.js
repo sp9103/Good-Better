@@ -39,7 +39,7 @@ function RecordClick() {
 }
 
 function TalkClick() {
-	//window.localStorage.setItem("TabHistory", "Talk")";
+	window.localStorage.setItem("TabHistory", "Talk")";
 	
 	document.getElementById("INFOPage").style.display = "none";
 	document.getElementById("RecordPage").style.display = "none";
@@ -68,7 +68,7 @@ function TalkClick() {
 }
 
 function SetClick() {
-	//window.localStorage.setItem("TabHistory", "Setting");
+	window.localStorage.setItem("TabHistory", "Setting");
 	
 	document.getElementById("INFOPage").style.display = "none";
 	document.getElementById("RecordPage").style.display = "none";
