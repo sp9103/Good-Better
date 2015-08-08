@@ -6,8 +6,6 @@
  }*/
 
 document.querySelector("#QR").addEventListener("touchend", QRClick, false);
-document.querySelector("#addButton").addEventListener("touchend", AddClick, false);
-document.querySelector("#questionButton").addEventListener("touchend", QuestionClick, false);
 
 function QRClick() {
 	window.localStorage.setItem("TabHistory", "QR"); 
