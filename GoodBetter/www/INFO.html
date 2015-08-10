@@ -170,6 +170,7 @@
 		var TabHistory = window.localStorage.getItem("TabHistory");
 		var radioId = TabHistory + "radio";
 		document.getElementById(radioId).checked = "checked";
+		document.addEventListener("backbutton", onBackKeyDown, false);
 		
 		switch(TabHistory){
 			case "INFO":
@@ -205,6 +206,15 @@
 			document.getElementById("addButton").style.display = "none";
 		}	
 			
+	}
+	
+	function onBackKeyDown(e) {
+		var r = confirm("어플리케이션을 종료하시겠습니까?");
+		if (r == true)
+			navigator.app.exitApp();
+		else{
+			alert("대체 왜 꺼지냐고 ㅡㅡ");
+		}
 	}
 	
 	function makeSelect(){

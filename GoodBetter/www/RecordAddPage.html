@@ -50,7 +50,6 @@
 					var ImageURL = "http://goodandbetter.cafe24.com"+list[CheckID].CHE_Image;
 					
 					//alert(ImageURL);
-					document.getElementById('ImageAdd').block;
 					document.getElementById('ImageAdd').src = ImageURL;
 				}
 			}
@@ -73,6 +72,7 @@
 			var r = confirm("어플리케이션을 종료하시겠습니까?");
 			if (r == true)
 				navigator.app.exitApp();
+				
 		}
 		
 		function onPhotoDataSuccess(imageData) {
@@ -235,7 +235,7 @@
 	
 	<!-- 사진 추가 버튼-->
 	<br><br>
-	<img style="display: none; width: 200px;" id="ImageAdd" src="" />
+	<img style="width: 200px;" id="ImageAdd" src="" />
 	<br>
 	<div id="ImageAddButton">
 		<input type="image" src="img/ImageAdd.png" class="ImageAdd" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">
