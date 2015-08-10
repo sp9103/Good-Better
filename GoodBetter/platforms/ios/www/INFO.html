@@ -95,13 +95,13 @@
 </div>
 
 <div id="RecordPage" style="display:none">
-	<button class="button-sp" id="addButton" onclick="AddClick()">+Add</button>
+	<button class="button-sp" id="addButton" onclick="AddClick()">+추가</button>
 	<!-- 임시 date -->
 	<div id="selectGroup">
 	</div>
 
 	<br><br>
-	<div class="settings-header">List</div>
+	<div class="settings-header">목</div>
 	<br>
 	<div id="RecordList">
 		<img style="width: 100%;" src="img/Loading.png" />
@@ -130,11 +130,11 @@
 	<div style="height: 20px;"></div>
 	<ons-list modifier="inset" class="settings-list">
 		<ons-list-item modifier="chevron" onclick="window.open('http://www.goodandbetter.co.kr/','_system');">
-			HomePage
+			홈페이지
 		</ons-list-item>
 
 		<ons-list-item modifier="chevron" onclick="document.getElementById('AppInfoDialog').style.display = 'block'">
-			App Information
+			앱 정보 보기
 		</ons-list-item>
 	</ons-list>
 	
@@ -243,7 +243,7 @@
 		}
 		html += "</select>";
 		html += "</div>";
-		html += "<button class=\"Refresh\" onclick=\"RefreshRecord()\">Refresh</button>";
+		html += "<button class=\"Refresh\" onclick=\"RefreshRecord()\">새로고침</button>";
 		html += "</section>";
 	
 		document.getElementById("selectGroup").innerHTML=html;

@@ -20,6 +20,7 @@ function dirname(path) {
 }
 
 function SubmitClicked() {
+	document.getElementById("SubmitButton").innerHTML = "등록 중입니다.";
 	document.getElementById("SubmitButton").style.opacity = 0.3;
 	document.getElementById("SubmitButton").style.pointerEvents = 'none';
 	var imageUri = window.localStorage.getItem("imageuri");
@@ -66,6 +67,7 @@ function submitClicked_WithImage(imageUri) {
 			alert("체크리스트가 등록되었습니다.");
 			CancelClick();
 		}, function(error) {
+			document.getElementById("SubmitButton").innerHTML = "등록하기";
 			document.getElementById("SubmitButton").style.opacity = 1.0;
 			document.getElementById("SubmitButton").style.pointerEvents = '';
 			alert('네트워크 상태를 확인해주세요.');
@@ -106,6 +108,7 @@ function submitClicked_NoImage() {
 			else alert(data.errMSG);
 		},
 		error:function (req,status,error) {
+			document.getElementById("SubmitButton").innerHTML = "등록하기";
 			document.getElementById("SubmitButton").style.opacity = 1.0;
 			document.getElementById("SubmitButton").style.pointerEvents = '';
 			alert('네트워크 상태를 확인해주세요.');
