@@ -36,6 +36,21 @@
     </feature>
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
+    <icon height="180" src="Ios_icon/icon-60@3x.png" width="180" />
+    <icon height="60" src="Ios_icon/icon-60.png" width="60" />
+    <icon height="120" src="Ios_icon/icon-60@2x.png" width="120" />
+    <icon height="76" src="Ios_icon/icon-76.png" width="76" />
+    <icon height="152" src="Ios_icon/icon-76@2x.png" width="152" />
+    <icon height="40" src="Ios_icon/icon-40.png" width="40" />
+    <icon height="80" src="Ios_icon/icon-40@2x.png" width="80" />
+    <icon height="57" src="Ios_icon/icon.png" width="57" />
+    <icon height="114" src="Ios_icon/icon@2x.png" width="114" />
+    <icon height="72" src="Ios_icon/icon-72.png" width="72" />
+    <icon height="144" src="Ios_icon//icon-72@2x.png" width="144" />
+    <icon height="29" src="Ios_icon/icon-small.png" width="29" />
+    <icon height="58" src="Ios_icon/icon-small@2x.png" width="58" />
+    <icon height="50" src="Ios_icon/icon-50.png" width="50" />
+    <icon height="100" src="Ios_icon/icon-50@2x.png" width="100" />
     <name>Plant Tech</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

@@ -25,6 +25,10 @@
         <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
     </feature>
     <allow-intent href="market:*" />
+    <icon density="ldpi" src="And_icon/icon.png" />
+    <icon density="mdpi" src="And_icon/icon.png" />
+    <icon density="hdpi" src="And_icon/icon.png" />
+    <icon density="xhdpi" src="And_icon/icon.png" />
     <name>Plant Tech</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
