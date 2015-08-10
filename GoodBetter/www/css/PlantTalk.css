@@ -41,7 +41,11 @@
     margin-left: 10px;
 }
 .popover__contentMin {
+<<<<<<< HEAD
     background-color: #FFEE7E;
+=======
+    background-color: rgba(255,236,66,1);
+>>>>>>> c4fefe66a7047c8b154a61def1a0576c2e49b7e6
     -webkit-border-radius: 8px;
     border-radius: 8px;
     -webkit-box-shadow: 0 2px 16px rgba(0,0,100,0.3);
