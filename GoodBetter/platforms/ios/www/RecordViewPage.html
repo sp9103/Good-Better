@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	
+    <link rel="stylesheet" href="css/RecordAddPage.css">
+	
+	<script type="text/javascript" charset="utf-8">
+  
+		document.addEventListener("deviceready",onDeviceReady,false);
+		function onDeviceReady() {
+			var CheckID = window.localStorage.getItem("CheckID");
+			var data = window.localStorage.getItem("CheckList");
+			var list = JSON.parse(data);
+			
+			var Indate = list[CheckID].CHE_Indate;
+	   
+			//스트링 자르기			
+			var time = cutStr(10, Indate);
+			document.getElementById("Today").innerHTML=time;
+
+			//체크리스트 작성
+			var Water =  list[CheckID].CHE_Water;
+			if(Water == 1)			document.getElementById('Water').checked="checked";
+			var Supplements =  list[CheckID].CHE_Supplements;
+			if(Supplements == 1)			document.getElementById('Supplements').checked="checked";
+			var Damage =  list[CheckID].CHE_Damage;
+			if(Damage == 1)			document.getElementById('Damage').checked="checked";
+			var Pruning =  list[CheckID].CHE_Pruning;
+			if(Pruning == 1)			document.getElementById('Pruning').checked="checked";
+			var Cleanleaf =  list[CheckID].CHE_Cleanleaf;
+			if(Cleanleaf == 1)			document.getElementById('Cleanleaf').checked="checked";
+			var Repotting =  list[CheckID].CHE_Repotting;
+			if(Repotting == 1)			document.getElementById('Repotting').checked="checked";
+			var Change =  list[CheckID].CHE_Change;
+			if(Change == 1)			document.getElementById('Change').checked="checked";
+			
+			//Text 작성
+			var CHETEXT = list[CheckID].CHE_Text;
+			document.getElementById('CHETEXT').innerHTML = CHETEXT;
+						
+			//Image 씌우기
+			if(list[CheckID].CHE_Image != ""){
+				var ImageURL = "http://goodandbetter.cafe24.com"+list[CheckID].CHE_Image;
+				
+				//alert(ImageURL);
+				document.getElementById('ImageAdd').src = ImageURL;
+			}
+	
+			document.addEventListener("backbutton", onBackKeyDown, false);
+		}
+		
+		function onBackKeyDown() {
+			var r = confirm("어플리케이션을 종료하시겠습니까?");
+			if (r == true)
+				navigator.app.exitApp();
+		}
+		
+		function cutStr(len, str){
+			var l = 0;
+			for (var i=0; i<str.length; i++) {
+				l += (str.charCodeAt(i) > 128) ? 2 : 1;
+				if (l > len) return str.substring(0,i);
+			}
+			return str;
+		}
+    </script>
+	
+  </head>
+  <body onload="onLoad()">
+	<div class="navigation-bar">
+		<div class="navigation-bar__left">
+		</div>
+
+		<div class="navigation-bar__center">
+			Record View page
+		</div>
+
+		<div class="navigation-bar__right">
+			<span class="toolbar-button--quiet navigation-bar__line-height" id="Cancel">Back</span>
+		</div>
+	</div>
+	
+	<!-- 날짜 출력 -->
+	<br>
+	<ul class="list list--inset">
+		<li class="list__item list--inset__item list__item--chevron" id="Today">
+			Today
+		</li>
+	</ul>
+	<br>
+	
+	<!--Check List-->
+	<ul class="list">
+		<li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+				<input type="checkbox" id="Water" disabled>
+				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				관수
+			</label>
+		</li>
+		<li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+				<input type="checkbox" id="Supplements" disabled>
+				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				영양제
+			</label>
+		</li>
+		<li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+				<input type="checkbox" id="Damage" disabled>
+				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				병충해
+			</label>
+		</li>
+		<li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+				<input type="checkbox" id="Pruning" disabled>
+				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				가지치기
+			</label>
+		</li>
+		<li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+				<input type="checkbox" id="Cleanleaf" disabled>
+				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				잎세정
+			</label>
+		</li>
+		<li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+				<input type="checkbox" id="Repotting" disabled>
+				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				분갈이
+			</label>
+		</li>
+		<li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+				<input type="checkbox" id="Change" disabled>
+				<div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				교체
+			</label>
+		</li>
+	</ul>
+	
+	<br>
+	<textarea class="textarea" rows="5" placeholder="비고" readonly id="CHETEXT"></textarea>
+	
+	<!-- 사진 추가 버튼-->
+	<br><br>
+	<img id="ImageAdd" style=" width: 200px;" src="" />
+	<br>
+	
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/RecordAddPage.js"></script>
+  </body>
+</html>
