@@ -29,6 +29,14 @@
     <icon density="mdpi" src="And_icon/icon.png" />
     <icon density="hdpi" src="And_icon/icon.png" />
     <icon density="xhdpi" src="And_icon/icon.png" />
+    <splash density="land-hdpi" src="And_icon/splash.png" />
+    <splash density="land-ldpi" src="And_icon/splash.png" />
+    <splash density="land-mdpi" src="And_icon/splash.png" />
+    <splash density="land-xhdpi" src="And_icon/splash.png" />
+    <splash density="port-hdpi" src="And_icon/splash.png" />
+    <splash density="port-ldpi" src="And_icon/splash.png" />
+    <splash density="port-mdpi" src="And_icon/splash.png" />
+    <splash density="port-xhdpi" src="And_icon/splash.png" />
     <name>Plant Tech</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

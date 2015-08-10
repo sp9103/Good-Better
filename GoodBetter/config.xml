@@ -22,6 +22,16 @@
         <icon src="And_icon/icon.png" density="mdpi" />
         <icon src="And_icon/icon.png" density="hdpi" />
         <icon src="And_icon/icon.png" density="xhdpi" />
+
+        <splash src="And_icon/splash.png" density="land-hdpi"/>
+        <splash src="And_icon/splash.png" density="land-ldpi"/>
+        <splash src="And_icon/splash.png" density="land-mdpi"/>
+        <splash src="And_icon/splash.png" density="land-xhdpi"/>
+
+        <splash src="And_icon/splash.png" density="port-hdpi"/>
+        <splash src="And_icon/splash.png" density="port-ldpi"/>
+        <splash src="And_icon/splash.png" density="port-mdpi"/>
+        <splash src="And_icon/splash.png" density="port-xhdpi"/>
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -51,6 +61,18 @@
         <!-- iPad Spotlight and Settings Icon -->
         <icon src="Ios_icon/icon-50.png" width="50" height="50" />
         <icon src="Ios_icon/icon-50@2x.png" width="100" height="100" />
+
+
+        <splash src="And_icon/splash.png" width="320" height="480"/>
+        <splash src="And_icon/splash.png" width="640" height="960"/>
+        <splash src="And_icon/splash.pngg" width="768" height="1024"/>
+        <splash src="And_icon/splash.png" width="1536" height="2048"/>
+        <splash src="And_icon/splash.png" width="1024" height="768"/>
+        <splash src="And_icon/splash.png" width="2048" height="1536"/>
+        <splash src="And_icon/splash.png" width="640" height="1136"/>
+        <splash src="And_icon/splash.png" width="750" height="1334"/>
+        <splash src="And_icon/splash.png" width="1242" height="2208"/>
+        <splash src="And_icon/splash.png" width="2208" height="1242"/>
     </platform>
     <engine name="ios" spec="^3.9.0" />
 

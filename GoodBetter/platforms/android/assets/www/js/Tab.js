@@ -104,7 +104,7 @@ function makeRecordList(data)
    window.localStorage.setItem("CheckList", data);
    
    for(i = 0; i < list.length; i++){
-	   var time = list[i].CHE_Indate;
+	   var time = list[i].indate;
 	   
 	   //스트링 자르기
 		var date = cutStr(10, time);
@@ -168,7 +168,7 @@ function RecordView(id){
 		idx=i;
 		var tid = "check"+idx;
 		if(id == tid){
-			tFullDay = cutStr(10, list[i].CHE_Indate);
+			tFullDay = cutStr(10, list[i].indate);
 			break;
 		}
 	}
@@ -183,7 +183,7 @@ function RecordView(id){
 	
 	//수정 가능인지 체크
 	var isadmin = window.localStorage.getItem("isadmin");
-	
+
 	//어드민이 아닐때는 그냥 보여주기만 (수정불가능하게)
 	if(preDate == tFullDay && isadmin == 1){
 		//같은날이니까 수정가능
