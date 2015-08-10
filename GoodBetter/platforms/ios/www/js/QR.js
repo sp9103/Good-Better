@@ -19,18 +19,11 @@ function startScan() {
                     }
                 },
                 error: function (xhr, ajaxoptions,thrownError) {
-					
-					if(xhr.status == 200){
-						/*var r = confirm("어플리케이션을 종료하시겠습니까?");
-						if (r == true)
-							navigator.app.exitApp();
-						else if(r == false){
-							//QR코드 재촬영
-							var dirPath = dirname(location.href);
-							fullPath = dirPath + "/QR_Scan.html";
-							window.location = fullPath;
-						}*/
-					}else{
+
+					if(result.text=='') {
+
+                    }
+                    else{
 						alert('server error occurred! code:'+xhr.status);
 						
 						//QR코드 재촬영
@@ -39,13 +32,15 @@ function startScan() {
 						window.location = fullPath;
 					}
                 }
-            });
-            /*
-            if (result.cancelled == true)
+            })
+
+            if (result.cancelled == true) {
+                window.localStorage.setItem("auto", false);
+
                 prevPage();
-			else
-				nextPage();
-				*/
+                //alert("취소 누르지마라");
+            }
+
         },
         function (error) {
             alert("Scanning failed: " + error);
@@ -60,8 +55,9 @@ function nextPage() {
 }
 
 function prevPage() {
+
     var dirPath = dirname(location.href);
-    fullPath = dirPath + "/index.html";
+    fullPath = dirPath + "/Login.html";
     window.location = fullPath;
 }
 
