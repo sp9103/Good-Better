@@ -38,7 +38,6 @@ function startScan() {
                 window.localStorage.setItem("auto", false);
 
                 prevPage();
-                //alert("취소 누르지마라");
             }
 
         },

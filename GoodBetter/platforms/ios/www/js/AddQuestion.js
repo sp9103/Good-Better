@@ -55,7 +55,9 @@ function submitClicked_WithImage(content, imageUri) {
                 alert("질문이 등록되었습니다.");
 				QuestionCancelClick();
             }, function(error) {
-                alert('fail');
+                document.getElementById("SubmitButton").style.opacity = 1.0;
+                document.getElementById("SubmitButton").style.pointerEvents = '';
+                alert('네트워크 상태를 확인해주세요.');
             }, options);
 
 }
@@ -86,7 +88,9 @@ function submitClicked_NoImage(content) {
          else alert(data.errMSG);
          },
          error:function (req,status,error) {
-         alert('fail');
+             document.getElementById("SubmitButton").style.opacity = 1.0;
+             document.getElementById("SubmitButton").style.pointerEvents = '';
+             alert('네트워크 상태를 확인해주세요.');
          }
 
          });

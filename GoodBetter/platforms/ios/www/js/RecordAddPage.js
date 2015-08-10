@@ -20,6 +20,8 @@ function dirname(path) {
 }
 
 function SubmitClicked() {
+	document.getElementById("SubmitButton").style.opacity = 0.3;
+	document.getElementById("SubmitButton").style.pointerEvents = 'none';
 	var imageUri = window.localStorage.getItem("imageuri");
 	if(!imageUri){
 		submitClicked_NoImage();
@@ -64,7 +66,9 @@ function submitClicked_WithImage(imageUri) {
 			alert("체크리스트가 등록되었습니다.");
 			CancelClick();
 		}, function(error) {
-			alert('fail');
+			document.getElementById("SubmitButton").style.opacity = 1.0;
+			document.getElementById("SubmitButton").style.pointerEvents = '';
+			alert('네트워크 상태를 확인해주세요.');
 		}, options);
 }
 
@@ -102,7 +106,9 @@ function submitClicked_NoImage() {
 			else alert(data.errMSG);
 		},
 		error:function (req,status,error) {
-			alert('fail');
+			document.getElementById("SubmitButton").style.opacity = 1.0;
+			document.getElementById("SubmitButton").style.pointerEvents = '';
+			alert('네트워크 상태를 확인해주세요.');
 		}
 	});
 }
