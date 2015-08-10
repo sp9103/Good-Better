@@ -41,7 +41,7 @@
     margin-left: 10px;
 }
 .popover__contentMin {
-    background-color: white;
+    background-color: rgba(255,236,66,1);
     -webkit-border-radius: 8px;
     border-radius: 8px;
     -webkit-box-shadow: 0 2px 16px rgba(0,0,100,0.3);
@@ -66,7 +66,7 @@
     -ms-transform-origin: 50% 50% 0;
     -o-transform-origin: 50% 50% 0;
     transform-origin: 50% 50% 0;
-    background-color: transparent;
+    background-color: rgba(255,236,66,1);
     background-image: -webkit-linear-gradient(45deg, white, white 50%, transparent 50%);
     background-image: -moz-linear-gradient(45deg, white, white 50%, transparent 50%);
     background-image: -o-linear-gradient(45deg, white, white 50%, transparent 50%);
@@ -93,7 +93,7 @@
     -ms-transform-origin: 50% 50% 0;
     -o-transform-origin: 50% 50% 0;
     transform-origin: 50% 50% 0;
-    background-color: transparent;
+    background-color: rgba(255,236,66,1);
     background-image: -webkit-linear-gradient(45deg, white, white 50%, transparent 50%);
     background-image: -moz-linear-gradient(45deg, white, white 50%, transparent 50%);
     background-image: -o-linear-gradient(45deg, white, white 50%, transparent 50%);
