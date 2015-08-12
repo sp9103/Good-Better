@@ -29,10 +29,6 @@
     <icon density="mdpi" src="And_icon/mdpi.png" />
     <icon density="hdpi" src="And_icon/hdpi.png" />
     <icon density="xhdpi" src="And_icon/xhdpi.png" />
-    <splash density="land-hdpi" src="And_icon/splash.png" />
-    <splash density="land-ldpi" src="And_icon/splash.png" />
-    <splash density="land-mdpi" src="And_icon/splash.png" />
-    <splash density="land-xhdpi" src="And_icon/splash.png" />
     <splash density="port-hdpi" src="And_icon/splash.png" />
     <splash density="port-ldpi" src="And_icon/splash.png" />
     <splash density="port-mdpi" src="And_icon/splash.png" />

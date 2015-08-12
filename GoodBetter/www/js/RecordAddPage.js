@@ -5,9 +5,6 @@ function init() {
 	$("#Setting").css('display','block');
 }*/
 
-
-document.querySelector("#Cancel").addEventListener("touchend", CancelClick, false);
-
 function CancelClick() {
 	
 	var dirPath = dirname(location.href);

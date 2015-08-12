@@ -11,6 +11,7 @@
     <plugin name="cordova-plugin-whitelist" version="1" />
     <access origin="*" />
 	<preference name="Orientation" value="portrait" />
+	<!--<preference name="Fullscreen" value="true" />-->
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -63,12 +64,9 @@
         <splash src="And_icon/splash.png" width="640" height="960"/>
         <splash src="And_icon/splash.pngg" width="768" height="1024"/>
         <splash src="And_icon/splash.png" width="1536" height="2048"/>
-        <splash src="And_icon/splash.png" width="1024" height="768"/>
-        <splash src="And_icon/splash.png" width="2048" height="1536"/>
         <splash src="And_icon/splash.png" width="640" height="1136"/>
         <splash src="And_icon/splash.png" width="750" height="1334"/>
         <splash src="And_icon/splash.png" width="1242" height="2208"/>
-        <splash src="And_icon/splash.png" width="2208" height="1242"/>
     </platform>
     <engine name="ios" spec="^3.9.0" />
 
