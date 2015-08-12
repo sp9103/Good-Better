@@ -25,10 +25,10 @@
         <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
     </feature>
     <allow-intent href="market:*" />
-    <icon density="ldpi" src="And_icon/icon.png" />
-    <icon density="mdpi" src="And_icon/icon.png" />
-    <icon density="hdpi" src="And_icon/icon.png" />
-    <icon density="xhdpi" src="And_icon/icon.png" />
+    <icon density="ldpi" src="And_icon/ldpi.png" />
+    <icon density="mdpi" src="And_icon/mdpi.png" />
+    <icon density="hdpi" src="And_icon/hdpi.png" />
+    <icon density="xhdpi" src="And_icon/xhdpi.png" />
     <splash density="land-hdpi" src="And_icon/splash.png" />
     <splash density="land-ldpi" src="And_icon/splash.png" />
     <splash density="land-mdpi" src="And_icon/splash.png" />
@@ -46,6 +46,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <preference name="Orientation" value="portrait" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />

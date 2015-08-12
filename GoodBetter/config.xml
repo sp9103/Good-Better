@@ -10,6 +10,7 @@
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" version="1" />
     <access origin="*" />
+	<preference name="Orientation" value="portrait" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -18,15 +19,10 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <icon src="And_icon/icon.png" density="ldpi" />
-        <icon src="And_icon/icon.png" density="mdpi" />
-        <icon src="And_icon/icon.png" density="hdpi" />
-        <icon src="And_icon/icon.png" density="xhdpi" />
-
-        <splash src="And_icon/splash.png" density="land-hdpi"/>
-        <splash src="And_icon/splash.png" density="land-ldpi"/>
-        <splash src="And_icon/splash.png" density="land-mdpi"/>
-        <splash src="And_icon/splash.png" density="land-xhdpi"/>
+        <icon src="And_icon/ldpi.png" density="ldpi" />
+        <icon src="And_icon/mdpi.png" density="mdpi" />
+        <icon src="And_icon/hdpi.png" density="hdpi" />
+        <icon src="And_icon/xhdpi.png" density="xhdpi" />
 
         <splash src="And_icon/splash.png" density="port-hdpi"/>
         <splash src="And_icon/splash.png" density="port-ldpi"/>
