@@ -70,6 +70,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+        "id": "cordova-plugin-splashscreen.SplashScreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-file/www/DirectoryEntry.js",
         "id": "cordova-plugin-file.DirectoryEntry",
         "clobbers": [
@@ -225,6 +232,7 @@ module.exports.metadata =
     "org.apache.cordova.device": "0.3.0",
     "cordova-plugin-whitelist": "1.0.0",
     "cordova-plugin-file-transfer": "1.2.1",
+    "cordova-plugin-splashscreen": "2.1.0",
     "cordova-plugin-file": "2.1.0"
 }
 // BOTTOM OF METADATA
