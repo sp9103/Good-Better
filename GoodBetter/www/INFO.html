@@ -31,9 +31,9 @@
 <body onload="onLoad()">
 
 <div class="tab-bar-sp tab-bar--top-sp tab-bar--top-border-sp" style="z-index:1000;">
-	<label class="tab-bar__item-sp tab-bar--top-border__item-sp" onclick="QRClick();">
+	<label class="tab-bar__item-sp tab-bar--top-border__item-sp">
 		<!--<input type="radio" name="top-tab-bar-b">-->
-		<button class="button--cta-sp" id="QR" class="tab-bar__button-sp tab-bar--top-border__button-sp">
+		<button class="button--cta-sp" id="QR" class="tab-bar__button-sp tab-bar--top-border__button-sp" onclick="QRClick();">
 			Scan
 		</button>
 	</label>
@@ -133,7 +133,7 @@
 			홈페이지
 		</ons-list-item>
 
-		<ons-list-item modifier="chevron" onclick="document.getElementById('AppInfoDialog').style.display = 'block'">
+		<ons-list-item modifier="chevron" onclick="document.getElementById('AppInfoDialog').style.display = 'block'; TapDisable()">
 			앱 정보 보기
 		</ons-list-item>
 	</ons-list>
@@ -151,11 +151,11 @@
 	<div class="alert-dialog">	
 		<div class="alert-dialog-content">
 			App Information<br><br>
-			Version : 0.1.0 Beta<br>
+			Version : 1.0.0<br>
 		</div>
 
 		<div class="alert-dialog-footer">
-			<button class="alert-dialog-button alert-dialog-button--primal" onclick="document.getElementById('AppInfoDialog').style.display = 'none'">OK</button>
+			<button class="alert-dialog-button alert-dialog-button--primal" onclick="document.getElementById('AppInfoDialog').style.display = 'none'; TapEnable()">OK</button>
 		</div>
 	</div>
 	</div>
@@ -259,6 +259,22 @@
 		var plant = JSON.parse(cur_plant);
 		
 		RecordListLoad(plant.PLA_Code, target_Year, target_Month);
+	}
+	
+	function TapDisable(){
+		document.getElementById("QR").disabled = "true";
+		document.getElementById("INFOradio").disabled = "true";
+		document.getElementById("Recordradio").disabled = "true";
+		document.getElementById("Talkradio").disabled = "true";
+		document.getElementById("Settingradio").disabled = "true";
+	}
+	
+	function TapEnable(){
+		document.getElementById("QR").disabled = "";
+		document.getElementById("INFOradio").disabled = "";
+		document.getElementById("Recordradio").disabled = "";
+		document.getElementById("Talkradio").disabled = "";
+		document.getElementById("Settingradio").disabled = "";
 	}
 </script>
 </body>
