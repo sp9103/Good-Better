@@ -34,6 +34,10 @@
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
     </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <icon height="180" src="Ios_icon/icon-60@3x.png" width="180" />
@@ -51,16 +55,13 @@
     <icon height="58" src="Ios_icon/icon-small@2x.png" width="58" />
     <icon height="50" src="Ios_icon/icon-50.png" width="50" />
     <icon height="100" src="Ios_icon/icon-50@2x.png" width="100" />
-    <splash height="480" src="And_icon/splash.png" width="320" />
-    <splash height="960" src="And_icon/splash.png" width="640" />
-    <splash height="1024" src="And_icon/splash.pngg" width="768" />
-    <splash height="2048" src="And_icon/splash.png" width="1536" />
-    <splash height="768" src="And_icon/splash.png" width="1024" />
-    <splash height="1536" src="And_icon/splash.png" width="2048" />
-    <splash height="1136" src="And_icon/splash.png" width="640" />
-    <splash height="1334" src="And_icon/splash.png" width="750" />
-    <splash height="2208" src="And_icon/splash.png" width="1242" />
-    <splash height="1242" src="And_icon/splash.png" width="2208" />
+    <splash height="480" src="Ios_splash/Non-Retina.png" width="320" />
+    <splash height="960" src="Ios_splash/Retina.png" width="640" />
+    <splash height="1024" src="Ios_splash/Tablet (iPad).pngg" width="768" />
+    <splash height="2048" src="Ios_splash/Retina (2x).png" width="1536" />
+    <splash height="1136" src="Ios_splash/iPhone 5 Retina.png" width="640" />
+    <splash height="1334" src="Ios_splash/iPhone 6.png" width="750" />
+    <splash height="2208" src="Ios_splash/iPhone 6 Plus.png" width="1242" />
     <name>Plant Tech</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -70,14 +71,11 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <preference name="Orientation" value="portrait" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <feature name="SplashScreen">
-        <param name="ios-package" value="CDVSplashScreen" />
-        <param name="onload" value="true" />
-    </feature>
 </widget>
