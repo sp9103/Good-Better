@@ -9,9 +9,17 @@ function startScan() {
                 success: function (data) {
                     if(data.error == 0){
                         var s = JSON.stringify(data.result);
-                        //alert(s);
                         window.localStorage.setItem("cur_plant",s);
 						window.localStorage.setItem("TabHistory", "INFO");
+						
+						//마스터 계정일때 예외처리
+						var isMaster = window.localStorage.getItem("isMaster");
+						if(isMaster){
+							var plant = JSON.parse(s);
+							var MEM_Code = plant.MEM_Code;
+							window.localStorage.setItem("clientCode", MEM_Code);
+						}
+						
                         nextPage();
                     }
                     else {

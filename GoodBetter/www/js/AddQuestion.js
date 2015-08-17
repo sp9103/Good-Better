@@ -15,15 +15,18 @@ function dirname(path) {
     return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
 }
 function submitClicked(content) {
-    document.getElementById("SubmitButton").innerHTML = "<button class=\"Submit Submit--large\">질문을 등록하고 있습니다.</button>";
-    document.getElementById("SubmitButton").style.opacity = 0.3;
-    document.getElementById("SubmitButton").style.pointerEvents = 'none';
     var imageUri = window.localStorage.getItem("imageuri");
     if(!content){
         alert("질문을 입력하세요!");
     }else if(!imageUri){
+		document.getElementById("SubmitButton").innerHTML = "<button class=\"Submit Submit--large\">질문을 등록하고 있습니다.</button>";
+		document.getElementById("SubmitButton").style.opacity = 0.3;
+		document.getElementById("SubmitButton").style.pointerEvents = 'none';
         submitClicked_NoImage(content);
     }else {
+		document.getElementById("SubmitButton").innerHTML = "<button class=\"Submit Submit--large\">질문을 등록하고 있습니다.</button>";
+		document.getElementById("SubmitButton").style.opacity = 0.3;
+		document.getElementById("SubmitButton").style.pointerEvents = 'none';
         submitClicked_WithImage(content,imageUri);
     }
 }
@@ -58,7 +61,7 @@ function submitClicked_WithImage(content, imageUri) {
                 alert("질문이 등록되었습니다.");
 				QuestionCancelClick();
             }, function(error) {
-                document.getElementById("SubmitButton").innerHTML = "<button class=\"Submit Submit--large\" onclick=\"SubmitClicked()\">질문하기</button>";
+                document.getElementById("SubmitButton").innerHTML = "<button class=\"Submit Submit--large\" onclick=\"submitClicked(document.getElementById('content').value)\">질문하기</button>";
                 document.getElementById("SubmitButton").style.opacity = 1.0;
                 document.getElementById("SubmitButton").style.pointerEvents = '';
                 alert('네트워크 상태를 확인해주세요.');
@@ -92,7 +95,7 @@ function submitClicked_NoImage(content) {
          else alert(data.errMSG);
          },
          error:function (req,status,error) {
-             document.gtElementById("SubmitButton").innerHTML = "<button class=\"Submit Submit--large\" onclick=\"SubmitClicked()\">질문하기</button>";
+             document.gtElementById("SubmitButton").innerHTML = "<button class=\"Submit Submit--large\" onclick=\"submitClicked(document.getElementById('content').value)\">질문하기</button>";
              document.getElementById("SubmitButton").style.opacity = 1.0;
              document.getElementById("SubmitButton").style.pointerEvents = '';
              alert('네트워크 상태를 확인해주세요.');

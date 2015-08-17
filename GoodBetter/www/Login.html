@@ -88,6 +88,7 @@
 						window.localStorage.setItem("auto", document.getElementById("check_auto").checked);
 						window.localStorage.setItem("isadmin", data.result.isAdmin);
 						window.localStorage.setItem("clientCode", data.result.clientCode);
+						window.localStorage.setItem("isMaster", data.result.isMaster);
 						goPage();
 					} else {
 						alert(data.errMSG);
