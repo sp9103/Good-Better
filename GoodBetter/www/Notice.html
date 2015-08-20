@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/RecordAddPage.css">
+
+
+    <script src="lib/onsen/js/angular/angular.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
+
+    <!-- 카메라 앨범 불러오기 부분-->
+    <script type="text/javascript" charset="utf-8">
+        document.addEventListener("deviceready",onDeviceReady,false);
+        function onDeviceReady() {
+            document.addEventListener("backbutton", onBackKeyDown, false);
+        }
+
+        function onBackKeyDown() {
+            
+        }
+    </script>
+
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<div class="navigation-bar">
+    <div class="navigation-bar__left">
+    </div>
+
+    <div class="navigation-bar__center">
+        공지사항
+    </div>
+
+    <div class="navigation-bar__right">
+        <span class="toolbar-button--quiet navigation-bar__line-height" onclick="NoticeCancel()">취소</span>
+    </div>
+</div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script src="js/Notice.js"></script>
+</body>
+</html>

@@ -12,3 +12,9 @@ function disableAutoLogin() {
 		window.location = fullPath;
 	}
 }
+
+function NoticeClick(){
+	var dirPath = dirname(location.href);
+    fullPath = dirPath + "/Notice.html";
+    window.location = fullPath;
+}
