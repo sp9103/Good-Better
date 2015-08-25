@@ -67,6 +67,7 @@ function submitClicked_WithImage(imageUri) {
 			document.getElementById("SubmitButton").innerHTML = "<button class=\"Submit Submit--large\" onclick=\"SubmitClicked()\">등록하기</button>";
 			document.getElementById("SubmitButton").style.opacity = 1.0;
 			document.getElementById("SubmitButton").style.pointerEvents = '';
+			alert(data.errMSG);
 			alert('네트워크 상태를 확인해주세요.');
 		}, options);
 }
