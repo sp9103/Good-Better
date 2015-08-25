@@ -79,6 +79,7 @@ function SetClick() {
 function AddClick() {
 	var idx = -1;
 	window.localStorage.setItem("CheckID", idx);
+	window.localStorage.setItem("isImageUpdated", 1);
 	
 	var dirPath = dirname(location.href);
 	fullPath = dirPath + "/RecordAddPage.html";
@@ -187,6 +188,8 @@ function RecordView(id){
 	//어드민이 아닐때는 그냥 보여주기만 (수정불가능하게)
 	if(preDate == tFullDay && isadmin == 1){
 		//같은날이니까 수정가능
+		window.localStorage.setItem("isImageUpdated", 0);
+		
 		var dirPath = dirname(location.href);
 		fullPath = dirPath + "/RecordAddPage.html";
 		window.location = fullPath;
