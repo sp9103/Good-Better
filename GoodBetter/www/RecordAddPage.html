@@ -85,8 +85,8 @@
  
 		function onPhotoURISuccess(imageURI) {
 			var largeImage = document.getElementById('ImageAdd');
-			//largeImage.style.display = 'block';
-			//largeImage.src = imageURI;
+			largeImage.style.display = 'block';
+			largeImage.src = imageURI;
 			
 			////////////////////////////
 			//var imgFileName = imageURI.substr(imageURI.lastIndexOf('/') +1); 
@@ -110,12 +110,12 @@
 		
 		function copiedFile(fileEntry) { 
             // !!! assumes you have an img element on page with id=largeImage 
-            var largeImage = document.getElementById('ImageAdd'); 
+            /*var largeImage = document.getElementById('ImageAdd'); 
 
             largeImage.style.display = 'block'; 
-            largeImage.src = fileEntry.toURI();
+            largeImage.src = fileEntry.toURI();*/
 			
-			window.localStorage.setItem("imageuri", largeImage.src);
+			window.localStorage.setItem("imageuri", fileEntry.toURI());
         } 
 		
 		// file system fail 
