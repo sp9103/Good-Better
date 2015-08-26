@@ -31,7 +31,7 @@ function LoadBoradTitle(){
 					titleListScript+=list[i].BOA_Title;
 					titleListScript+="<span class=\"list-item-note lucent\">" + date + "</span>";
 					titleListScript+="</li>";
-					titleListScript+="<div class=\"list__content\" id=\""+ i + "\" style=\"display: none\">asdfasfdasdf</div>";
+					titleListScript+="<div class=\"list__content\" id=\""+ i + "\" style=\"display: none\"></div>";
 				}
 				titleListScript += "</ul>";
 				
@@ -100,8 +100,11 @@ function fillContent(id, data){
 	
 	for(var i = 0; i < list.length; i++){
 		if(i == id){
+			var str = list[i].BOA_Content;
+			var result = str.replace(/\r\n/gi, '<br>');
+			
 			document.getElementById(i).style.display = "block";
-			document.getElementById(i).innerHTML = list[i].BOA_Content;
+			document.getElementById(i).innerHTML = result;
 		}else{
 			document.getElementById(i).style.display = "none";
 		}

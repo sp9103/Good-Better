@@ -31,6 +31,7 @@ ons-list-item > ons-icon {
 }
 
 .list__content {
+	width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -40,7 +41,7 @@ ons-list-item > ons-icon {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 10px 10px 10px 10px;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 500;
   background-color: #eee;
   color: #1f1f21;
