@@ -12,7 +12,9 @@ function dirname(path) {
 function LoadBoradTitle(){
 	var cliCode = window.localStorage.getItem("clientCode");
 	var BoardTitleURL = 'http://goodandbetter.cafe24.com/appGetBoardTitle?clientCode='+cliCode;
-			
+	
+	window.localStorage.setItem("BoardCount", 0);
+	
 	$.ajax({
 		dataType: 'Json',
 		url: BoardTitleURL,
@@ -21,13 +23,15 @@ function LoadBoradTitle(){
 				var s = JSON.stringify(data.result);
 				list = JSON.parse(s);
 				
+				window.localStorage.setItem("BoardCount", list.length);
+				
 				var titleListScript = "<ul class=\"list\">";
 				for(var i = 0; i < list.length; i++){
 					var time = list[i].indate;
 					//스트링 자르기
 					var date = cutStr(10, time);
 					
-					titleListScript+="<li class=\"list__item list__item--chevron\" onclick=\"TitleClicked(" + i + ")\">";
+					titleListScript+="<li class=\"list__item list__item--chevron\" onclick=\"TitleClicked(" + list[i].BOA_Code + ", " + i + ")\">";
 					titleListScript+=list[i].BOA_Title;
 					titleListScript+="<span class=\"list-item-note lucent\">" + date + "</span>";
 					titleListScript+="</li>";
@@ -66,41 +70,34 @@ function cutStr(len, str){
 	return str;
 }
 
-function TitleClicked(id){
-	var BoardAllInfo = window.localStorage.getItem("BoardAll");
+function TitleClicked(id, idx){
 	
-	if(BoardAllInfo == null){
-		var cliCode = window.localStorage.getItem("clientCode");
-		var BoardAllURL = 'http://goodandbetter.cafe24.com/appGetBoardAll?clientCode='+cliCode;
+	var BoardAllURL = 'http://goodandbetter.cafe24.com/appGetBoardAll?noticeCode='+id;
 	
-		$.ajax({
-			dataType: 'Json',
-			url: BoardAllURL,
-			success: function (data) {
-				if(data.error == 0){
-					var s = JSON.stringify(data.result);
-					window.localStorage.setItem("BoardAll", s);
-					fillContent(id, s);
-				}
-				else {
-					alert(data.errMSG);
-				}
-			},
-			error: function (xhr, type) {
-				alert('server error occurred');
+	$.ajax({
+		dataType: 'Json',
+		url: BoardAllURL,
+		success: function (data) {
+			if(data.error == 0){
+				var s = JSON.stringify(data.result);
+				fillContent(idx, s);
 			}
-		});
-	}else{
-		fillContent(id, BoardAllInfo);
-	}
+			else {
+				alert(data.errMSG);
+			}
+		},
+		error: function (xhr, type) {
+			alert('server error occurred');
+		}
+	});
 }
 
 function fillContent(id, data){
-	list = JSON.parse(data);
+	content = JSON.parse(data);
 	
-	for(var i = 0; i < list.length; i++){
+	for(var i = 0; i < window.localStorage.getItem("BoardCount"); i++){
 		if(i == id){
-			var str = list[i].BOA_Content;
+			var str = content[0].BOA_Content;
 			var result = str.replace(/\r\n/gi, '<br>');
 			
 			document.getElementById(i).style.display = "block";
