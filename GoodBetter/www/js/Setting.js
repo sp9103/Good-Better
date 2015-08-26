@@ -2,6 +2,8 @@
  * Created by minseock on 2015-07-08.
  */
 function disableAutoLogin() {
+	window.localStorage.removeItem("BoardAll");
+	
 	var r = confirm("자동 로그인을 해제하시겠습니까?");
 	if (r == true){
 		window.localStorage.setItem("auto",false);

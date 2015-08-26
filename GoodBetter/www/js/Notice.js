@@ -28,7 +28,7 @@ function LoadBoradTitle(){
 					//스트링 자르기
 					var date = cutStr(10, time);
 					
-					titleListScript+="<li class=\"list__item list__item--chevron\">";
+					titleListScript+="<li class=\"list__item list__item--chevron\" onclick=\"TitleClicked(" + i + ")\">";
 					titleListScript+=list[i].BOA_Title;
 					titleListScript+="<span class=\"list-item-note lucent\">" + date + "</span>";
 					titleListScript+="</li>";
@@ -64,4 +64,32 @@ function cutStr(len, str){
        if (l > len) return str.substring(0,i);
 	}
 	return str;
+}
+
+function TitleClicked(id){
+	alert(id);
+	var BoardAllInfo = window.localStorage.getItem("BoardAll");
+	
+	if(BoardAllInfo == null){
+		var cliCode = window.localStorage.getItem("clientCode");
+		var BoardAllURL = 'http://goodandbetter.cafe24.com/appGetBoardAll?clientCode='+cliCode;
+	
+		$.ajax({
+			dataType: 'Json',
+			url: BoardAllURL,
+			success: function (data) {
+				if(data.error == 0){
+					var s = JSON.stringify(data.result);
+					window.localStorage.setItem("BoardAll", s);
+				}
+				else {
+					alert(data.errMSG);
+				}
+			},
+			error: function (xhr, type) {
+				alert('server error occurred');
+			}
+		});
+	}else{
+	}
 }
