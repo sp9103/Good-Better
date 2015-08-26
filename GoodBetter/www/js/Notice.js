@@ -19,7 +19,6 @@ function LoadBoradTitle(){
 		success: function (data) {
 			if(data.error == 0){
 				var s = JSON.stringify(data.result);
-				alert(s);
 				list = JSON.parse(s);
 				
 				var titleListScript = "<ul class=\"list\">";
@@ -32,6 +31,7 @@ function LoadBoradTitle(){
 					titleListScript+=list[i].BOA_Title;
 					titleListScript+="<span class=\"list-item-note lucent\">" + date + "</span>";
 					titleListScript+="</li>";
+					titleListScript+="<div class=\"list__content\" id=\""+ i + "\" style=\"display: none\">asdfasfdasdf</div>";
 				}
 				titleListScript += "</ul>";
 				
@@ -67,7 +67,6 @@ function cutStr(len, str){
 }
 
 function TitleClicked(id){
-	alert(id);
 	var BoardAllInfo = window.localStorage.getItem("BoardAll");
 	
 	if(BoardAllInfo == null){
@@ -81,6 +80,7 @@ function TitleClicked(id){
 				if(data.error == 0){
 					var s = JSON.stringify(data.result);
 					window.localStorage.setItem("BoardAll", s);
+					fillContent(id, s);
 				}
 				else {
 					alert(data.errMSG);
@@ -91,5 +91,19 @@ function TitleClicked(id){
 			}
 		});
 	}else{
+		fillContent(id, BoardAllInfo);
+	}
+}
+
+function fillContent(id, data){
+	list = JSON.parse(data);
+	
+	for(var i = 0; i < list.length; i++){
+		if(i == id){
+			document.getElementById(i).style.display = "block";
+			document.getElementById(i).innerHTML = list[i].BOA_Content;
+		}else{
+			document.getElementById(i).style.display = "none";
+		}
 	}
 }
