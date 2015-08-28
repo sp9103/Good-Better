@@ -2,6 +2,7 @@
  * Created by minseock on 2015-07-08.
  */
 function disableAutoLogin() {
+	
 	var r = confirm("자동 로그인을 해제하시겠습니까?");
 	if (r == true){
 		window.localStorage.setItem("auto",false);
@@ -11,4 +12,10 @@ function disableAutoLogin() {
 		fullPath = dirPath + "/Login.html";
 		window.location = fullPath;
 	}
+}
+
+function NoticeClick(){
+	var dirPath = dirname(location.href);
+    fullPath = dirPath + "/Notice.html";
+    window.location = fullPath;
 }

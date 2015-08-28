@@ -14,10 +14,9 @@
 	
 	<!-- 상태바 조절 -->
 	<preference name="StatusBarOverlaysWebView" value="false"/>
-	<!--
-	<preference name="StatusBarBackgroundColor" value="#FFFFFF"/>
-	<preference name="StatusBarStyle" value="blacktranslucent" />
-	-->
+	<preference name="StatusBarBackgroundColor" value="#000000"/>
+	<preference name="StatusBarStyle" value="lightcontent" />
+
 	
 	<!--<preference name="Fullscreen" value="true" />-->
     <allow-intent href="http://*/*" />

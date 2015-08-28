@@ -30,9 +30,9 @@
 
             <div class="switch__toggle"></div>
         </label>
-        Auto Login
+        자동 로그인
         <br><br>
-        <ons-button modifier="large" class="login-button" onclick="verifyLogin();">Log In</ons-button>
+        <ons-button modifier="large" class="login-button" onclick="verifyLogin();">로그인</ons-button>
     </div>
 
 </ons-page>
@@ -88,6 +88,7 @@
 						window.localStorage.setItem("auto", document.getElementById("check_auto").checked);
 						window.localStorage.setItem("isadmin", data.result.isAdmin);
 						window.localStorage.setItem("clientCode", data.result.clientCode);
+						window.localStorage.setItem("isMaster", data.result.isMaster);
 						goPage();
 					} else {
 						alert(data.errMSG);

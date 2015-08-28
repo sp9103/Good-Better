@@ -34,6 +34,7 @@ function submitClicked_WithImage(imageUri) {
 	var cur_plant = window.localStorage.getItem("cur_plant");
 	var plant = JSON.parse(cur_plant);
 	var clientCode = window.localStorage.getItem("clientCode");
+	var ImageUpdated = window.localStorage.getItem("isImageUpdated");
 
 	var options = new FileUploadOptions();
 	options.fileKey = "checklistImage";
@@ -55,6 +56,7 @@ function submitClicked_WithImage(imageUri) {
 	params.repotting = document.getElementById("Repotting").checked ? 1 : 0;
 	params.change = document.getElementById("Change").checked ? 1 : 0;
 	params.text = document.getElementById("CHETEXT").value;
+	params.isImageUpdated = ImageUpdated;
 
 	options.params = params;
 
@@ -67,6 +69,7 @@ function submitClicked_WithImage(imageUri) {
 			document.getElementById("SubmitButton").innerHTML = "<button class=\"Submit Submit--large\" onclick=\"SubmitClicked()\">등록하기</button>";
 			document.getElementById("SubmitButton").style.opacity = 1.0;
 			document.getElementById("SubmitButton").style.pointerEvents = '';
+			alert(data.errMSG);
 			alert('네트워크 상태를 확인해주세요.');
 		}, options);
 }
@@ -75,6 +78,7 @@ function submitClicked_NoImage() {
 	var cur_plant = window.localStorage.getItem("cur_plant");
 	var plant = JSON.parse(cur_plant);
 	var clientCode = window.localStorage.getItem("clientCode");
+	var ImageUpdated = window.localStorage.getItem("isImageUpdated");
 
 	var formData = new FormData();
 
@@ -88,6 +92,7 @@ function submitClicked_NoImage() {
 	formData.append('repotting',document.getElementById("Repotting").checked ? 1 : 0);
 	formData.append('change',document.getElementById("Change").checked ? 1 : 0);
 	formData.append('text',document.getElementById("CHETEXT").value);
+	formData.append('isImageUpdated',ImageUpdated);
 
 	$.ajax({
 		url:'http://goodandbetter.cafe24.com/appUpdateChecklist',
