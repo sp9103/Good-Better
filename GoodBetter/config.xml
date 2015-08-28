@@ -11,6 +11,12 @@
     <plugin name="cordova-plugin-whitelist" version="1" />
     <access origin="*" />
 	<preference name="Orientation" value="portrait" />
+	
+	<!-- 상태바 조절 -->
+	<preference name="StatusBarOverlaysWebView" value="false"/>
+	<preference name="StatusBarBackgroundColor" value="#FFFFFF"/>
+	<preference name="StatusBarStyle" value="blacktranslucent" />
+	
 	<!--<preference name="Fullscreen" value="true" />-->
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

@@ -39,6 +39,10 @@
                         {
                             "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -585,6 +589,9 @@
             "PACKAGE_NAME": "com.app.GoodBetter"
         },
         "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.app.GoodBetter"
+        },
+        "org.apache.cordova.statusbar": {
             "PACKAGE_NAME": "com.app.GoodBetter"
         }
     },
