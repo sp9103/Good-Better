@@ -34,7 +34,7 @@ function LoadBoradTitle(){
 					
 					titleListScript+="<li class=\"list__item_sp list__item--chevron_sp\" onclick=\"TitleClicked(" + list[i].BOA_Code + ", " + i + ")\">";
 					titleListScript+="<div style=\"width: "+ twidth +"px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis\">";
-					titleListScript+=list[i].BOA_Title+"asdfasdfasdf";
+					titleListScript+=list[i].BOA_Title;
 					titleListScript+="</div>";
 	                titleListScript+="<span class=\"list-item-note lucent\">" + date + "</span>";
 					//titleListScript+="<span class=\"list-item-note lucent\" style=\"width:80px\>" + date + "</span>";
@@ -106,7 +106,8 @@ function fillContent(id, data){
 			var result = str.replace(/\r\n/gi, '<br>');
 			
 			document.getElementById(i).style.display = "block";
-			document.getElementById(i).innerHTML = result;
+			var temp_content = content[0].BOA_Title + "<br><br>" + result;
+			document.getElementById(i).innerHTML = temp_content;
 		}else{
 			document.getElementById(i).style.display = "none";
 		}
