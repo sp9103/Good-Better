@@ -53,6 +53,10 @@
                         {
                             "xml": false,
                             "count": 1
+                        },
+                        {
+                            "xml": true,
+                            "count": 1
                         }
                     ],
                     "ImageIO.framework": [
@@ -121,6 +125,10 @@
                         {
                             "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -163,6 +171,9 @@
             "PACKAGE_NAME": "com.app.GoodBetter"
         },
         "org.apache.cordova.statusbar": {
+            "PACKAGE_NAME": "com.app.GoodBetter"
+        },
+        "org.apache.cordova.dialogs": {
             "PACKAGE_NAME": "com.app.GoodBetter"
         }
     },

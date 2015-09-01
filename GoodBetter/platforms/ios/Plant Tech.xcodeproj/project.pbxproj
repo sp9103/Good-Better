@@ -63,6 +63,8 @@
 		0C065EEFFA8D442E89BC9795 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC538F70B5D4783882867B0 /* CDVSplashScreen.m */; };
 		614C6212286748C78B7A5A87 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 497036BA7BB144D585B7B2E1 /* CDVViewController+SplashScreen.m */; };
 		3B7E45619A234B5C8766F49D /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0356CAC5A7460C8B10222C /* CDVStatusBar.m */; };
+		013E7516B1C74618858EFF59 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 234673C103704C40A5956021 /* CDVNotification.m */; };
+		0F0A6D90432D47BDB8F58397 /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 956762BB91BC4D15890DA27A /* CDVNotification.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +166,9 @@
 		DA4F8B7186514587B2C499E8 /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		DA0356CAC5A7460C8B10222C /* CDVStatusBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVStatusBar.m"; path = "org.apache.cordova.statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		C833AC77C23542F485F976B9 /* CDVStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVStatusBar.h"; path = "org.apache.cordova.statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		234673C103704C40A5956021 /* CDVNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVNotification.m"; path = "org.apache.cordova.dialogs/CDVNotification.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		196B8EE9E7434548B3E6BE7B /* CDVNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVNotification.h"; path = "org.apache.cordova.dialogs/CDVNotification.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		956762BB91BC4D15890DA27A /* CDVNotification.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "CDVNotification.bundle"; path = "CDVNotification.bundle"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +251,7 @@
 				8D1107310486CEB800E47090 /* Plant Tech-Info.plist */,
 				F18E78B48D6E4F8DBC3F071E /* scannerOverlay.xib */,
 				72FD3B05D7C04AAD86FB055C /* CDVBarcodeScanner.bundle */,
+				956762BB91BC4D15890DA27A /* CDVNotification.bundle */,
 			);
 			name = Resources;
 			path = "Plant Tech/Resources";
@@ -308,6 +314,8 @@
 				DA4F8B7186514587B2C499E8 /* CDVViewController+SplashScreen.h */,
 				DA0356CAC5A7460C8B10222C /* CDVStatusBar.m */,
 				C833AC77C23542F485F976B9 /* CDVStatusBar.h */,
+				234673C103704C40A5956021 /* CDVNotification.m */,
+				196B8EE9E7434548B3E6BE7B /* CDVNotification.h */,
 			);
 			name = Plugins;
 			path = "Plant Tech/Plugins";
@@ -468,6 +476,7 @@
 				30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */,
 				DE9F1779CA0C4A4699F294F2 /* scannerOverlay.xib in Resources */,
 				CD2809E963C34F638B0B809B /* CDVBarcodeScanner.bundle in Resources */,
+				0F0A6D90432D47BDB8F58397 /* CDVNotification.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +522,7 @@
 				0C065EEFFA8D442E89BC9795 /* CDVSplashScreen.m in Sources */,
 				614C6212286748C78B7A5A87 /* CDVViewController+SplashScreen.m in Sources */,
 				3B7E45619A234B5C8766F49D /* CDVStatusBar.m in Sources */,
+				013E7516B1C74618858EFF59 /* CDVNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

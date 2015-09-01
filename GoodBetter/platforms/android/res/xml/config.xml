@@ -32,6 +32,9 @@
         <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
     <allow-intent href="market:*" />
     <icon density="ldpi" src="And_icon/ldpi.png" />
     <icon density="mdpi" src="And_icon/mdpi.png" />

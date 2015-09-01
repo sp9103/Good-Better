@@ -22,6 +22,7 @@ function LoadBoradTitle(){
 			if(data.error == 0){
 				var s = JSON.stringify(data.result);
 				list = JSON.parse(s);
+				var twidth = window.screen.width - 43 - 80;
 				
 				window.localStorage.setItem("BoardCount", list.length);
 				
@@ -31,9 +32,13 @@ function LoadBoradTitle(){
 					//스트링 자르기
 					var date = cutStr(10, time);
 					
-					titleListScript+="<li class=\"list__item list__item--chevron\" onclick=\"TitleClicked(" + list[i].BOA_Code + ", " + i + ")\">";
+					titleListScript+="<li class=\"list__item_sp list__item--chevron_sp\" onclick=\"TitleClicked(" + list[i].BOA_Code + ", " + i + ")\">";
+					titleListScript+="<div style=\"width: "+ twidth +"px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis\">";
 					titleListScript+=list[i].BOA_Title;
-					titleListScript+="<span class=\"list-item-note lucent\">" + date + "</span>";
+					titleListScript+="</div>";
+	                titleListScript+="<span class=\"list-item-note lucent\">" + date + "</span>";
+					//titleListScript+="<span class=\"list-item-note lucent\" style=\"width:80px\>" + date + "</span>";
+					titleListScript+="<div style=\"width:43px\"><div>";
 					titleListScript+="</li>";
 					titleListScript+="<div class=\"list__content\" id=\""+ i + "\" style=\"display: none\"></div>";
 				}
@@ -101,7 +106,8 @@ function fillContent(id, data){
 			var result = str.replace(/\r\n/gi, '<br>');
 			
 			document.getElementById(i).style.display = "block";
-			document.getElementById(i).innerHTML = result;
+			var temp_content = content[0].BOA_Title + "<br><br>" + result;
+			document.getElementById(i).innerHTML = temp_content;
 		}else{
 			document.getElementById(i).style.display = "none";
 		}
