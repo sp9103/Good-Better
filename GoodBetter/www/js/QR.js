@@ -59,7 +59,8 @@ function startScan() {
 // process the confirmation dialog result
 function onConfirm(buttonIndex) {
     if(buttonIndex==1) {
-        navigator.app.exitApp();
+        window.localStorage.setItem("auto", false);
+        prevPage();
     }else if(buttonIndex ==2) {
         //QR코드 재촬영
         var dirPath = dirname(location.href);
@@ -72,9 +73,9 @@ function onConfirm(buttonIndex) {
 //
 function showConfirm() {
     navigator.notification.confirm(
-        '어플리케이션을 종료하시겠습니까?', // message
+        '로그인 화면으로 이동하시겠습니까?', // message
         onConfirm,            // callback to invok with index of button pressed
-        '종료 확인',           // title
+        '스캔 취소',           // title
         ['예', '아니오']        // buttonLabels
     );
 }

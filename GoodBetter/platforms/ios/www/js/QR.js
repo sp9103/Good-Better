@@ -1,7 +1,7 @@
 
 function startScan() {
 	var isCancelled = false;
-    
+
     cordova.plugins.barcodeScanner.scan(
         function (result) {
             $.ajax({
@@ -42,9 +42,9 @@ function startScan() {
 					}
                 }
             })
-
             if (result.cancelled == true) {
-				isCancelled = true;
+                showConfirm();
+                //return false;
             }
 
         },
@@ -52,19 +52,34 @@ function startScan() {
             alert("Scanning failed: " + error);
         }
     );
-	
+
 	if(isCancelled == true){
-		var r = confirm("어플리케이션을 종료하시겠습니까?");
-		if (r == true){
-			navigator.app.exitApp();
-		}else{
-			//QR코드 재촬영
-			var dirPath = dirname(location.href);
-			fullPath = dirPath + "/QR_Scan.html";
-			window.location = fullPath;
-		}
 	}
 }
+// process the confirmation dialog result
+function onConfirm(buttonIndex) {
+    if(buttonIndex==1) {
+        window.localStorage.setItem("auto", false);
+        prevPage();
+    }else if(buttonIndex ==2) {
+        //QR코드 재촬영
+        var dirPath = dirname(location.href);
+        fullPath = dirPath + "/QR_Scan.html";
+        window.location = fullPath;
+    }
+}
+
+// Show a custom confirmation dialog
+//
+function showConfirm() {
+    navigator.notification.confirm(
+        '로그인 화면으로 이동하시겠습니까?', // message
+        onConfirm,            // callback to invok with index of button pressed
+        '스캔 취소',           // title
+        ['예', '아니오']        // buttonLabels
+    );
+}
+
 
 function nextPage() {
     var dirPath = dirname(location.href);
