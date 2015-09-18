@@ -4,7 +4,7 @@ background: url(../img/logo2.png) no-repeat center top; /* 170px x 200px */
   text-align: center;
   width: 80%;
   padding: 200px 0px 0px 0px; /* image height is 200px (bottom 20px are overlapped with text) */
-  margin: 40% auto 0;
+  margin: 30% auto 0;
 }
 
 input[type=email], input[type=password] {
