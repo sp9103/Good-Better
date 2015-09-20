@@ -140,6 +140,12 @@
                             "xml": "<string />",
                             "count": 1
                         }
+                    ],
+                    "NSAppTransportSecurity": [
+                        {
+                            "xml": "<dict><key>NSAllowsArbitraryLoads</key><true /></dict>",
+                            "count": 1
+                        }
                     ]
                 }
             }
@@ -174,6 +180,9 @@
             "PACKAGE_NAME": "com.app.GoodBetter"
         },
         "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "com.app.GoodBetter"
+        },
+        "sk.kcorp.cordova.ios-security": {
             "PACKAGE_NAME": "com.app.GoodBetter"
         }
     },

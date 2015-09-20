@@ -256,6 +256,7 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "2.1.0",
     "org.apache.cordova.statusbar": "0.1.10",
     "org.apache.cordova.dialogs": "0.3.0",
+    "sk.kcorp.cordova.ios-security": "0.3.0",
     "cordova-plugin-file": "2.1.0"
 }
 // BOTTOM OF METADATA
