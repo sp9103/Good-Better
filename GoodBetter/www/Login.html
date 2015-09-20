@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="thema/onsen-css-components.css">
     <link rel="stylesheet" href="css/login.css">
 
+
+    <script src="js/jquery-2.1.4.min.js"></script>
     <script src="lib/onsen/js/angular/angular.js"></script>
     <script src="lib/onsen/js/onsenui.js"></script>
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script>
         ons.bootstrap();
     </script>
+    
 </head>
 <body>
 
@@ -71,9 +73,11 @@
 		}
 
 		function verifyLogin() {
-			alert("button cliecked");
+			
 			var uname = document.getElementById("txt_username").value;
 			var pwd = document.getElementById("txt_pwd").value;
+            try{
+                //alert('inside try');
 			$.ajax({
 				type: 'POST',
 				dataType: 'Json',
@@ -95,12 +99,19 @@
 						alert(data.errMSG);
 					}
 				},
-				error: function (xhr, type) {
+				error: function (xhr, type, errorMsg) {
 					alert('server error occurred');
 				}
 			});
+            }
+            catch(err){
+                alert(err);
+            }
+            
+            
 		}
-	</script>
+
+</script>
 
 </body>
 </html>
