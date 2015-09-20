@@ -600,6 +600,9 @@
         },
         "org.apache.cordova.dialogs": {
             "PACKAGE_NAME": "com.app.GoodBetter"
+        },
+        "sk.kcorp.cordova.ios-security": {
+            "PACKAGE_NAME": "com.app.GoodBetter"
         }
     },
     "dependent_plugins": {

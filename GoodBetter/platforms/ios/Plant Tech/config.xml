@@ -78,7 +78,7 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
-    <access origin="*" />
+    <access origin="http://*.cafe24.com" />
     <preference name="Orientation" value="portrait" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
