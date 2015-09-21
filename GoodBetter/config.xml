@@ -70,7 +70,7 @@
 
         <splash src="Ios_splash/Non-Retina.png" width="320" height="480"/>
         <splash src="Ios_splash/Retina.png" width="640" height="960"/>
-        <splash src="Ios_splash/Tablet (iPad).pngg" width="768" height="1024"/>
+        <splash src="Ios_splash/Tablet (iPad).png" width="768" height="1024"/>
         <splash src="Ios_splash/Retina (2x).png" width="1536" height="2048"/>
         <splash src="Ios_splash/iPhone 5 Retina.png" width="640" height="1136"/>
         <splash src="Ios_splash/iPhone 6.png" width="750" height="1334"/>
